@@ -1,22 +1,18 @@
 class Solution {
-    public int[] diStringMatch(String S) {
-        int n = S.length();
-        int low = 0;
-        int high = n;
-        int[] A = new int[n + 1];
-
-        for (int i = 0; i < n; i++) {
-            if (S.charAt(i) == 'I') {
-                A[i] = low;
-                low++;
+    public int[] diStringMatch(String s) {
+        int n = s.length();
+        int[] arr = new int[n+1];
+        int start = 0;
+        int end = n;
+        char[] ch = s.toCharArray();
+        for(int i=0; i<n; i++) {
+            if(ch[i] == 'I') {
+                arr[i] = start++;
             } else {
-                A[i] = high;
-                high--;
+                arr[i] = end--;
             }
         }
-
-        A[n] = low;
-
-        return A;
+        arr[n] = start;
+        return arr;
     }
 }
