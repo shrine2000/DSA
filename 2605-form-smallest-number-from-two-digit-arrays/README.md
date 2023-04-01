@@ -34,7 +34,7 @@ class Solution {
         Arrays.sort(nums1);
         Arrays.sort(nums2);
 		
-		int[] count = new int[10];
+	int[] count = new int[10];
         for (int i : nums1) {
             count[i]++;
         }
