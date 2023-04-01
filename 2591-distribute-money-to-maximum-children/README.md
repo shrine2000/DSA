@@ -103,3 +103,21 @@ class Solution {
 }
 
 ```
+
+#### Explanation
+
+```java 
+
+ for (i = 0; i < children && money - children + i >= 0; i++) {
+     money = money - 8;
+ }
+	
+```
+
+The loop starts from `i = 0`, which represents the first child, and will continue until `i` reaches the number of `children` or there is not enough money left to give $8 to the remaining children.
+
+In each iteration of the loop, the code subtracts $8 from the remaining `money`. The condition `money - children + i >= 0` checks if there is enough money left to give $8 to the current child (i.e., `i`th child).
+
+If there isn't enough money left for the current child, the loop will exit and the remaining money will be distributed to the remaining children using a while loop.
+
+The loop will continue until there is enough money left to give $8 to the next child or until all children have received at least $1. If there is not enough money left to give $8 to the next child, the loop will subtract $8 from the last child, and the remaining money will be returned.
