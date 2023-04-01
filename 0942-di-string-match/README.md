@@ -27,7 +27,7 @@
 </ul>
 </div>
 
-​Implementation of `diStringMatch` with an example.
+### Implementation of `diStringMatch` with an example.
 
 Suppose the input string `s` is `"IDDID"`.
 
