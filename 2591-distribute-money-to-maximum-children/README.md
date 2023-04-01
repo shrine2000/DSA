@@ -38,3 +38,68 @@ It can be proven that no distribution exists such that number of children gettin
 	<li><code>2 &lt;= children &lt;= 30</code></li>
 </ul>
 </div>
+
+
+### Solution 1
+
+```java
+
+class Solution {
+    public int distMoney(int money, int children) {
+        money = money - children;
+
+        if (money < 0) return -1;
+
+        if (money < 7) return 0;
+
+        int count = money / 7;
+
+        if (count >= children) {
+            return children - (money > children * 7 ? 1 : 0);
+        }
+        if ((money % 7) == 3) {
+            return count - (children - count > 1 ? 0 : 1);
+        }
+
+        return count;
+
+    }
+}
+
+```
+
+### Solution 2 
+
+
+```java 
+
+class Solution {
+    public int distMoney(int money, int children) {
+        // Check if there is enough money to give each child at least 1 dollar
+        if (money < children) return -1;
+
+        // Check if the money can be evenly divided among the children and each child can receive exactly 8 dollars
+        if (money % 8 == 0 && money / 8 == children) return children;
+
+        // Give money to as many children as possible, subtracting 8 dollars from the total money for each child
+        int i = 0;
+        for (i = 0; i < children && money - children + i >= 0; i++) {
+            money = money - 8;
+        }
+
+        // If there is 4 dollars left and all children have been given money, take 8 dollars from two of the children
+        if (money == -4 && i == children) return i - 2;
+
+        // If not all children have been given money, add 8 dollars back to the total money until there is enough to give money to all children
+        while (money - children + i < 0) {
+            money += 8;
+            i--;
+        }
+
+        // Check if all children have been given money and if so, return the number of children who received exactly 8 dollars
+        // If not all children have been given money, return the number of children who did receive money
+        return money > 0 && i == children ? i - 1 : i;
+    }
+}
+
+```
