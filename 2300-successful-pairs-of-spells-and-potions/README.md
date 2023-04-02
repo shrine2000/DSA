@@ -38,3 +38,55 @@ Thus, [2,0,2] is returned.
 	<li><code>1 &lt;= success &lt;= 10<sup>10</sup></code></li>
 </ul>
 </div>
+
+## Solution
+
+### Approach 1 : Prefix Sum
+
+This solution uses counting sort to count the number of potions with a particular strength, then creates a prefix sum of these counts to allow for efficient querying of the number of potions with strength greater than or equal to a given value.
+
+For each spell, the strength of the potion required to achieve success is computed as `success / spells[i]`. If this strength is greater than the maximum strength in the input `potions` array, then no potions can be successful for this spell and the loop moves to the next iteration. Otherwise, the loop searches for the smallest strength `target` such that `target * spells[i] >= success`. If `target` is greater than the maximum strength in the input `potions` array, then no potions can be successful for this spell and the loop moves to the next iteration. Otherwise, the solution returns the number of potions with strength greater than or equal to `target` using the prefix sum computed earlier.
+
+Here is the Java implementation of this solution:
+
+ 
+```java
+
+class Solution {
+    public int[] successfulPairs(int[] spells, int[] potions, long success) {
+        int n = spells.length;
+        int m = potions.length;
+        
+        int max = -1;
+        for (int x : potions)
+            max = max>x?max:x;
+        
+        int[] potionsCount = new int[max + 1];
+        for (int x : potions)
+            potionsCount[x]++;
+        
+        int count = 0;
+        for (int i = max; i >= 0; i--) {
+            count += potionsCount[i];
+            potionsCount[i] = count;
+        }
+        
+        int[] ret = new int[n];
+        for (int i = 0; i < n; i++) {
+            long target = success / spells[i];
+            if (target > max)
+                continue;
+            
+            while (target < 100001 && target * spells[i] < success)
+                target++;
+            
+            if (target > max)
+                continue;
+            
+            ret[i] = potionsCount[(int)target];
+        }
+        
+        return ret;
+    }
+}
+```
