@@ -1,19 +1,15 @@
 class Solution {
     public int partitionString(String s) {
-        int count = 0;
-
-        Set<Character> set = new HashSet<>();
-        for (char c : s.toCharArray()) {
-            if (set.contains(c)) {
+        int charMap = 0;
+        int count = 1;
+        for(char c : s.toCharArray()) {
+            if((charMap & (1 << c)) != 0) {
                 count++;
-                set = new HashSet<>();
-                set.add(c);
-            } else {
-                set.add(c);
+                charMap = 0;
             }
+            charMap ^= (1 << c);
         }
-
-        if (!set.isEmpty()) count++;
         return count;
     }
+
 }
