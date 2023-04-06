@@ -1,45 +1,53 @@
 class Solution {
-     public int closedIsland(int[][] gd) {
+  public static int closedIsland(int[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+        boolean[][] visited = new boolean[m][n];
 
-            int m = gd.length;
-            int n = gd[0].length;
-
-            for (int i=0; i<m; i++) {
-                dfs(gd, i, 0);
-                dfs(gd, i, n-1);
-            }
-
-            for (int j=0; j<n; j++) {
-                dfs(gd, 0, j);
-                dfs(gd, m-1, j);
-            }
-
-            int isd = 0;
-            for (int k=0; k<m; k++) {
-                for (int l=0; l<n; l++) {
-                    if (gd[k][l] == 0) {
-                        isd++;
-                        dfs(gd, k, l);
+        int count = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (!visited[i][j] && grid[i][j] == 0) {
+                    if (dfs(grid, visited, i, j, m, n)) {
+                        count++;
                     }
                 }
             }
-
-            return isd;
         }
 
+        return count;
+    }
 
-        private void dfs (int[][] gd, int r, int c) {
-
-            if (r < 0 || r > gd.length-1 || c <0 || c>gd[0].length-1 || gd[r][c] != 0) {
-                return;
-            }
-
-            gd[r][c] = -1;
-
-            dfs(gd, r+1, c);
-            dfs(gd, r-1, c);
-            dfs(gd, r, c+1);
-            dfs(gd, r, c-1);
-
+    private static boolean dfs(int[][] grid, boolean[][] visited, int i, int j, int m, int n) {
+        if (i < 0 || j < 0 || i >= m || j >= n) {
+            return false;
         }
+        if (visited[i][j] || grid[i][j] == 1) {
+            return true;
+        }
+        visited[i][j] = true;
+
+        boolean top = dfs(grid, visited, i - 1, j, m, n);
+        boolean bottom = dfs(grid, visited, i + 1, j, m, n);
+        boolean left = dfs(grid, visited, i, j - 1, m, n);
+        boolean right = dfs(grid, visited, i, j + 1, m, n);
+
+        boolean isClosed = top && bottom && left && right;
+        if (isClosed) {
+            markVisited(grid, visited, i, j, m, n);
+        }
+        return isClosed;
+    }
+
+    private static void markVisited(int[][] grid, boolean[][] visited, int i, int j, int m, int n) {
+        if (i < 0 || j < 0 || i >= m || j >= n || visited[i][j] || grid[i][j] == 1) {
+            return;
+        }
+        visited[i][j] = true;
+
+        markVisited(grid, visited, i - 1, j, m, n);
+        markVisited(grid, visited, i + 1, j, m, n);
+        markVisited(grid, visited, i, j - 1, m, n);
+        markVisited(grid, visited, i, j + 1, m, n);
+    }
 }
