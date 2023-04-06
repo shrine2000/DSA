@@ -1,45 +1,52 @@
 class Solution {
-     public static int closedIsland(int[][] grid) {
-        int rows = grid.length;
-        int cols = grid[0].length;
-        boolean[][] visited = new boolean[rows][cols];
-        int count = 0;
+    public int closedIsland(int[][] grid) {
+        
+        // get the number of rows and columns in the grid
+        int m = grid.length;
+        int n = grid[0].length;
 
-        // Traverse the cells on the boundary and mark the connected cells as visited
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if ((i == 0 || i == rows - 1 || j == 0 || j == cols - 1) && grid[i][j] == 0 && !visited[i][j]) {
-                    dfs(grid, visited, i, j);
+        // traverse the left and right edges of the grid and call dfs on each cell that is 0
+        for (int i=0; i<m; i++) {
+            dfs(grid, i, 0);
+            dfs(grid, i, n-1);
+        }
+
+        // traverse the top and bottom edges of the grid and call dfs on each cell that is 0
+        for (int j=0; j<n; j++) {
+            dfs(grid, 0, j);
+            dfs(grid, m-1, j);
+        }
+
+        // count the number of closed islands
+        int island = 0;
+        for (int k=0; k<m; k++) {
+            for (int l=0; l<n; l++) {
+                if (grid[k][l] == 0) {
+                    island++;
+                    dfs(grid, k, l);
                 }
             }
         }
 
-        // Traverse the remaining cells and count the number of closed islands
-        for (int i = 1; i < rows - 1; i++) {
-            for (int j = 1; j < cols - 1; j++) {
-                if (!visited[i][j] && grid[i][j] == 0) {
-                    count++;
-                    dfs(grid, visited, i, j);
-                }
-            }
-        }
-
-        return count;
+        return island;
     }
 
-    private static void dfs(int[][] grid, boolean[][] visited, int i, int j) {
-        int rows = grid.length;
-        int cols = grid[0].length;
 
-        if (i < 0 || j < 0 || i >= rows || j >= cols || visited[i][j] || grid[i][j] == 1) {
+    private void dfs (int[][] grid, int row, int col) {
+
+        // if the current cell is out of bounds or has already been visited or is not 0, return
+        if (row < 0 || row > grid.length-1 || col <0 || col>grid[0].length-1 || grid[row][col] != 0) {
             return;
-        }
+        } 
 
-        visited[i][j] = true;
+        // mark the current cell as visited
+        grid[row][col] = -1;
 
-        dfs(grid, visited, i + 1, j);
-        dfs(grid, visited, i, j + 1);
-        dfs(grid, visited, i - 1, j);
-        dfs(grid, visited, i, j - 1);
+        // call dfs on each of the neighboring cells that are 0
+        dfs(grid, row+1, col);
+        dfs(grid, row-1, col);
+        dfs(grid, row, col+1);
+        dfs(grid, row, col-1);
+
     }
 }
