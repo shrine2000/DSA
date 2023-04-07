@@ -1,28 +1,25 @@
-
 class Solution(object):
-    def numEnclaves(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
-        
-        ROWS, COLS = len(grid), len(grid[0])
-        
-        def dfs(r,c):
-            if(r < 0 or c <0 or r == ROWS or c==COLS or not grid[r][c] or (r,c) in                  visit):
-                return 0
-            visit.add((r,c))
-            res=1
-            direct = [[0,1], [0,-1], [1,0], [-1,0]]
-            for dr, dc in direct:
-                res+= dfs(r+dr, c+dc)
-            return res
-        
-        visit = set()
-        land, borderLand = 0 , 0
-        for r in range(ROWS):
-            for c in range(COLS):
-                land+= grid[r][c]
-                if(grid[r][c] and (r,c) not in visit and (c in [0, COLS -1] or r in [0, ROWS - 1])):
-                    borderLand +=dfs(r,c)
-        return land - borderLand
+    def numEnclaves(self, grid: list[list[int]]) -> int:
+        if len(grid) <=2 or len(grid[0]) <= 2:
+            return 0
+        visited = set()
+        rows, cols = len(grid), len(grid[0])
+        border_cells = [(0, j) for j in range(cols)] + \
+                       [(rows-1, j) for j in range(cols)] + \
+                       [(i, 0) for i in range(1, rows-1)] + \
+                       [(i, cols-1) for i in range(1, rows-1)]
+        queue = deque(border_cells)
+        while queue:
+            i, j = queue.popleft()
+            if (i, j) in visited or grid[i][j] == 0:
+                continue
+            visited.add((i, j))
+            if i != 0:
+                queue.append((i-1, j))
+            if j != 0:
+                queue.append((i, j-1))
+            if i < rows-1:
+                queue.append((i+1, j))
+            if j < cols-1:
+                queue.append((i, j+1))
+        return sum(1 for i in range(rows) for j in range(cols) if grid[i][j] == 1 and (i, j) not in visited)
