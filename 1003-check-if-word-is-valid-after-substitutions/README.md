@@ -41,3 +41,58 @@ Thus, "abcabcababcc" is valid.
 	<li><code>s</code> consists of letters <code>'a'</code>, <code>'b'</code>, and <code>'c'</code></li>
 </ul>
 </div>
+
+## Solution
+
+```java 
+class Solution {
+    // 1st attempt O(n) time O(n) space AC 189ms using StringBuilder
+    public boolean isValid1(String s) {
+        final StringBuilder sb = new StringBuilder(s);
+        int index = -1;
+        while ((index = sb.indexOf("abc")) != -1) {
+            sb.delete(index, index + 3);
+        }
+        return sb.length() == 0;
+    }
+
+    // 2nd attempt O(n) time O(n) space AC 17ms using Stack
+    public boolean isValid2(String s) {
+        final Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c != 'c') {
+                stack.push(c);
+            } else {
+                if (stack.isEmpty() || stack.pop() != 'b') {
+                    return false;
+                }
+                if (stack.isEmpty() || stack.pop() != 'a') {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    // 3rd attempt O(n) time, O(n) space AC 2ms using char array
+    public boolean isValid(String s) {
+        int top = 0;
+        char[] stack = s.toCharArray();
+        for (int i = 0; i < stack.length; i++) {
+            if (stack[i] != 'c') {
+                stack[top++] = stack[i];
+            } else {
+                if (top == 0 || stack[--top] != 'b') {
+                    return false;
+                }
+                if (top == 0 || stack[--top] != 'a') {
+                    return false;
+                }
+            }
+        }
+        return top == 0;
+    }
+}
+
+
+```
