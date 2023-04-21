@@ -1,16 +1,24 @@
 class Solution {
-    public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        int n = nums.length;
-        for (int i = 0; i < (1 << n); i++) {
-            List<Integer> temp = new ArrayList<>();
-            for (int j = 0; j < n; j++) {
-                if ((i & (1 << j)) != 0) {
-                    temp.add(nums[j]);
-                }
-            }
-            res.add(temp);
+
+    public static void generatePowerSet(int[] nums, int index, List<Integer> currentSet, List<List<Integer>> powerSet) {
+        if (index == nums.length) {
+            powerSet.add(new ArrayList<Integer>(currentSet));
+            return;
         }
-        return res;
+
+        // Include the current element in the subset
+        currentSet.add(nums[index]);
+        generatePowerSet(nums, index + 1, currentSet, powerSet);
+
+        // Exclude the current element from the subset
+        currentSet.remove(currentSet.size() - 1);
+        generatePowerSet(nums, index + 1, currentSet, powerSet);
+    }
+
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> powerSet = new ArrayList<>();
+        List<Integer> currentSet = new ArrayList<Integer>();
+        generatePowerSet(nums, 0, currentSet, powerSet);
+        return powerSet;
     }
 }
