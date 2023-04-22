@@ -1,16 +1,28 @@
 class Solution {
-    public int minInsertions(String s) {
-        int n = s.length();
-        int[][] dp = new int[n][n];
-        for (int i = n - 2; i >= 0; i--) {
-            for (int j = i + 1; j < n; j++) {
-                if (s.charAt(i) == s.charAt(j)) {
-                    dp[i][j] = dp[i + 1][j - 1];
-                } else {
-                    dp[i][j] = Math.min(dp[i + 1][j], dp[i][j - 1]) + 1;
+    public int longestPalindromeSubseq(String s) {
+        char[] chars = s.toCharArray();
+        int n = chars.length, max = 0;
+        int[] dp = new int[n];
+        for(int j = 0; j < n; j++) {
+            dp[j] = 1;
+            int prevMax = 0;
+            for(int i = j-1; i >= 0; i--) {
+                int prevLen = dp[i];
+                if(chars[i] == chars[j]) {
+                    dp[i] = 2 + prevMax;
                 }
+                prevMax = Math.max(prevMax, prevLen);
             }
         }
-        return dp[0][n - 1];
+        int longestPalSubseq = 0;
+        for(int len: dp) {
+            longestPalSubseq = Math.max(longestPalSubseq, len);
+        }
+        return longestPalSubseq;
+    }
+    
+    public int minInsertions(String s) {
+        int longestPalSubseq = longestPalindromeSubseq(s);
+        return s.length() - longestPalSubseq;
     }
 }
