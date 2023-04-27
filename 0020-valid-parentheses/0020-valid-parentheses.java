@@ -10,10 +10,12 @@ class Solution {
             } else {
                 if(topIndex >= 0 && ((stack[topIndex] == '(' && currentChar == ')') || (stack[topIndex] == '[' && currentChar == ']') || (stack[topIndex] == '{' && currentChar == '}'))) {
                     topIndex--;
-                } else return false;
+                } else {
+                    return false;
+                }
             }
         }
         
-        return topIndex==-1;                            
+        return topIndex == -1;                            
     }
 }
