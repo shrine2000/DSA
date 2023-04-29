@@ -26,18 +26,18 @@ class GFG {
 
 class Solution {
     public static String removeOuter(String s) {
-        int count = 0;
+        Stack<Character> stack = new Stack<>();
         StringBuilder sb = new StringBuilder();
         
         for (char c : s.toCharArray()) {
             if (c == '(') {
-                if (count > 0) {
+                if (!stack.isEmpty()) {
                     sb.append(c);
                 }
-                count++;
+                stack.push(c);
             } else if (c == ')') {
-                count--;
-                if (count > 0) {
+                stack.pop();
+                if (!stack.isEmpty()) {
                     sb.append(c);
                 }
             }
