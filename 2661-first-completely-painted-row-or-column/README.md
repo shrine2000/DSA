@@ -33,3 +33,116 @@
 	<li>All the integers of <code>mat</code> are <strong>unique</strong>.</li>
 </ul>
 </div>
+
+
+## Solution
+
+
+```java
+
+class Solution {
+    public int firstCompleteIndex(int[] arr, int[][] mat) {
+        int rows = mat.length;
+        int cols = mat[0].length;
+        
+        // Store the locations of all the integers in mat
+        int[][] integerLocations = new int[rows * cols][2];
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                int integer = mat[i][j];
+                integerLocations[integer-1][0] = i; // Row index
+                integerLocations[integer-1][1] = j; // Column index
+            }
+        }
+        
+        // Count the number of painted cells in each row and column
+        int[] paintedInRow = new int[rows];
+        int[] paintedInCol = new int[cols];
+        for (int i = 0; i < arr.length; ++i) {
+            int integer = arr[i];
+            int[] location = integerLocations[integer-1];
+            int row = location[0];
+            int col = location[1];
+            
+            // Increment the count of painted cells in the current row and column
+            paintedInRow[row]++;
+            paintedInCol[col]++;
+            
+            // If any row or column is fully painted, return the current index
+            if (paintedInRow[row] == cols || paintedInCol[col] == rows) {
+                return i;
+            }
+        }
+        
+        // No row or column is fully painted
+        return -1;
+    }
+}
+
+
+```
+Detailed explanation of the code:
+
+
+```java
+
+class Solution {
+    public int firstCompleteIndex(int[] arr, int[][] mat) {
+        int rows = mat.length;
+        int cols = mat[0].length;
+```
+
+
+
+The function `firstCompleteIndex` takes two parameters: an integer array `arr` and a 2D integer array `mat`. The goal is to go through each integer in `arr`, find its corresponding cell in `mat`, and paint it. The function should then return the smallest index `i` such that either a row or a column is completely painted in `mat`.
+
+The first two lines of the function set the variables `rows` and `cols` to the number of rows and columns in `mat`, respectively. This is done to make the code more readable and avoid calling `mat.length` and `mat[0].length` multiple times later on.
+
+```java
+
+// Store the locations of all the integers in mat
+        int[][] integerLocations = new int[rows * cols][2];
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                int integer = mat[i][j];
+                integerLocations[integer-1][0] = i; // Row index
+                integerLocations[integer-1][1] = j; // Column index
+            }
+        }
+```
+
+
+
+The next block of code creates a 2D array `integerLocations` that stores the row and column indices of each integer in `mat`. The array has dimensions `rows * cols` by 2, where each row corresponds to an integer and the first column is the row index while the second column is the column index.
+
+The loop iterates through every element in `mat`, retrieves the integer value at that element, and stores its row and column indices in `integerLocations`. Note that we subtract 1 from the integer value because the range of integers in `mat` is from 1 to `rows * cols`, while the array indices are 0-indexed.
+
+```java
+
+// Count the number of painted cells in each row and column
+        int[] paintedInRow = new int[rows];
+        int[] paintedInCol = new int[cols];
+        for (int i = 0; i < arr.length; ++i) {
+            int integer = arr[i];
+            int[] location = integerLocations[integer-1];
+            int row = location[0];
+            int col = location[1];
+            
+            // Increment the count of painted cells in the current row and column
+            paintedInRow[row]++;
+            paintedInCol[col]++;
+            
+            // If any row or column is fully painted, return the current index
+            if (paintedInRow[row] == cols || paintedInCol[col] == rows) {
+                return i;
+            }
+        }
+```
+
+
+
+The final block of code loops through each integer in `arr`, retrieves its corresponding row and column indices from `integerLocations`, and increments the counters `paintedInRow` and `paintedInCol` at the respective indices. These counters keep track of the number of painted cells in each row and column.
+
+After each iteration, the code checks if the current row or column has been fully painted. If a row has been fully painted, its counter in `paintedInRow` will equal `cols`. If a column has been fully painted, its counter in `paintedInCol` will equal `rows`. If either of these conditions is met, the function returns the current index `i`.
+
+If no row or column is fully painted after iterating through all the integers in `arr`, the function returns -1.
