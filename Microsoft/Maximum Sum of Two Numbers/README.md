@@ -1,4 +1,4 @@
-- ## [Maximum Sum of Two Numbers](https://www.desiqna.in/13267/microsoft-coding-oa-sde-1-may-3-2023)
+## [Maximum Sum of Two Numbers](https://www.desiqna.in/13267/microsoft-coding-oa-sde-1-may-3-2023)
 
 You are given an integer array `nums` of size `n`. You need to pick any two numbers from the array such that their digit sum is equal. Then, you need to calculate their sum and return the maximum possible sum of the two numbers.
 
