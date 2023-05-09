@@ -1,47 +1,25 @@
-<h2><a href="https://leetcode.com/problems/find-the-maximum-divisibility-score/">2644. Find the Maximum Divisibility Score</a></h2><h3>Easy</h3><hr><div><p>You are given two <strong>0-indexed</strong> integer arrays <code>nums</code> and <code>divisors</code>.</p>
+- ## [Maximum Sum of Two Numbers](https://www.desiqna.in/13267/microsoft-coding-oa-sde-1-may-3-2023)
 
-<p>The <strong>divisibility score</strong> of <code>divisors[i]</code> is the number of indices <code>j</code> such that <code>nums[j]</code> is divisible by <code>divisors[i]</code>.</p>
+You are given an integer array `nums` of size `n`. You need to pick any two numbers from the array such that their digit sum is equal. Then, you need to calculate their sum and return the maximum possible sum of the two numbers.
 
-<p>Return <em>the integer</em> <code>divisors[i]</code> <em>with the maximum divisibility score</em>. If there is more than one integer with the maximum score, return the minimum of them.</p>
+Implement the `maxSum` function to solve the problem.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+*Note: The digit sum of a number is defined as the sum of its digits.*
+### Example 1:
 
-<pre><strong>Input:</strong> nums = [4,7,9,3,9], divisors = [5,2,3]
-<strong>Output:</strong> 3
-<strong>Explanation:</strong> The divisibility score for every element in divisors is:
-The divisibility score of divisors[0] is 0 since no number in nums is divisible by 5.
-The divisibility score of divisors[1] is 1 since nums[0] is divisible by 2.
-The divisibility score of divisors[2] is 3 since nums[2], nums[3], and nums[4] are divisible by 3.
-Since divisors[2] has the maximum divisibility score, we return it.
-</pre>
+Input: `nums = [51, 71, 17, 42]`
 
-<p><strong class="example">Example 2:</strong></p>
+Output: `93`
 
-<pre><strong>Input:</strong> nums = [20,14,21,10], divisors = [5,7,5]
-<strong>Output:</strong> 5
-<strong>Explanation:</strong> The divisibility score for every element in divisors is:
-The divisibility score of divisors[0] is 2 since nums[0] and nums[3] are divisible by 5.
-The divisibility score of divisors[1] is 2 since nums[1] and nums[2] are divisible by 7.
-The divisibility score of divisors[2] is 2 since nums[0] and nums[3] are divisible by 5.
-Since divisors[0], divisors[1], and divisors[2] all have the maximum divisibility score, we return the minimum of them (i.e., divisors[2]).
-</pre>
+Explanation: Pick 51 and 42 to get a digit sum of 6 + 6 = 12. Add 51 and 42 to get 93 which is the maximum possible sum.
+### Example 2:
 
-<p><strong class="example">Example 3:</strong></p>
+Input: `nums = [42, 33, 60]`
 
-<pre><strong>Input:</strong> nums = [12], divisors = [10,16]
-<strong>Output:</strong> 10
-<strong>Explanation:</strong> The divisibility score for every element in divisors is:
-The divisibility score of divisors[0] is 0 since no number in nums is divisible by 10.
-The divisibility score of divisors[1] is 0 since no number in nums is divisible by 16.
-Since divisors[0] and divisors[1] both have the maximum divisibility score, we return the minimum of them (i.e., divisors[0]).
-</pre>
+Output: `102`
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
-
-<ul>
-	<li><code>1 &lt;= nums.length, divisors.length &lt;= 1000</code></li>
-	<li><code>1 &lt;= nums[i], divisors[i] &lt;= 10<sup>9</sup></code></li>
-</ul>
-</div>
+Explanation: Pick 42 and 60 to get a digit sum of 6 + 6 = 12. Add 42 and 60 to get 102 which is the maximum possible sum.
+### Constraints: 
+- `n == nums.length` 
+- `2 <= n <= 10^4` 
+- `1 <= nums[i] <= 10^5`
