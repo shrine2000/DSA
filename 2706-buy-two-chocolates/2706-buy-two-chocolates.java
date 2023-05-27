@@ -1,9 +1,13 @@
 class Solution {
     public int buyChoco(int[] prices, int money) {
-        Arrays.sort(prices);
-        int lol = prices[0]+prices[1];
-        if(money < lol)
-            return money;
-        return money-lol;
+        int ans = -1,n = prices.length;
+        for(int i = 0;i < n;i++){
+            for(int j = i + 1;j < n;j++){
+                if(prices[i] + prices[j] <= money){
+                    ans = Math.max(ans,money - prices[i] - prices[j]);
+                }
+            }
+        }
+        return ans == -1 ? money : ans;
     }
 }
