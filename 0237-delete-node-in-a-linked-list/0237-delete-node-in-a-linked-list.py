@@ -18,3 +18,10 @@ class Solution:
         node.next = node.next.next
         
         
+        """
+        
+        The code proceeds to delete the node in-place by copying the value of the next node to the current node, which effectively replaces the current node with the next node. Subsequently, it updates the current node's next pointer to skip the next node, thereby effectively removing it from the linked list.
+        
+        """
+        
+        
