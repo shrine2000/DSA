@@ -38,3 +38,85 @@
 <p>&nbsp;</p>
 <p><strong>Follow up:</strong> Can you solve it using <code>O(1)</code> (i.e. constant) memory?</p>
 </div>
+
+
+## Solution
+
+different approaches to detect a cycle in a linked list:
+
+**1. Hash Set:**
+
+```python
+def hasCycleHashSet(head):
+    visited = set()
+    curr = head
+
+    while curr:
+        if curr in visited:
+            return True
+        visited.add(curr)
+        curr = curr.next
+
+    return False
+```
+
+**2. Two Pointers (Fast and Slow):**
+
+```python
+def hasCycleTwoPointers(head):
+    if not head or not head.next:
+        return False
+
+    slow = head
+    fast = head.next
+
+    while slow != fast:
+        if not fast or not fast.next:
+            return False
+        slow = slow.next
+        fast = fast.next.next
+
+    return True
+```
+
+**3. Floyd's Cycle Detection Algorithm:**
+
+```python
+def hasCycleFloyd(head):
+    if not head or not head.next:
+        return False
+
+    slow = head
+    fast = head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+        if slow == fast:
+            return True
+
+    return False
+```
+
+**4. Modify the Linked List Structure:**
+
+```python
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+        self.visited = False
+
+def hasCycleModifyList(head):
+    curr = head
+
+    while curr:
+        if curr.visited:
+            return True
+        curr.visited = True
+        curr = curr.next
+
+    return False
+```
+
