@@ -27,6 +27,15 @@ class Solution:
         return head
 
 
+"""
+
+In the insertAtEnd method, a new node is created with the given data x. If the head is None, indicating an empty list, the new node is returned as the new head. 
+Otherwise, we traverse the linked list until we reach the last node. 
+Then, we set the next pointer of the last node to the new node, effectively appending it to the end of the list. 
+Finally, we return the head of the linked list.
+
+"""
+
 
 
 #{ 
