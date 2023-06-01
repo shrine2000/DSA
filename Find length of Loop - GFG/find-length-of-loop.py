@@ -34,6 +34,17 @@ def countNodesinLoop(head):
 
     # If loop is not found, return 0
     return 0
+    
+    """ 
+    
+    We initialize a variable count to 1 because we have already identified one node in the loop (the current slow node).
+    We create a temporary node temp and assign it the value of slow.next. This allows us to traverse the loop and count the number of nodes in it.
+    The while loop iterates as long as temp is not equal to slow, indicating that we have completed a full loop traversal.
+    Inside the loop, we increment the count variable by 1 to account for each node we encounter in the loop.
+    We update temp to its next node (temp = temp.next) to continue traversing the loop.
+    Once the loop ends, we have counted all the nodes in the loop, so we return the final value of count.
+    
+    """
 
 
 
