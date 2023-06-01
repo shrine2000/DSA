@@ -8,26 +8,19 @@ class Solution:
         if not head or not head.next: 
             return head
         
-        odd_values = []
-        even_values = []
-        current = head
-        count = 1
-
-        while current:
-            if count % 2 == 1:
-                odd_values.append(current.val)
-            else:
-                even_values.append(current.val)
-            count += 1
-            current = current.next
-
-        values = odd_values + even_values
-
-        new_head = ListNode(values[0])
-        current = new_head
-
-        for i in range(1, len(values)):
-            current.next = ListNode(values[i])
-            current = current.next
-
-        return new_head
+        odd_head = head
+        even_head = head.next
+        odd_tail = odd_head
+        even_tail = even_head
+        
+        while even_tail and even_tail.next:
+            odd_tail.next = even_tail.next
+            odd_tail = odd_tail.next
+            even_tail.next = odd_tail.next
+            even_tail = even_tail.next
+            
+        odd_tail.next = even_head
+        
+        return odd_head
+        
+       
