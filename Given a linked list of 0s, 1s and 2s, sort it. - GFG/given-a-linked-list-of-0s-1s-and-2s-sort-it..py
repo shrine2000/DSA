@@ -15,10 +15,12 @@
 	}
 
 '''
+
 class Solution:
-    #Function to sort a linked list of 0s, 1s and 2s.
+    # Function to sort a linked list of 0s, 1s, and 2s.
     def segregate(self, head):
-        #code here
+        # Time Complexity: O(n)
+        # Space Complexity: O(1)
         
         if not head or not head.next:
             return head
@@ -54,6 +56,7 @@ class Solution:
             current = current.next
         
         return head
+
         
     
 
