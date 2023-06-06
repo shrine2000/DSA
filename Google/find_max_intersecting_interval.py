@@ -1,4 +1,5 @@
 """
+
 # question - https://leetcode.com/discuss/interview-question/3515163/Google-interview-question
 
 Given array of intervals. find the maximum intersecting interval pair. 
@@ -6,14 +7,14 @@ For eg. given intervals [1, 100], [1000, 2000], [50, 200], [60, 80] the maximum 
 
 Solution :
 
-create two lists, one only stores starting points and another stores ending points. sort them
+Sorts the intervals based on their start and end points separately. 
 
-for each segment, find how many segments end before it starts and how many start after it ends using binary search.
+Checks for overlapping intervals by comparing the start of each interval with the previous interval's end. 
 
-total ct minus non-overlapped ct equals overlapped ct
-
+The maximum intersecting interval pair is returned. Binary search is used to optimize the process.
 
 """
+
 
 def binary_search(arr, target):
     # Binary search in a sorted array
@@ -60,12 +61,7 @@ def find_max_intersecting_pair(intervals):
         end_index = binary_search(starts, end)
         start_index = binary_search(ends, start)
 
-        if (
-            end_index < len(starts)
-            and start_index >= 0
-            and starts[end_index] <= end
-            and ends[start_index] >= start
-        ):
+        if (end_index < len(starts) and start_index >= 0 and starts[end_index] <= end and ends[start_index] >= start):
             non_overlapped_count += 1
 
     overlapped_count = total_count - non_overlapped_count
