@@ -1,15 +1,9 @@
 #User function Template for python3
 
 class Solution: 
-    def select(self, arr, i):
-        # code here 
-        
-        arr.sort()
-        return arr[i - 1]
-    
+
     def selectionSort(self, arr,n):
         #code here
-
         for i in range(n):
             min_idx = i
             for j in range(i + 1, n):
