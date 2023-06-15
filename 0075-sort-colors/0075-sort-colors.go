@@ -17,3 +17,9 @@ func sortColors(nums []int) {
         }
     }
 }
+
+
+/*
+The Dutch National Flag algorithm is a sorting algorithm that efficiently partitions an array into three sections: elements less than a pivot, equal to the pivot, and greater than the pivot. It achieves this by using three pointers to track the boundaries between the sections while iterating through the array in a single pass.
+
+*/
