@@ -1,18 +1,31 @@
-class Solution:
-    def longestSemiRepetitiveSubstring(self, s: str) -> int:
-        left = 0
-        right = 0
-        consecutive_count = 0
-        longest_length = 1
-
-        while right < len(s) - 1 and left <= right:
-            right += 1
-            if s[right] == s[right - 1]:
-                consecutive_count += 1
-            while consecutive_count >= 2:
-                left += 1
-                if s[left] == s[left - 1]:
-                    consecutive_count -= 1
-            longest_length = max(longest_length, right - left + 1)
-
-        return longest_length
+class Solution {
+      public int longestSemiRepetitiveSubstring(String s) {
+      int ans = 0, c = 0;
+      Stack<Character> st = new Stack<>();
+      for(int i = 0; i < s.length(); i++) {
+        if(st.size() == 0) {
+            st.push(s.charAt(i));
+        }
+        else{
+            if(st.peek() == s.charAt(i)) {   // When Semi-R Occurence Found
+                if(c == 1) {      // count 1 means already one occurence is exist in stack
+                     ans = Math.max(ans,  st.size());
+                     int remove = st.remove(0);
+                     while(st.get(0) != remove) {   // So remove the elements from left side to remove previous occurence and put the current index character which makes one occurence again
+                          remove = st.remove(0);     }
+                         st.push(s.charAt(i));
+                }
+                else if(c == 0) {  // when first occurence encountered which makes count as 1
+                   c = 1;
+                   st.push(s.charAt(i));
+                   ans = Math.max(ans, st.size());
+                }
+            }
+            else{    // until no occurence found take max length
+                st.push(s.charAt(i));
+                ans = Math.max(ans, st.size());     }    }
+    }
+    ans = Math.max(ans,  st.size());
+    return ans;
+ }
+}
