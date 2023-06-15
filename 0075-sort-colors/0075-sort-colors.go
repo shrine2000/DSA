@@ -1,28 +1,19 @@
 func sortColors(nums []int) {
-    zero := 0
-    one := 0
-    two := 0
-
-    for i := 0; i < len(nums); i++ {
-        if nums[i] == 0 {
-            zero++
-        } else if nums[i] == 1 {
-            one++
-        } else if nums[i] == 2 {
-            two++
-        }
-    }
-
-    for i := 0; i < len(nums); i++ {
-        if zero != 0 {
-            nums[i] = 0
-            zero--
-        } else if one != 0 {
-            nums[i] = 1
-            one--
-        } else if two != 0 {
-            nums[i] = 2
-            two--
+    low := 0
+    mid := 0
+    high := len(nums) - 1
+    
+    for mid <= high {
+        switch nums[mid] {
+            case 0:
+                nums[low], nums[mid] = nums[mid], nums[low]
+                low++
+                mid++
+            case 1:
+                mid++
+            case 2:
+                nums[mid], nums[high] = nums[high], nums[mid]
+                high--
         }
     }
 }
