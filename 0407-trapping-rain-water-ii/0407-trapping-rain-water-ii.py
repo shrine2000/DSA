@@ -1,3 +1,7 @@
+import heapq
+from typing import List
+
+
 class Solution:
     def trapRainWater(self, heightMap: List[List[int]]) -> int:
         if not heightMap or not heightMap[0]:
@@ -31,3 +35,12 @@ class Solution:
                     visited[new_row][new_col] = True
         
         return trappedWater
+
+heightMap = [
+    [1, 4, 3, 1, 3, 2],
+    [3, 2, 1, 3, 2, 4],
+    [2, 3, 3, 2, 3, 1]
+]
+
+solution = Solution()
+print(solution.trapRainWater(heightMap))
