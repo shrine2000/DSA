@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=5rHz_6s2Buw
+
 func arrangeCoins(n int) int {
     left := 0
     right := n
