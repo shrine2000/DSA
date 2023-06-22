@@ -6,3 +6,8 @@
 ## Machine Coding
 
 [Work@tech](https://workat.tech/)
+
+
+## Design Patterns
+
+[Refactoring Guru](https://refactoring.guru/design-patterns)
