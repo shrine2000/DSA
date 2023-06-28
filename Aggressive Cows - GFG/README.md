@@ -46,3 +46,8 @@ Complete the function int solve(), which takes integer n, k, and a vector&nbsp;s
 2 &lt;= k &lt;= n<br>
 0 &lt;= stalls[i] &lt;= 10^9</p>
 </div>
+
+## Solution
+
+https://leetcode.com/discuss/general-discussion/1302335/aggressive-cows-spoj-fully-explained-c
+https://takeuforward.org/data-structure/aggressive-cows-detailed-solution/#:~:text=Problem%20Statement%3A%20There%20is%20a,is%20as%20large%20as%20possible.
