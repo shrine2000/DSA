@@ -1,6 +1,6 @@
 func minimumTime(time []int, totalTrips int) int64 {
-	left := min(time)
-	right := min(time) * totalTrips
+    left := min(time)
+	right := left * totalTrips
 
 	for left < right {
 		mid := left + (right-left)/2
