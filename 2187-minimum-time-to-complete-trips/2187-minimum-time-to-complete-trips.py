@@ -1,7 +1,7 @@
 class Solution:
     def minimumTime(self, time: List[int], totalTrips: int) -> int:
         left = min(time)
-        right = 10**14
+        right = min(time) * totalTrips
 
         while left < right:
             mid = left + (right - left) // 2
