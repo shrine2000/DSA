@@ -16,4 +16,4 @@ def findKthPositive(arr, k):
 arr = [2, 3, 4, 7, 11]
 k = 5
 result = findKthPositive(arr, k)
-print(result)  # Output: 6
+print(result)  
