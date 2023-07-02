@@ -1,6 +1,6 @@
 class Solution:
     def findPrimePairs(self, n: int) -> List[List[int]]:
-        prime_numbers = self.sieve(n)
+        prime_numbers = self.generate_primes(n)
         ans = []
         
         i, j = 0, len(prime_numbers) - 1
@@ -17,16 +17,19 @@ class Solution:
         
         return ans
 
-    def sieve(self, n):
-            prime = [True for i in range(n+1)]
-            p = 2
-            arr=[]
-            while (p * p <= n):
-                if (prime[p] == True):
-                    for i in range(p * p, n+1, p):
-                        prime[i] = False
-                p += 1
-            for p in range(2, n+1):
-                if prime[p]:
-                    arr.append(p)
-            return arr
+    def generate_primes(self, n):
+        primes = []
+        sieve = [True] * (n + 1)
+        sieve[0] = sieve[1] = False
+
+        for p in range(2, int(n ** 0.5) + 1):
+            if sieve[p]:
+                primes.append(p)
+                for i in range(p * p, n + 1, p):
+                    sieve[i] = False
+
+        for p in range(int(n ** 0.5) + 1, n + 1):
+            if sieve[p]:
+                primes.append(p)
+
+        return primes
