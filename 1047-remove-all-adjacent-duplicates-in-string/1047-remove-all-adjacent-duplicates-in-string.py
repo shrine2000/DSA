@@ -1,4 +1,7 @@
 class Solution:
+    
+    # https://www.youtube.com/watch?v=yJv_ltADGuA
+    # https://www.youtube.com/watch?v=EMKDoj5Sshk
     def removeDuplicates(self, s: str) -> str:
         stack = []
         
