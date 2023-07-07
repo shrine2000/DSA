@@ -1,29 +1,28 @@
 class Solution:
     def maxConsecutiveAnswers(self, answerKey: str, k: int) -> int:
-        trueCount = 0
-        falseCount = 0
+        t_c, f_c = 0 , 0
         n = len(answerKey)
-        start = 0
-        end = 0
-        maxLength = float('-inf')
-
-        while end < n:
-            if answerKey[end] == 'F':
-                falseCount += 1
-            if answerKey[end] == 'T':
-                trueCount += 1
-
-            if falseCount > k and trueCount > k:
-                while falseCount > k and trueCount > k:
-                    if answerKey[start] == 'F':
-                        falseCount -= 1
-                    if answerKey[start] == 'T':
-                        trueCount -= 1
-                    start += 1
-
-            if falseCount <= k or trueCount <= k:
-                maxLength = max(maxLength, end - start + 1)
-
-            end += 1
-
-        return maxLength
+        l, r = 0, 0
+        
+        maxLen = float('-inf')
+        
+        while r < n:
+            if answerKey[r] == 'F':
+                f_c += 1
+            if answerKey[r] == 'T':
+                t_c += 1
+            
+            if f_c > k and t_c > k:
+                while f_c > k and t_c > k:
+                    if answerKey[l] == 'F':
+                        f_c -= 1
+                    if answerKey[l] == 'T':
+                        t_c -= 1
+                    l += 1
+                    
+            if f_c <= k or t_c <= k:
+                maxLen = max(maxLen, r - l + 1)
+                
+            r += 1
+            
+        return maxLen
