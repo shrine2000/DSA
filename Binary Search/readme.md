@@ -32,6 +32,8 @@ https://leetcode.com/problems/magnetic-force-between-two-balls/ (similar to aggr
 
 https://leetcode.com/problems/minimized-maximum-of-products-distributed-to-any-store/
 
+https://leetcode.com/problems/maximum-tastiness-of-candy-basket/
+
 
 ## Study Guide
 
