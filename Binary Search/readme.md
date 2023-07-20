@@ -47,3 +47,5 @@ https://leetcode.com/problems/maximum-tastiness-of-candy-basket/
 
 
 https://usaco.guide/silver/binary-search?lang=cpp#usaco
+
+[Binary Search in Detail by labuladong](https://labuladong.gitbook.io/algo-en/iii.-algorithmic-thinking/detailedbinarysearch)
