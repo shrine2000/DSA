@@ -1,13 +1,12 @@
 class Solution:
     def makeGood(self, s: str) -> str:
         stack = []
-
-        for char in s:
-            if stack and stack[-1] == chr(ord(char) ^ 32):
+        
+        for c in s:
+            if stack and stack[-1] == chr(ord(c) ^ 32):
                 stack.pop()
-            else:
-                stack.append(char)
-
+            else: 
+                stack.append(c)
+                
         return ''.join(stack)
-
         
