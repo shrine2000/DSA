@@ -1,12 +1,20 @@
+from typing import List
+
 class Solution:
     def finalPrices(self, prices: List[int]) -> List[int]:
         n = len(prices)
-        ans = [0] * n
-        for i in range(n):
-            discount = 0
-            for j in range(i + 1, n):
-                if prices[j] <= prices[i]:
-                    discount = prices[j]
-                    break
-            ans[i] = prices[i] - discount
-        return ans
+        result = []
+        stack = []
+
+        for i in range(n - 1, -1, -1):  
+            while stack and stack[-1] > prices[i]:
+                stack.pop()
+            if not stack:
+                result.append(prices[i])  
+            else:
+                result.append(prices[i] - stack[-1])  
+            stack.append(prices[i])
+
+        return result[::-1]  
+
+ 
