@@ -39,3 +39,35 @@
 	<li><code>1 &lt;= k &lt;= 10<sup>4</sup></code></li>
 </ul>
 </div>
+
+
+## Solution O(n) https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/discuss/252849/C%2B%2BJava-O(n)-or-O(1)
+
+
+```python
+
+
+def largestSumAfterKNegations(A, K):
+    cnt = [0] * 201
+    res = 0
+
+    # Count the occurrences of each number in A
+    for i in A:
+        cnt[i + 100] += 1
+
+    # Flip the negative numbers using the flipping technique
+    for i in range(-100, 101):
+        if K > 0 and cnt[i + 100] > 0:
+            k = min(K, cnt[i + 100]) if i < 0 else K % 2
+            cnt[-i + 100] += k
+            cnt[i + 100] -= k
+            K = K - k if i < 0 else 0
+
+    # Calculate the result by accumulating the sum of occurrences multiplied by their corresponding number
+    for i in range(-100, 101):
+        res += i * cnt[i + 100]
+
+    return res
+
+
+```
