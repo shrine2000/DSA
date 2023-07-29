@@ -41,7 +41,7 @@
 </div>
 
 
-## Solution O(n) https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/discuss/252849/C%2B%2BJava-O(n)-or-O(1)
+## [Solution O(n)](https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/discuss/252849/C%2B%2BJava-O(n)-or-O(1))
 
 
 ```python
