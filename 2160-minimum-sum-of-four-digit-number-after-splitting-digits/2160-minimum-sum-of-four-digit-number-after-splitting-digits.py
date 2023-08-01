@@ -8,8 +8,8 @@ class Solution:
             pq.put(digit)
 
             
-        # 2932 => 2239
-        # 4009 => 0049
+        # 2932 => 2239 => [29, 23]
+        # 4009 => 0049 => [9, 4]
         
         smallest1 = pq.get()
         smallest2 = pq.get()
