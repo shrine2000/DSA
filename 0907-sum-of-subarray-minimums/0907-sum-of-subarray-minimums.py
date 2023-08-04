@@ -1,8 +1,9 @@
+from collections import deque
 class Solution:
     def sumSubarrayMins(self, arr: List[int]) -> int:
         MOD = 10**9 + 7
         n = len(arr)
-        stack = []
+        stack = deque()
         count = 0
         prev_count = [0] * n
         
@@ -16,3 +17,4 @@ class Solution:
             stack.append(i)
         
         return count % MOD
+    
