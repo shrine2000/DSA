@@ -6,7 +6,7 @@ class Solution:
         nsr = [n] * n
         area = []
 
-        for i in range(n):  # Nearest Smallest Element to Left
+        for i in range(n):   
             while stack and stack[-1][0] >= heights[i]:
                 stack.pop()
             if not stack:
@@ -16,7 +16,7 @@ class Solution:
             stack.append((heights[i], i))
 
         stack = []
-        for i in range(n - 1, -1, -1):  # Nearest Smallest Element to Right
+        for i in range(n - 1, -1, -1):  
             while stack and stack[-1][0] >= heights[i]:
                 stack.pop()
             if not stack:
