@@ -1,13 +1,11 @@
-import heapq
-
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         heap = []
-
+        
         for num in nums:
-            heapq.heappush(heap, -num)   
+            heapq.heappush(heap, -num)
         
-        max1 = -heapq.heappop(heap)
-        max2 = -heapq.heappop(heap)
+        i = -heapq.heappop(heap)
+        j = -heapq.heappop(heap)
         
-        return (max1 - 1) * (max2 - 1)
+        return (i -1) * (j- 1)
