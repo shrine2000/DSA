@@ -29,4 +29,8 @@ class Solution:
             
         return dummy.next
         
+        """
         
+        Inside while loop, a new node is created with the GCD value of adjacent nodes. The new node's next pointer is linked to the current node's next, and the current node's next is updated to the new node. This effectively inserts the GCD node between the current and next nodes. Then, the 'prev' pointer is moved to the next node, and the 'head' pointer is updated to 'prev'. This process advances the iteration to the next pair of nodes. Finally, the modified linked list is returned, starting from the dummy node's next.
+        
+        """
