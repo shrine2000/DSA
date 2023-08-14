@@ -3,14 +3,15 @@ from itertools import islice
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        hmap = {}
+        freq_map = Counter(nums)
         
-        for num in nums:
-            if num in hmap:
-                hmap[num] += 1
-            else:
-                hmap[num] = 1
+        pq = []
         
-        sorted_hmap = dict(sorted(hmap.items(), key=lambda x: x[1], reverse=True))
+        for v, f in freq_map.items():
+            heapq.heappush(pq, (f, v))
+            if len(pq) > k:
+                heapq.heappop(pq)
         
-        return list(islice(sorted_hmap.keys(), k))
+        ans = [item[1] for item in pq]
+        
+        return ans
