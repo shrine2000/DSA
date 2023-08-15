@@ -1,26 +1,21 @@
+import heapq
+
 class Solution:
     def furthestBuilding(self, heights: List[int], bricks: int, ladders: int) -> int:
-        ladders_used = []
-        n = len(heights)
+        maxHeap = []  
         
-        for i in range(n - 1):
-            climb = heights[i+1] - heights[i]
-            
-            if climb <= 0:
-                continue
-                
-            if len(ladders_used) < ladders:
-                heapq.heappush(ladders_used, climb)
-            elif ladders_used and ladders_used[0] < climb:
-                ladder_height = heapq.heappop(ladders_used)
-                bricks -= ladder_height
-                
-                heapq.heappush(ladders_used, climb)
-                
-            else:
-                bricks -= climb
-                
-            if bricks < 0:
-                return i
-            
-        return n - 1
+        lastHeight = heights[0]
+        for idx, height in enumerate(heights[1:]):
+            dif = height - lastHeight
+            if dif > 0:
+                bricks -= dif
+                if bricks < 0:
+                    if ladders == 0:
+                        return idx  
+                    ladders -= 1
+                    bricks -= heapq.heappushpop(maxHeap, -dif)  
+                else:
+                    heapq.heappush(maxHeap, -dif)  
+            lastHeight = height
+        
+        return len(heights) - 1  
