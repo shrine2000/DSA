@@ -1,23 +1,28 @@
-import heapq
-
 class Solution:
     def swimInWater(self, grid: List[List[int]]) -> int:
-        n = len(grid)
-        directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
-        visited = set()
-        pq = [(grid[0][0], 0, 0)]  # elevation, row, column
+        def dfs(i, j, T, visited):
+            if i < 0 or i >= n or j < 0 or j >= n or visited[i][j] or grid[i][j] > T:
+                return False
+            if i == n - 1 and j == n - 1:
+                return True
+            
+            visited[i][j] = True
+            
+            return (
+                dfs(i - 1, j, T, visited) or
+                dfs(i + 1, j, T, visited) or
+                dfs(i, j - 1, T, visited) or
+                dfs(i, j + 1, T, visited)
+            )
         
-        while pq:
-            e, r, c = heapq.heappop(pq)
-            visited.add((r, c))
-            
-            if r == n - 1 and c == n - 1:
-                return e
-            
-            for dr, dc in directions:
-                nr, nc = r + dr, c + dc
-                if 0 <= nr < n and 0 <= nc < n and (nr, nc) not in visited:
-                    heapq.heappush(pq, (max(e, grid[nr][nc]), nr, nc))
-                    visited.add((nr, nc))
-                    
-        return -1
+        n = len(grid)
+        l, r = 0, n * n - 1
+        
+        while l < r:
+            m = l + ((r - l) >> 1)
+            if dfs(0, 0, m, [[False] * n for _ in range(n)]):
+                r = m
+            else:
+                l = m + 1
+                
+        return l
