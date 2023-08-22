@@ -27,3 +27,11 @@ class Solution:
                 total_beauty += max_occurrence - min_occurrence
         
         return total_beauty
+    
+    
+    """
+    
+    This approach focuses on tracking the occurrence frequency of characters in substrings efficiently. It iterates through the input string and, for each character, dynamically updates the occurrences of character frequencies within the substring. The maximum and minimum occurrences of frequencies are maintained using dynamic updates to calculate the beauty of each substring. This avoids redundant calculations for previously considered substrings and leads to an optimized solution with a manageable time complexity.
+    
+    
+    """
