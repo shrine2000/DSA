@@ -1,21 +1,13 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        def backtrack(start, target, path):
-            if target == 0:
-                result.append(path[:])
-                return
-                
-            if target < 0 or start >= len(candidates):
-                return
-            
-            path.append(candidates[start])
-            backtrack(start, target - candidates[start], path)
-            path.pop()
-            
-            backtrack(start + 1, target, path)
-            
-        result = []
-        backtrack(0, target, [])
-        
-        return result
-            
+        candidates.sort()
+        dp = [[0, []] for _ in range(target + 1)]
+
+        dp[0] = [1, [[]]]
+        for candidate in candidates:
+            for i in range(candidate, target + 1):
+                 for way in dp[i - candidate][1]:
+                        new_way = way + [i]
+                        dp[i][1].append(way + [candidate])
+                        dp[i][0] += 1
+        return dp[target][1]
