@@ -10,4 +10,9 @@ class Solution:
                         new_way = way + [i]
                         dp[i][1].append(way + [candidate])
                         dp[i][0] += 1
+                        
+        for i in range(len(dp)):
+            for j in range(len(dp[i][1])):
+                print("Target:", i, "Count:", dp[i][0], "Combination:", dp[i][1][j])            
+            
         return dp[target][1]
