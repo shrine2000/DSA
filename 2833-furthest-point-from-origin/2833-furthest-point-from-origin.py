@@ -1,8 +1,5 @@
 class Solution:
-    def furthestDistanceFromOrigin(self, moves: str) -> int:
-        from collections import Counter
-        
-        
+    def furthestDistanceFromOrigin(self, moves: str) -> int:        
         count = Counter(moves)
         
         l = count['L']
