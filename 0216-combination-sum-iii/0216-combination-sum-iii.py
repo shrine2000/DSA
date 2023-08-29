@@ -3,7 +3,7 @@ class Solution:
         nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         res = []
         
-        def backtrack(idx, curr_combo):
+        def bt(idx, curr_combo):
             if len(curr_combo) == k and sum(curr_combo) == n:
                 res.append(curr_combo.copy())
                 return
@@ -11,9 +11,9 @@ class Solution:
                 return
             
             curr_combo.append(nums[idx])
-            backtrack(idx + 1, curr_combo)
+            bt(idx + 1, curr_combo)
             curr_combo.pop()
-            backtrack(idx + 1, curr_combo)
+            bt(idx + 1, curr_combo)
             
-        backtrack(0, [])
+        bt(0, [])
         return res
