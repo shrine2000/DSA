@@ -2,40 +2,25 @@
 
 class Solution:
     def findPath(self, m, n):
-        def backtrack(i, j, a, n, ans, move, vis):
+        def backtrack(i, j, path):
             if i == n - 1 and j == n - 1:
-                ans.append(move)
+                paths.append(path)
+                return
 
-            # Downward
-            if i + 1 < n and not vis[i + 1][j] and a[i + 1][j] == 1:
-                vis[i][j] = 1
-                backtrack(i + 1, j, a, n, ans, move + 'D', vis)
-                vis[i][j] = 0
+            for x, y, move in [(i + 1, j, 'D'), (i - 1, j, 'U'), (i, j + 1, 'R'), (i, j - 1, 'L')]:
+                if 0 <= x < n and 0 <= y < n and m[x][y] == 1 and (x, y) not in visited:
+                    visited.add((x, y))
+                    backtrack(x, y, path + move)
+                    visited.remove((x, y))
 
-            # Left
-            if j - 1 >= 0 and not vis[i][j - 1] and a[i][j - 1] == 1:
-                vis[i][j] = 1
-                backtrack(i, j - 1, a, n, ans, move + 'L', vis)
-                vis[i][j] = 0
-
-            # Right
-            if j + 1 < n and not vis[i][j + 1] and a[i][j + 1] == 1:
-                vis[i][j] = 1
-                backtrack(i, j + 1, a, n, ans, move + 'R', vis)
-                vis[i][j] = 0
-
-            # Upwards
-            if i - 1 >= 0 and not vis[i - 1][j] and a[i - 1][j] == 1:
-                vis[i][j] = 1
-                backtrack(i - 1, j, a, n, ans, move + 'U', vis)
-                vis[i][j] = 0
-
-        ans = []
-        vis = [[False for j in range(len(m[0]))] for i in range(len(m))]
+        paths = []
+        visited = set()
         if m[0][0] == 1:
-            backtrack(0, 0, m, n, ans, "", vis)
-
-        return sorted(ans)  
+            visited.add((0, 0))
+            backtrack(0, 0, "")
+        
+        return sorted(paths)
+ 
 
 #{ 
  # Driver Code Starts
