@@ -1,25 +1,13 @@
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
-        if not cost:
-            return 0
+        n = len(cost)
+        dp = [0] * (n + 1)
         
-        # Dictionary to store computed costs for each index
-        memo = {}
-
-        # Helper function with memoization
-        def min_cost(idx):
-            # If the result is already memoized, return it
-            if idx in memo:
-                return memo[idx]
+        for i in range(0, n):
+            if i < 2:
+                dp[i] = cost[i]
+            else: 
+                dp[i] = cost[i] + min(dp[i-1], dp[i-2])
             
-            if idx >= len(cost):
-                return 0
-
-            cost_starting_from_current = cost[idx] + min_cost(idx + 1)
-            cost_starting_from_next = cost[idx] + min_cost(idx + 2)
-
-            # Store the result in the memo dictionary and return
-            memo[idx] = min(cost_starting_from_current, cost_starting_from_next)
-            return memo[idx]
-
-        return min(min_cost(0), min_cost(1))
+        return min(dp[n-1], dp[n-2])
+        
