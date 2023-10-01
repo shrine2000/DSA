@@ -1,6 +1,7 @@
 from typing import List
 import heapq
 
+
 # https://leetcode.com/problems/pizza-with-3n-slices/discuss/1223688/Python-O(n-log-n)-greedy%2Bheap-strategy-with-proof-(100-30ms)
 
 class Node:
