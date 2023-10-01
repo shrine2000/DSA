@@ -5,8 +5,5 @@ class Solution:
         for i in range(n):
             for j in range(i + 1, n):
                 for k in range(j + 1, n): 
-                    if i < j < k:
-                        t = (nums[i] - nums[j]) * nums[k]
-                        m = max(m, t)
-                        
+                    m = max(m, (nums[i] - nums[j]) * nums[k])
         return m
