@@ -33,4 +33,4 @@ if __name__ == "__main__":
     s1 = "abcde"
     s2 = "bdgek"
     res = longest_common_subsequence(s1, s2)
-    print(res)  
+    print(res)
