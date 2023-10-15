@@ -2,12 +2,6 @@ class Solution:
     def minInsertions(self, s: str) -> int:
         n = len(s)
         
-        if n == 0:
-            return 0
-        
-        elif self.isPalindrome(s):
-            return 0
-        
         reversed_s = s[::-1]
         
         lcs_length = self.longest_common_subsequence(s, reversed_s)
@@ -15,9 +9,6 @@ class Solution:
         min_insertions = n - lcs_length
         
         return min_insertions
-    
-    def isPalindrome(self, s) -> bool:
-        return s == s[::-1]
     
     def longest_common_subsequence(self, text1: str, text2: str) -> int:
         m, n = len(text1), len(text2)
