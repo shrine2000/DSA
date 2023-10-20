@@ -1,26 +1,34 @@
-from typing import List
+from itertools import combinations
 
 
-class Solution:
-    def lengthOfLIS(self, nums: List[int]) -> int:
-        self.memo = [[-1] * (len(nums) + 1) for _ in range(len(nums))]
-        return self.lis(0, -1, nums)
+"""
+The brute force approach for finding the Longest Increasing Subsequence (LIS) involves generating all possible 
+subsequences of the input array and checking if each subsequence forms an increasing sequence. It selects the 
+longest increasing subsequence among all the generated subsequences. This method has exponential time complexity
+(O(2^n)) and is inefficient for large arrays.
 
-    def lis(self, current_index, previous_index, nums):
-        if current_index == len(nums):
-            return 0
+"""
+def longest_increasing_subsequence_bruteforce(arr):
+    n = len(arr)
+    max_length = 0
+    lis = []
 
-        if self.memo[current_index][previous_index + 1] != -1:
-            return self.memo[current_index][previous_index + 1]
+    for r in range(1, n + 1):
+        for subsequence in combinations(arr, r):
+            subsequence = list(subsequence)
+            increasing = True
+            for i in range(1, r):
+                if subsequence[i] <= subsequence[i - 1]:
+                    increasing = False
+                    break
+            if increasing and len(subsequence) > max_length:
+                max_length = len(subsequence)
+                lis = subsequence
 
-        not_pick = self.lis(current_index + 1, previous_index, nums)
+    return max_length, lis
 
-        pick = 0
-
-        if previous_index == -1 or nums[current_index] > nums[previous_index]:
-            pick = 1 + self.lis(current_index + 1, current_index, nums)
-
-        self.memo[current_index][previous_index + 1] = max(pick, not_pick)
-
-        return max(pick, not_pick)
-
+if __name__ == "__main__":
+    arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]
+    length, lis = longest_increasing_subsequence_bruteforce(arr)
+    print(f"Length of Longest Increasing Subsequence (Brute Force): {length}")
+    print(f"LIS: {lis}")
