@@ -54,7 +54,6 @@ def unbounded_knapsack(price, length, maxLength, N):
 
     return memo[N][maxLength]
 
-# Test your function with example data
 price = [1, 5, 8, 9, 10, 17, 17, 20]
 length = [1, 2, 3, 4, 5, 6, 7, 8]
 maxLength = 8
@@ -63,4 +62,4 @@ result = unbounded_knapsack(price, length, maxLength, N)
 print("Maximum profit:", result)
 ```
 
-In the corrected version above, I have addressed the typos, syntax errors, and provided a properly formatted Markdown content. The Python code is now free of errors and ready for testing.
+ 
