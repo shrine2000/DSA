@@ -2,7 +2,7 @@ from itertools import combinations
 
 
 """
-The brute force approach for finding the Longest Increasing Subsequence (LIS) involves generating all possible 
+The brute force approach for finding the Longest Increasing Subsequence (Longest Increasing Subsequence) involves generating all possible 
 subsequences of the input array and checking if each subsequence forms an increasing sequence. It selects the 
 longest increasing subsequence among all the generated subsequences. This method has exponential time complexity
 (O(2^n)) and is inefficient for large arrays.
@@ -31,4 +31,4 @@ if __name__ == "__main__":
     arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]
     length, lis = longest_increasing_subsequence_bruteforce(arr)
     print(f"Length of Longest Increasing Subsequence (Brute Force): {length}")
-    print(f"LIS: {lis}")
+    print(f"Longest Increasing Subsequence: {lis}")
