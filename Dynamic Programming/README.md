@@ -10,5 +10,7 @@ https://leetcode.com/discuss/study-guide/662866/DP-for-Beginners-Problems-or-Pat
 
 [From good to great. How to approach most of DP problems.](https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.)
 
-
 https://www.youtube.com/watch?v=i9OAOk0CUQE
+
+[DSA + CP Problem Solving Booster Series](https://www.youtube.com/playlist?list=PLjeQ9Mb66hM1VsmVaQ9Xf3d98kNHun66f)
+
