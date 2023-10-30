@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def isSubsetSum(self, N: int, arr: List[int], target_sum: int) -> bool:
         def helper(arr: List[int], k: int, n: int) -> bool:
@@ -15,6 +16,7 @@ class Solution:
             return pick or not_pick
 
         return helper(arr, target_sum, N - 1)
+
 
 if __name__ == "__main__":
     arr: List[int] = [3, 34, 4, 12, 5, 2]

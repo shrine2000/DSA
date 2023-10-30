@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         total_sum = sum(nums)
@@ -8,7 +9,6 @@ class Solution:
             return 0
 
         target_subset_sum = (total_sum - target) // 2
-
 
         dp = [0] * (target_subset_sum + 1)
         dp[0] = 1

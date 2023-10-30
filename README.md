@@ -10,6 +10,8 @@
 
 [T-414-ÁFLV: A Competitive Programming Course (2016 edition)](https://algo.is/t-414-aflv-competitive-programming-course-2016)
 
+[CS 290-CP1: Introduction to Competitive Programming
+](https://www.cs.purdue.edu/homes/ninghui/courses/CPi/cp1_2020_fall.html)
 
 ## Machine Coding
 
