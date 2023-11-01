@@ -1,26 +1,21 @@
-import sys
 
 
-def matrix_chain_multiplication(arr, L, R):
-    # If the range contains only one matrix, return 0 (base case).
-    if L == R:
+
+def matrix_chain_multiplication(arr, low, high):
+    if low == high:
         return 0
 
-    res = sys.maxsize
+    res = float('inf')
 
-    # Iterate through all possible split points (k) in the given range.
-    for k in range(L, R):
-        # Calculate the cost of multiplying matrices in two subchains and adding the cost of the merge.
-        temp = matrix_chain_multiplication(arr, L, k) + matrix_chain_multiplication(arr, k + 1, R) + arr[L - 1] * arr[k] * arr[R]
-
-        # Update the result with the minimum cost.
-        res = min(res, temp)
+    for i in range(low, high):
+        cost = matrix_chain_multiplication(arr, low, i) + matrix_chain_multiplication(arr, i + 1, high) + arr[low - 1] * arr[i] * arr[high]
+        res = min(res, cost)
 
     return res
 
 
 if __name__ == "__main__":
-    matrices = [10, 30, 5, 60]  # Example matrix dimensions
+    matrices = [2, 4, 6, 8, 6]  # Example matrix dimensions
     n = len(matrices)  # Number of matrices
 
     # Call the recursive function to find the minimum cost.
