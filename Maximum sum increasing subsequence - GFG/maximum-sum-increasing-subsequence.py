@@ -1,20 +1,18 @@
 #User function Template for python3
 class Solution:
     def maxSumIS(self, Arr, n):
-        # Initialize a list to store the maximum sum ending at each index
-        max_sum = [0] * n
-
+        ms = [0] * n
+        
+        
         for i in range(n):
-            max_sum[i] = Arr[i]  # Initialize with the element itself
-
+            ms[i] = Arr[i]
             for j in range(i):
                 if Arr[i] > Arr[j]:
-                    max_sum[i] = max(max_sum[i], Arr[i] + max_sum[j])
-
-        # Find the maximum value in the max_sum list
-        result = max(max_sum)
-
-        return result
+                    ms[i] = max(ms[i], ms[j] + Arr[i])
+            
+        res = max(ms)
+            
+        return res
 
 
 #{ 
