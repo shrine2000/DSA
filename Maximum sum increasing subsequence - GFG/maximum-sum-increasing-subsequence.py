@@ -1,7 +1,7 @@
-#User function Template for python3
 class Solution:
     def maxSumIS(self, Arr, n):
         ms = [0] * n
+        idx = [-1] * n
         
         
         for i in range(n):
@@ -9,23 +9,20 @@ class Solution:
             for j in range(i):
                 if Arr[i] > Arr[j]:
                     ms[i] = max(ms[i], ms[j] + Arr[i])
+                    idx[i] = i
             
         res = max(ms)
             
         return res
 
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
+
 
 if __name__ == '__main__':
-	T=int(input())
-	for i in range(T):
-		n = int(input())
-		Arr = [int(x) for x in input().split()]
-		ob = Solution()
-		ans = ob.maxSumIS(Arr,n)
-		print(ans)
+    Arr = [1, 101, 2, 3, 100]
+    N = 5
+    sol = Solution()
+    ms = sol.maxSumIS(Arr, N)
+    print(ms)
 
-# } Driver Code Ends
+
