@@ -44,6 +44,6 @@ class Solution:
                 if cost == 1:
                     queue.append((position, current[1] + cost))
                 else:
-                    queue.appendleft((position, current[1] + cost))
+                    queue.appendleft((position, current[1] + cost)) # append at beginning
         
         return result
