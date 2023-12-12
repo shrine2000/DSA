@@ -13,7 +13,7 @@ def is_bipartite(adj):
         colors[vertex] = color
         for neighbor in adj[vertex]:
             if colors[neighbor] == -1:
-                if not dfs(neighbor, 1- color):
+                if not dfs(neighbor, 1 - color):
                     return False
                 elif colors[neighbor] == colors[vertex]:
                     return False
