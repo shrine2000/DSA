@@ -10,7 +10,7 @@ def topo_sort(vertices, edges):
         in_degree[to_vertex] += 1
         adj_list[from_vertex].append(to_vertex)
 
-    queue = deque([v for v in vertices if in_degree[v] == 0])  
+    queue = deque([v for v in vertices if in_degree[v] == 0])
     topo_order = []
 
     while queue:
