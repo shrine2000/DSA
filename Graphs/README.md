@@ -69,3 +69,21 @@ Network delay time: https://leetcode.com/problems/network-delay-time/
 Network delay time: https://leetcode.com/problems/network-delay-time/
 
 [Graph algorithms + problems to practice](https://leetcode.com/discuss/study-guide/1326900/Graph-algorithms-%2B-problems-to-practice)
+
+### Identifying pattern 
+
+| When to Use BFS              | When to Use DFS                |
+|------------------------------|--------------------------------|
+| Finding shortest path        | Exploring all possibilities    |
+| Minimum steps to reach target| Backtracking                   |
+| Level-order traversal        | Detecting cycles               |
+| Connected components         | Topological sorting            |
+| Optimality in unweighted graphs | Memory efficiency (less memory usage) |
+
+
+**BFS Patterns:**
+   - Look for keywords like "shortest path," "minimum steps," "level-order traversal," "connected components," or problems involving optimality in unweighted graphs.
+
+**DFS Patterns:**
+   - Keywords indicating DFS usage include "exploring all possibilities," "backtracking," "cycle detection," or problems where memory efficiency is a concern.
+
