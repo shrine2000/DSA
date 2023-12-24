@@ -6,7 +6,7 @@ from collections import deque
 def is_bipartite(adj):
     V = len(adj)
 
-    colors = [-1] * V
+    colors = [-1] * V # Initialize colors for nodes: -1 for uncolored, 0 and 1 for two colors
 
     for i in range(V):
         if colors[i] == -1:
