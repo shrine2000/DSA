@@ -87,3 +87,13 @@ Network delay time: https://leetcode.com/problems/network-delay-time/
 **DFS Patterns:**
    - Keywords indicating DFS usage include "exploring all possibilities," "backtracking," "cycle detection," or problems where memory efficiency is a concern.
 
+
+### Blogs
+
+[Graph Algorithms One Place | Dijkstra | Bellman Ford | Floyd Warshall | Prims | Kruskals | DSU
+](https://leetcode.com/discuss/study-guide/969327/Graph-Algorithms-One-Place-or-Dijkstra-or-Bellman-Ford-or-Floyd-Warshall-or-Prims-or-Kruskals-or-DSU)
+
+[Graph For Beginners [Problems | Pattern | Sample Solutions]
+](https://leetcode.com/discuss/study-guide/655708/Graph-For-Beginners-Problems-or-Pattern-or-Sample-Solutions)
+
+https://github.com/MAZHARMIK/Interview_DS_Algo/tree/master/Graph
