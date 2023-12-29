@@ -8,6 +8,8 @@
 
 [Dynamic Programming](https://github.com/shrine2000/DSA/tree/main/Dynamic%20Programming)
 
+[Graphs](https://github.com/shrine2000/DSA/tree/main/Graphs)
+
 [T-414-ÁFLV: A Competitive Programming Course (2016 edition)](https://algo.is/t-414-aflv-competitive-programming-course-2016)
 
 [CS 290-CP1: Introduction to Competitive Programming
