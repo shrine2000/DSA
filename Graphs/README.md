@@ -98,3 +98,7 @@
 ](https://leetcode.com/discuss/study-guide/655708/Graph-For-Beginners-Problems-or-Pattern-or-Sample-Solutions)
 
 https://github.com/MAZHARMIK/Interview_DS_Algo/tree/master/Graph
+
+[Graph (Beginners to Advanced) All Algorithms - Python](https://leetcode.com/discuss/interview-question/4283222/Graph-(Beginners-to-Advanced)-All-Algorithms-Python)
+
+[[Python] Graph Algorithms One Place for quick revision](https://leetcode.com/discuss/general-discussion/971272/Python-Graph-Algorithms-One-Place-for-quick-revision)
