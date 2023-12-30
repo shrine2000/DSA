@@ -19,6 +19,8 @@
 
 [Work@tech](https://workat.tech/)
 
+[Grokking the Object Oriented Design Interview](https://github.com/tssovi/grokking-the-object-oriented-design-interview)
+
 
 ## Design Patterns
 
