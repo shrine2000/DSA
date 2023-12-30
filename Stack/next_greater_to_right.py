@@ -14,6 +14,4 @@ def next_greater_element_to_right(arr):
 
     return result
 
-
-
 print(next_greater_element_to_right([1,1,1,1]))

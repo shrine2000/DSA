@@ -1,0 +1,3 @@
+[More LIS problems](https://github.com/MAZHARMIK/Interview_DS_Algo/tree/master/DP/LIS%20%26%20Variants)
+
+[LIS Video Explanation](https://www.youtube.com/watch?v=E6us4nmXTHs)
