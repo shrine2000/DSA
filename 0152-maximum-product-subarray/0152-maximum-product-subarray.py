@@ -14,7 +14,7 @@ class Solution:
             else:
                 dpMin[k] = min(nums[k], nums[k] * dpMax[k - 1])
                 dpMax[k] = max(nums[k], nums[k] * dpMin[k - 1])
-            
+
             ans = max(ans, dpMax[k])
-            
+
         return ans

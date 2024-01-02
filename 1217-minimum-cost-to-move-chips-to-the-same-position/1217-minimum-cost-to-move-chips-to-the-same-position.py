@@ -6,9 +6,8 @@ class Solution:
                 even += 1
             else:
                 odd += 1
-        
+
         if even == 0 or odd == 0:
             return 0
         else:
             return min(even, odd)
-        

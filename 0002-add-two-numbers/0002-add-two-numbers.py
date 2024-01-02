@@ -4,16 +4,17 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    
     # TODO - revise once again
-    
+
     # there is only one approach for this and this is the most optimised code
-    
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+
+    def addTwoNumbers(
+        self, l1: Optional[ListNode], l2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         dummy = ListNode()
         temp = dummy
         carry = 0
-        while(l1 != None or l2 != None) or carry:
+        while (l1 != None or l2 != None) or carry:
             sum = 0
             if l1 != None:
                 sum += l1.val

@@ -24,7 +24,9 @@ class Solution:
         for i in range(n):
             for j in range(i):
                 if is_predecessor(words[j], words[i]):
-                    longestChainLengths[i] = max(longestChainLengths[i], longestChainLengths[j] + 1)
+                    longestChainLengths[i] = max(
+                        longestChainLengths[i], longestChainLengths[j] + 1
+                    )
                     maxChainLength = max(maxChainLength, longestChainLengths[i])
 
         return maxChainLength

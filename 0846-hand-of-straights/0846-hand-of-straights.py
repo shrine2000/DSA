@@ -12,4 +12,3 @@ class Solution:
                     pq.remove(smallest + i)
             heapq.heapify(pq)
         return True
-        

@@ -9,7 +9,7 @@ class Solution:
     def findMinimumBeautifulSubstrings(self, s, index, dp) -> int:
         if index == len(s):
             return 0
-        if s[index] == '0':
+        if s[index] == "0":
             return 20
 
         if dp[index] != -1:
@@ -21,7 +21,9 @@ class Solution:
         for i in range(index, len(s)):
             currentVal = currentVal * 2 + int(s[i])
             if self.checkPower(currentVal):
-                minSubstrings = min(minSubstrings, 1 + self.findMinimumBeautifulSubstrings(s, i + 1, dp))
+                minSubstrings = min(
+                    minSubstrings, 1 + self.findMinimumBeautifulSubstrings(s, i + 1, dp)
+                )
         dp[index] = minSubstrings
         return minSubstrings
 

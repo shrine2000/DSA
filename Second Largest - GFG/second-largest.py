@@ -1,6 +1,5 @@
-#User function Template for python3
+# User function Template for python3
 class Solution:
-
     def print2largest(self, arr, n):
         max1 = -1
         max2 = -1
@@ -19,13 +18,13 @@ class Solution:
 
         return max2
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
+
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         n = int(input())

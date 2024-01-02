@@ -2,23 +2,24 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-        
+
+
 class LinkedList:
     def __init__(self):
         self.head = None
-        
+
     def search(self, target):
         current = self.head
-        
+
         while current:
             if current.data == target:
                 return True
-            
+
             current = current.next
-            
+
         return False
-        
-        
+
+
 linked_list = LinkedList()
 linked_list.head = Node(1)
 second_node = Node(2)

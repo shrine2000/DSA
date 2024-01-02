@@ -8,7 +8,7 @@ class Solution:
         for i in range(len(s)):
             # if the current character is a space and the length is not zero,
             # update the last word length to the current length and reset the length
-            if s[i] == ' ':
+            if s[i] == " ":
                 if length != 0:
                     last_word_length = length
                 length = 0

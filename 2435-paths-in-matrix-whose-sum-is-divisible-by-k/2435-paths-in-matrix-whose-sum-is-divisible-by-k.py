@@ -11,9 +11,13 @@ class Solution:
             for y in range(n):
                 for z in range(k):
                     if x > 0:
-                        dp[x][y][(z + grid[x][y]) % k] = (dp[x][y][(z + grid[x][y]) % k] + dp[x - 1][y][z]) % mod
+                        dp[x][y][(z + grid[x][y]) % k] = (
+                            dp[x][y][(z + grid[x][y]) % k] + dp[x - 1][y][z]
+                        ) % mod
                     if y > 0:
-                        dp[x][y][(z + grid[x][y]) % k] = (dp[x][y][(z + grid[x][y]) % k] + dp[x][y - 1][z]) % mod
+                        dp[x][y][(z + grid[x][y]) % k] = (
+                            dp[x][y][(z + grid[x][y]) % k] + dp[x][y - 1][z]
+                        ) % mod
 
         res = dp[m - 1][n - 1][0]
 

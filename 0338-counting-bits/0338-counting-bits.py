@@ -9,4 +9,3 @@ class Solution:
 
         res = [count_ones(i) for i in range(n + 1)]
         return res
-        

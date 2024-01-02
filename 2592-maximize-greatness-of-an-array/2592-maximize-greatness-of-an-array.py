@@ -1,6 +1,6 @@
 class Solution:
     def maximizeGreatness(self, nums):
-        nums.sort()   
+        nums.sort()
         ans = 0
         i = 0
         j = 1

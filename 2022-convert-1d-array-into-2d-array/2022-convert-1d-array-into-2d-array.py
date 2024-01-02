@@ -5,11 +5,10 @@ class Solution:
             return []
 
         res = [[0] * n for _ in range(m)]
-        
+
         for i in range(l):
             row = i // n
             col = i % n
             res[row][col] = original[i]
 
         return res
-        

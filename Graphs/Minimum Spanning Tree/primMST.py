@@ -1,5 +1,6 @@
 from typing import List, Tuple, Optional
 
+
 class PrimMST:
     def __init__(self, vertices: int):
         self.V: int = vertices  # Number of vertices
@@ -7,7 +8,7 @@ class PrimMST:
 
     def select_min_vertex(self, value: List[int], set_MST: List[bool]) -> Optional[int]:
         # Helper function to select the vertex with the minimum value that is not yet included in MST
-        minimum: int = float('inf')
+        minimum: int = float("inf")
         vertex: Optional[int] = None
         for i in range(self.V):
             if not set_MST[i] and value[i] < minimum:
@@ -17,7 +18,7 @@ class PrimMST:
 
     def find_MST(self) -> List[Tuple[int, int, int]]:
         parent: List[int] = [-1] * self.V  # Stores MST
-        value: List[int] = [float('inf')] * self.V  # Used for edge relaxation
+        value: List[int] = [float("inf")] * self.V  # Used for edge relaxation
         set_MST: List[bool] = [False] * self.V  # TRUE->Vertex is included in MST
 
         # Assuming start point as Node-0
@@ -40,7 +41,11 @@ class PrimMST:
                     2. Vertex j is not included in MST.
                     3. Edge weight is smaller than the current edge weight.
                 """
-                if self.graph[U][j] != 0 and not set_MST[j] and self.graph[U][j] < value[j]:
+                if (
+                    self.graph[U][j] != 0
+                    and not set_MST[j]
+                    and self.graph[U][j] < value[j]
+                ):
                     value[j] = self.graph[U][j]
                     parent[j] = U
 
@@ -59,7 +64,7 @@ if __name__ == "__main__":
         [6, 6, 0, 1, 8, 0],
         [0, 3, 1, 0, 2, 3],
         [0, 4, 8, 2, 0, 7],
-        [0, 0, 0, 3, 7, 0]
+        [0, 0, 0, 3, 7, 0],
     ]
 
     # Create an instance of PrimMST

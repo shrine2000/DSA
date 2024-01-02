@@ -1,61 +1,62 @@
 class Solution:
-    
-    #Function to return list containing vertices in Topological order.
-    
+    # Function to return list containing vertices in Topological order.
+
     def __init__(self):
         self.stack = []
-        
+
     def topoSort(self, V, adj):
         visited = [False] * V
         for i in range(V):
             if not visited[i]:
                 self.topologicalsortUtil(i, visited, adj)
         return self.stack[::-1]
-        
+
     def topologicalsortUtil(self, v, visited, adj):
         visited[v] = True
-        
+
         for i in adj[v]:
             if not visited[i]:
                 self.topologicalsortUtil(i, visited, adj)
-                
+
         self.stack.append(v)
 
 
-
-#{ 
- # Driver Code Starts
+# {
+# Driver Code Starts
 # Driver Program
 
 import sys
+
 sys.setrecursionlimit(10**6)
-        
+
+
 def check(graph, N, res):
-    if N!=len(res):
+    if N != len(res):
         return False
-    map=[0]*N
+    map = [0] * N
     for i in range(N):
-        map[res[i]]=i
+        map[res[i]] = i
     for i in range(N):
         for v in graph[i]:
             if map[i] > map[v]:
                 return False
     return True
 
-if __name__=='__main__':
+
+if __name__ == "__main__":
     t = int(input())
     for i in range(t):
-        e,N = list(map(int, input().strip().split()))
+        e, N = list(map(int, input().strip().split()))
         adj = [[] for i in range(N)]
-        
+
         for i in range(e):
-            u,v=map(int,input().split())
+            u, v = map(int, input().split())
             adj[u].append(v)
-            
+
         ob = Solution()
-        
+
         res = ob.topoSort(N, adj)
-        
+
         if check(adj, N, res):
             print(1)
         else:

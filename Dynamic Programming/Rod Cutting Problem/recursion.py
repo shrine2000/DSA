@@ -13,7 +13,11 @@ def unbounded_knapsack(price, length, maxLength, N):
     # Check if the current rod length can be included in the cut
     if length[N - 1] <= maxLength:
         # Calculate the maximum profit by either including or excluding the current rod length
-        memo[N][maxLength] = max(price[N - 1] + unbounded_knapsack(price, length, maxLength - length[N - 1], N), unbounded_knapsack(price, length, maxLength, N - 1))
+        memo[N][maxLength] = max(
+            price[N - 1]
+            + unbounded_knapsack(price, length, maxLength - length[N - 1], N),
+            unbounded_knapsack(price, length, maxLength, N - 1),
+        )
     else:
         # If the current rod length is too long to be included, skip it
         memo[N][maxLength] = unbounded_knapsack(price, length, maxLength, N - 1)

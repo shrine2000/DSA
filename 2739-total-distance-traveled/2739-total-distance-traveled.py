@@ -2,11 +2,9 @@ class Solution:
     def distanceTraveled(self, mainTank: int, additionalTank: int) -> int:
         if mainTank < 5:
             return mainTank * 10
-        
-        
+
         ans = 0
-        
-        
+
         while mainTank > 0:
             if mainTank >= 5:
                 ans += 50
@@ -18,4 +16,3 @@ class Solution:
             ans += mainTank * 10
             mainTank = 0
         return ans
-        

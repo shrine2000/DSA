@@ -1,5 +1,6 @@
 # https://www.spoj.com/problems/EKO/
 
+
 def maxSawbladeHeight(N, M, heights):
     left = 0
     right = max(heights)

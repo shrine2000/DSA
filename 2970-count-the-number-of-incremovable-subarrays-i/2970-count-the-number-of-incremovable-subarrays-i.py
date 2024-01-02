@@ -5,9 +5,9 @@ class Solution:
 
         for i in range(length):
             for j in range(i, length):
-                sub_arr = nums[i:j + 1] 
+                sub_arr = nums[i : j + 1]
                 temp = nums[:]
-                temp[i:j + 1] = [] 
+                temp[i : j + 1] = []
 
                 strictly_increasing = True
                 for k in range(len(temp) - 1):

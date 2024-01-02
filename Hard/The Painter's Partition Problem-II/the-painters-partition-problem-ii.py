@@ -1,8 +1,8 @@
 # User function Template for python3
 
+
 class Solution:
     def minTime(self, arr, n, k):
-
         left = max(arr)
         right = sum(arr)
 
@@ -36,7 +36,7 @@ class Solution:
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         str = input().split()

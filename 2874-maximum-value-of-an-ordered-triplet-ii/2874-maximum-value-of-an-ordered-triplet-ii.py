@@ -24,7 +24,7 @@ class Solution:
         return res
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution = Solution()
     nums1 = [12, 6, 1, 2, 7]
     nums2 = [1, 10, 3, 4, 19]

@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
         n = len(heights)
@@ -33,5 +34,6 @@ class Solution:
             area = max(temp_area, area)
 
         return area
+
 
 print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))

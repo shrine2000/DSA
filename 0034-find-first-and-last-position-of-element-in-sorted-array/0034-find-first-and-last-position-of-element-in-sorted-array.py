@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         left, right = 0, len(nums) - 1
@@ -11,7 +12,9 @@ class Solution:
                     start = left
                 break
 
-            pos = left + ((target - nums[left]) * (right - left)) // (nums[right] - nums[left])
+            pos = left + ((target - nums[left]) * (right - left)) // (
+                nums[right] - nums[left]
+            )
             if nums[pos] == target:
                 start = pos
                 right = pos - 1
@@ -27,7 +30,9 @@ class Solution:
                     end = right
                 break
 
-            pos = left + ((target - nums[left]) * (right - left)) // (nums[right] - nums[left])
+            pos = left + ((target - nums[left]) * (right - left)) // (
+                nums[right] - nums[left]
+            )
             if nums[pos] == target:
                 end = pos
                 left = pos + 1

@@ -61,7 +61,12 @@ def find_max_intersecting_pair(intervals):
         end_index = binary_search(starts, end)
         start_index = binary_search(ends, start)
 
-        if (end_index < len(starts) and start_index >= 0 and starts[end_index] <= end and ends[start_index] >= start):
+        if (
+            end_index < len(starts)
+            and start_index >= 0
+            and starts[end_index] <= end
+            and ends[start_index] >= start
+        ):
             non_overlapped_count += 1
 
     overlapped_count = total_count - non_overlapped_count

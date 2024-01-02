@@ -51,5 +51,3 @@ class Solution:
         dfs(next_node, 0)
 
         return max_distance
-
-

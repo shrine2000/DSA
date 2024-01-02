@@ -3,7 +3,7 @@ class Solution:
         ans = []
         n = len(nums)
         for i in range(n):
-            for j in range(i, n+1):
-                ans.append(len(set(nums[i:j]))**2)
-                
+            for j in range(i, n + 1):
+                ans.append(len(set(nums[i:j])) ** 2)
+
         return sum(ans)

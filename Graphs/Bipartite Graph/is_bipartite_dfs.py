@@ -28,13 +28,7 @@ def is_bipartite(adj):
 
 
 if __name__ == "__main__":
-
-    adjacency_list = [
-        [1, 3],
-        [0, 2],
-        [1, 3],
-        [0, 2]
-    ]
+    adjacency_list = [[1, 3], [0, 2], [1, 3], [0, 2]]
 
     result = is_bipartite(adjacency_list)
     if result:

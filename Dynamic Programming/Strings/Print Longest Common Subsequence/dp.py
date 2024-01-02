@@ -10,7 +10,7 @@ def longest_common_subsequence(s1, s2):
                 dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 
     lcs_length = dp[n][m]
-    lcs = [''] * lcs_length
+    lcs = [""] * lcs_length
 
     i, j = n, m
     index = lcs_length - 1
@@ -26,7 +26,7 @@ def longest_common_subsequence(s1, s2):
         else:
             j -= 1
 
-    return ''.join(lcs)
+    return "".join(lcs)
 
 
 if __name__ == "__main__":

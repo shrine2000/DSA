@@ -27,7 +27,7 @@ class Solution:
         return max(left[i] + right[i] for i in range(n + 1))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     solution = Solution()
 
     maxHeights1 = [5, 3, 4, 1, 1]

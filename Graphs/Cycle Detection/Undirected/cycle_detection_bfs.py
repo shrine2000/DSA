@@ -10,7 +10,9 @@ class Graph:
         self.graph[u].append(v)
         self.graph[v].append(u)
 
-    def is_cyclic_util(self, v: int, visited: Dict[int, bool], parent: Dict[int, int]) -> bool:
+    def is_cyclic_util(
+        self, v: int, visited: Dict[int, bool], parent: Dict[int, int]
+    ) -> bool:
         queue: deque = deque()
         queue.append(v)
         visited[v] = True

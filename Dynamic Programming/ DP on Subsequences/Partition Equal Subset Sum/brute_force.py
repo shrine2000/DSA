@@ -7,7 +7,6 @@ class Solution:
         target_sum = total_sum // 2
 
         def helper(k, n):
-
             if k < 0 or n < 0:
                 return False
 

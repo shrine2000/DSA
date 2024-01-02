@@ -1,6 +1,7 @@
 from collections import deque
 from typing import List, Dict, Set, Optional
 
+
 class Graph:
     def __init__(self) -> None:
         self.adj_list: Dict[int, List[int]] = {}
@@ -43,6 +44,7 @@ class Graph:
 
         dfs_util(start)
         return traversal_path
+
 
 if __name__ == "__main__":
     graph = Graph()

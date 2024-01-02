@@ -1,5 +1,5 @@
-
 # O(N)
+
 
 def generateSubarrays(nums):
     n = len(nums)
@@ -22,7 +22,7 @@ def generateSubarrays(nums):
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     nums = [1, 2, 3]
     subarrays = generateSubarrays(nums)
     for subarray in subarrays:

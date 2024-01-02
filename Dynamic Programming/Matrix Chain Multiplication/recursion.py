@@ -1,14 +1,15 @@
-
-
-
 def matrix_chain_multiplication(arr, low, high):
     if low == high:
         return 0
 
-    res = float('inf')
+    res = float("inf")
 
     for i in range(low, high):
-        cost = matrix_chain_multiplication(arr, low, i) + matrix_chain_multiplication(arr, i + 1, high) + arr[low - 1] * arr[i] * arr[high]
+        cost = (
+            matrix_chain_multiplication(arr, low, i)
+            + matrix_chain_multiplication(arr, i + 1, high)
+            + arr[low - 1] * arr[i] * arr[high]
+        )
         res = min(res, cost)
 
     return res

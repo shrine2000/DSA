@@ -5,5 +5,5 @@ class Solution:
             if i > mr:
                 return False
             mr = max(mr, i + nums[i])
-            
+
         return mr >= len(nums) - 1

@@ -24,19 +24,30 @@ class Solution:
         if current_word_index == self.num_words:
             return 0
 
-        if prev_word_index != -1 and self.memoization_table[prev_word_index][current_word_index] != -1:
+        if (
+            prev_word_index != -1
+            and self.memoization_table[prev_word_index][current_word_index] != -1
+        ):
             return self.memoization_table[prev_word_index][current_word_index]
 
         # Try including the current word in the chain.
         taken = 0
-        if prev_word_index == -1 or self.is_predecessor(words[prev_word_index], words[current_word_index]):
-            taken = 1 + self.find_longest_chain(words, current_word_index, current_word_index + 1)
+        if prev_word_index == -1 or self.is_predecessor(
+            words[prev_word_index], words[current_word_index]
+        ):
+            taken = 1 + self.find_longest_chain(
+                words, current_word_index, current_word_index + 1
+            )
 
         # Try excluding the current word from the chain.
-        not_taken = self.find_longest_chain(words, prev_word_index, current_word_index + 1)
+        not_taken = self.find_longest_chain(
+            words, prev_word_index, current_word_index + 1
+        )
 
         if prev_word_index != -1:
-            self.memoization_table[prev_word_index][current_word_index] = max(taken, not_taken)
+            self.memoization_table[prev_word_index][current_word_index] = max(
+                taken, not_taken
+            )
 
         return max(taken, not_taken)
 

@@ -7,7 +7,7 @@ class Solution:
 
         for i in range(N - 1, 0, -1):
             for j in range(i + 1, N):
-                res = float('inf')
+                res = float("inf")
 
                 for k in range(i, j):
                     ans = dp[i][k] + dp[k + 1][j] + arr[i - 1] * arr[k] * arr[j]

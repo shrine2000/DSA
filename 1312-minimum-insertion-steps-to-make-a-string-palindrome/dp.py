@@ -12,9 +12,13 @@ class Solution:
             dp[i][i] = 1  # Base case: a single character is a palindrome by itself
             for j in range(i + 1, n):
                 if s[i] == s[j]:
-                    dp[i][j] = dp[i + 1][j - 1] + 2  # Characters match, extend the palindrome
+                    dp[i][j] = (
+                        dp[i + 1][j - 1] + 2
+                    )  # Characters match, extend the palindrome
                 else:
-                    dp[i][j] = max(dp[i + 1][j], dp[i][j - 1])  # Characters don't match, take the max of left or below cell
+                    dp[i][j] = max(
+                        dp[i + 1][j], dp[i][j - 1]
+                    )  # Characters don't match, take the max of left or below cell
 
         # Minimum number of insertions needed to make the string a palindrome
         return n - dp[0][n - 1]

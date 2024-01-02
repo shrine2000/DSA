@@ -10,5 +10,5 @@ class Solution:
                     s[left] = s[right]
             left += 1
             right -= 1
-            
-        return ''.join(s)
+
+        return "".join(s)

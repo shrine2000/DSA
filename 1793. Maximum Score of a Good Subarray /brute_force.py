@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def maximumScore(self, nums: List[int], k: int) -> int:
         n: int = len(nums)
@@ -9,7 +10,7 @@ class Solution:
             for j in range(i, n):
                 if i <= k <= j:
                     # Calculate the minimum value in the subarray
-                    min_val: int = min(nums[i:j + 1])
+                    min_val: int = min(nums[i : j + 1])
                     # Calculate the score for this subarray
                     score: int = min_val * (j - i + 1)
                     max_score: int = max(max_score, score)

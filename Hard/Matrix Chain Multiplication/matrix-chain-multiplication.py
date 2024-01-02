@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 class Solution:
     def matrixMultiplication(self, N, arr):
         dp = [[-1] * N for _ in range(N)]
@@ -9,7 +10,7 @@ class Solution:
 
         for i in range(N - 1, 0, -1):
             for j in range(i + 1, N):
-                res = float('inf')
+                res = float("inf")
 
                 for k in range(i, j):
                     ans = dp[i][k] + dp[k + 1][j] + arr[i - 1] * arr[k] * arr[j]
@@ -24,7 +25,7 @@ class Solution:
 # Driver Code Starts
 # Initial Template for Python 3
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         N = int(input())

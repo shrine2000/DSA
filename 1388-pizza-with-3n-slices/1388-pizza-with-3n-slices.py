@@ -8,7 +8,8 @@ class Node:
     # Inverted/incorrect less than to work with Python's min-heap
     def __lt__(self, other):
         return self.value > other.value
-    
+
+
 class Solution:
     def maxSizeSlices(self, slices: List[int]) -> int:
         n = len(slices)
@@ -46,9 +47,10 @@ class Solution:
                 best_node.left.deleted = True
                 best_node.right.deleted = True
 
-
                 # Replace current value with trade-in value
-                best_node.value = best_node.left.value + best_node.right.value - best_node.value
+                best_node.value = (
+                    best_node.left.value + best_node.right.value - best_node.value
+                )
 
                 best_node.left = best_node.left.left
                 best_node.right = best_node.right.right

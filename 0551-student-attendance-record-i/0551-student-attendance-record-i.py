@@ -4,12 +4,12 @@ class Solution:
         late_count = 0
 
         for record in s:
-            if record == 'A':
+            if record == "A":
                 absent_count += 1
                 late_count = 0
                 if absent_count > 1:
                     return False
-            elif record == 'L':
+            elif record == "L":
                 late_count += 1
                 if late_count > 2:
                     return False
