@@ -1,43 +1,146 @@
-from typing import Optional
+from collections import deque
 
-
-class Node:
-    def __init__(self, key: int) -> None:
-        self.left: Optional[Node] = None
-        self.right: Optional[Node] = None
-        self.val: int = key
-
+class TreeNode:
+    def __init__(self, value):
+        self.val = value
+        self.left = None
+        self.right = None
 
 class BinaryTree:
-    def __init__(self) -> None:
-        self.root: Optional[Node] = None
+    def __init__(self):
+        self.root = None
 
-    def insert(self, root: Optional[Node], key: int) -> Node:
-        if root is None:
-            return Node(key)
-        else:
-            if root.val < key:
-                root.right = self.insert(root.right, key)
-            else:
-                root.left = self.insert(root.left, key)
-        return root
+    def build_tree(self, nodes):
+        # Build a binary tree from a list of nodes
+        node_dict = {}
+        for value, left, right in nodes:
+            node = node_dict.get(value, TreeNode(value))
+            node_dict[value] = node
 
-    def inorder_traversal(self, root: Optional[Node]) -> None:
+            if left:
+                left_node = node_dict.get(left, TreeNode(left))
+                node.left = left_node
+                node_dict[left] = left_node
+
+            if right:
+                right_node = node_dict.get(right, TreeNode(right))
+                node.right = right_node
+                node_dict[right] = right_node
+
+        self.root = node_dict[nodes[0][0]]
+
+    def preorder_recursive(self, root):
+        # Pre-order traversal (recursive)
         if root:
-            self.inorder_traversal(root.left)
             print(root.val, end=" ")
-            self.inorder_traversal(root.right)
+            self.preorder_recursive(root.left)
+            self.preorder_recursive(root.right)
 
+    def inorder_recursive(self, root):
+        # In-order traversal (recursive)
+        if root:
+            self.inorder_recursive(root.left)
+            print(root.val, end=" ")
+            self.inorder_recursive(root.right)
 
+    def postorder_recursive(self, root):
+        # Post-order traversal (recursive)
+        if root:
+            self.postorder_recursive(root.left)
+            self.postorder_recursive(root.right)
+            print(root.val, end=" ")
+
+    def level_order(self):
+        # Level-order traversal (using queue)
+        if not self.root:
+            return []
+
+        result = []
+        queue = deque([self.root])
+
+        while queue:
+            level_size = len(queue)
+            current_level = []
+
+            for _ in range(level_size):
+                node = queue.popleft()
+                current_level.append(node.val)
+
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+
+            result.append(current_level)
+
+        return result
+
+    def preorder_iterative(self):
+        # Iterative pre-order traversal (using stack)
+        if not self.root:
+            return []
+
+        result = []
+        stack = [self.root]
+
+        while stack:
+            node = stack.pop()
+            result.append(node.val)
+
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+
+        return result
+
+    def inorder_iterative(self):
+        # Iterative in-order traversal (using stack)
+        if not self.root:
+            return []
+
+        result = []
+        stack = []
+        current = self.root
+
+        while stack or current:
+            while current:
+                stack.append(current)
+                current = current.left
+
+            current = stack.pop()
+            result.append(current.val)
+            current = current.right
+
+        return result
+
+# Example usage
 if __name__ == "__main__":
+    # Create a tree and specify the nodes (value, left child, right child)
     tree = BinaryTree()
-    tree.root = tree.insert(tree.root, 50)
-    tree.insert(tree.root, 30)
-    tree.insert(tree.root, 20)
-    tree.insert(tree.root, 40)
-    tree.insert(tree.root, 70)
-    tree.insert(tree.root, 60)
-    tree.insert(tree.root, 80)
+    nodes = [(1, 2, 3), (2, 4, 5), (3, 6, 7), (4, None, None), (5, None, None), (6, None, None), (7, None, None)]
+    tree.build_tree(nodes)
 
-    print("Inorder Traversal of the constructed binary tree:")
-    tree.inorder_traversal(tree.root)
+    # Print various traversal results
+    print("Pre-order Recursive:")
+    tree.preorder_recursive(tree.root)
+    print("\n")
+
+    print("In-order Recursive:")
+    tree.inorder_recursive(tree.root)
+    print("\n")
+
+    print("Post-order Recursive:")
+    tree.postorder_recursive(tree.root)
+    print("\n")
+
+    print("Level-order:")
+    print(tree.level_order())
+    print("\n")
+
+    print("Iterative Pre-order:")
+    print(tree.preorder_iterative())
+    print("\n")
+
+    print("Iterative In-order:")
+    print(tree.inorder_iterative())
