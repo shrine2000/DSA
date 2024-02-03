@@ -1,4 +1,5 @@
-#User function Template for python3
+# User function Template for python3
+
 
 class Solution:
     def LongestBitonicSequence(self, nums):
@@ -29,18 +30,17 @@ class Solution:
 
         return bitonic_length
 
-	            
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
-if __name__ == '__main__':
-	T=int(input())
-	for i in range(T):
-		n = int(input())
-		nums = list(map(int, input().split()))
-		ob = Solution()
-		ans = ob.LongestBitonicSequence(nums)
-		print(ans)
+if __name__ == "__main__":
+    T = int(input())
+    for i in range(T):
+        n = int(input())
+        nums = list(map(int, input().split()))
+        ob = Solution()
+        ans = ob.LongestBitonicSequence(nums)
+        print(ans)
 # } Driver Code Ends

@@ -1,9 +1,9 @@
-#User function Template for python3
+# User function Template for python3
 
 
 class Solution:
     def InfixtoPostfix(self, exp):
-        precedence = {'^': 3, '*': 2, '/': 2, '+': 1, '-': 1}
+        precedence = {"^": 3, "*": 2, "/": 2, "+": 1, "-": 1}
 
         stack = []
         postfix = ""
@@ -11,26 +11,30 @@ class Solution:
         for char in exp:
             if char.isalnum():  # Operand
                 postfix += char
-            elif char == '(':
+            elif char == "(":
                 stack.append(char)
-            elif char == ')':
-                while stack and stack[-1] != '(':
+            elif char == ")":
+                while stack and stack[-1] != "(":
                     postfix += stack.pop()
                 stack.pop()  # Discard the opening parenthesis
             else:  # Operator
-                while stack and stack[-1] != '(' and precedence[char] <= precedence.get(stack[-1], 0):
+                while (
+                    stack
+                    and stack[-1] != "("
+                    and precedence[char] <= precedence.get(stack[-1], 0)
+                ):
                     postfix += stack.pop()
                 stack.append(char)
 
-        while stack and stack[-1] != '(':
+        while stack and stack[-1] != "(":
             postfix += stack.pop()
 
         return postfix
 
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
 import atexit
 import io
@@ -44,16 +48,16 @@ input = iter(_INPUT_LINES).__next__
 _OUTPUT_BUFFER = io.StringIO()
 sys.stdout = _OUTPUT_BUFFER
 
-@atexit.register
 
+@atexit.register
 def write():
     sys.__stdout__.write(_OUTPUT_BUFFER.getvalue())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_cases = int(input())
-    for cases in range(test_cases) :
+    for cases in range(test_cases):
         exp = str(input())
-        ob=Solution()
+        ob = Solution()
         print(ob.InfixtoPostfix(exp))
 # } Driver Code Ends

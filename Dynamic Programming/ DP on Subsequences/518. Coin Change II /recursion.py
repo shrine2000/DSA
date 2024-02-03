@@ -18,7 +18,9 @@ class Solution:
         # For each coin, we have two choices:
         # 1. Pick the current coin and make a recursive call with reduced amount and same coin.
         # 2. Do not pick the current coin and make a recursive call with the same amount and next coin.
-        ways_with_current_coin = self._change_recursive(amount - coins[index], coins, index)
+        ways_with_current_coin = self._change_recursive(
+            amount - coins[index], coins, index
+        )
         ways_without_current_coin = self._change_recursive(amount, coins, index + 1)
 
         # The total ways is the sum of the ways with and without the current coin.

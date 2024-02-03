@@ -1,9 +1,10 @@
 import queue
 
+
 class Solution:
     def largestSumAfterKNegations(self, nums: List[int], k: int) -> int:
         pq = queue.PriorityQueue()
-        
+
         for num in nums:
             pq.put(num)
 
@@ -15,5 +16,5 @@ class Solution:
         ans = 0
 
         while not pq.empty():
-            ans += pq.get()   
+            ans += pq.get()
         return ans

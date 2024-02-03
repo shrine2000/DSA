@@ -7,11 +7,12 @@
 class Solution:
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         res = []
-        
+
         def p(node):
             if node:
                 p(node.left)
                 p(node.right)
                 res.append(node.val)
+
         p(root)
         return res

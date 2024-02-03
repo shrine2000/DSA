@@ -3,7 +3,7 @@ class Solution:
         res = ""
         for w in words:
             res += w[0]
-            
+
         if res == s:
             return True
         return False

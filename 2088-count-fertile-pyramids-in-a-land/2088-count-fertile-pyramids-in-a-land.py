@@ -6,7 +6,7 @@ class Solution:
         output = self.helper(grid)
         output += self.helper(reversed_grid)
         return output
-    
+
     def helper(self, grid):
         output, rows, cols = 0, len(grid), len(grid[0])
         for i in range(1, rows):

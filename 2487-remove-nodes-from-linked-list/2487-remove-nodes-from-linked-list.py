@@ -5,9 +5,9 @@
 #         self.next = next
 class Solution:
     def removeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = ListNode(float('inf'))
+        dummy = ListNode(float("inf"))
         stack = [dummy]
-        
+
         current = head
         while current is not None:
             while stack[-1].val < current.val:
@@ -16,4 +16,3 @@ class Solution:
             stack.append(current)
             current = current.next
         return dummy.next
-        

@@ -6,6 +6,7 @@ def get_digit_sum(num):
         num //= 10
     return digit_sum
 
+
 n = int(input())
 a = list(map(int, input().split()))
 

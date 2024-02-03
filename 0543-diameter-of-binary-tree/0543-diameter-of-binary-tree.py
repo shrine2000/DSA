@@ -9,11 +9,11 @@ class Solution:
         def height(node):
             if not node:
                 return 0
-            
+
             l = height(node.left)
             r = height(node.right)
             return max(l, r) + 1
-        
+
         def diameter(node):
             if not node:
                 return 0
@@ -21,5 +21,5 @@ class Solution:
             r = diameter(node.right)
             t = height(node.left) + height(node.right)
             return max(l, r, t)
-        
-        return diameter(root)        
+
+        return diameter(root)

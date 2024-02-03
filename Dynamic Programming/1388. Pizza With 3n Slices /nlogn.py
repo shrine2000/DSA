@@ -4,6 +4,7 @@ import heapq
 
 # https://leetcode.com/problems/pizza-with-3n-slices/discuss/1223688/Python-O(n-log-n)-greedy%2Bheap-strategy-with-proof-(100-30ms)
 
+
 class Node:
     def __init__(self, value: int = 0, left=None, right=None, deleted: bool = False):
         self.value = value
@@ -54,7 +55,9 @@ class Solution:
                 best_node.right.deleted = True
 
                 # Replace current value with trade-in value
-                best_node.value = best_node.left.value + best_node.right.value - best_node.value
+                best_node.value = (
+                    best_node.left.value + best_node.right.value - best_node.value
+                )
 
                 best_node.left = best_node.left.left
                 best_node.right = best_node.right.right

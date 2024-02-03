@@ -4,14 +4,14 @@ class Solution:
         for u, v in edges:
             adj[u].append(v)
             adj[v].append(u)
-            
-        mincycle = float('inf')
+
+        mincycle = float("inf")
         for i in range(n):
             dist = [-1] * n
             queue = deque()
             queue.append(i)
             dist[i] = 0
-            
+
             while queue:
                 u = queue.popleft()
                 for v in adj[u]:
@@ -20,6 +20,5 @@ class Solution:
                         queue.append(v)
                     elif v != i and dist[v] >= dist[u]:
                         mincycle = min(mincycle, dist[u] + dist[v] + 1)
-                        
-        return -1 if mincycle == float('inf') else mincycle
-        
+
+        return -1 if mincycle == float("inf") else mincycle

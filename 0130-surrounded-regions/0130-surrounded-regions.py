@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
         """
@@ -8,16 +9,22 @@ class Solution:
 
         if not board or not board[0]:
             return
-        
+
         rows = len(board)
         cols = len(board[0])
 
         def dfs(row, col):
-            if row < 0 or col < 0 or row >= rows or col >= cols or board[row][col] != 'O':
+            if (
+                row < 0
+                or col < 0
+                or row >= rows
+                or col >= cols
+                or board[row][col] != "O"
+            ):
                 return
-            
-            board[row][col] = 'S'
-            
+
+            board[row][col] = "S"
+
             directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
             for dr, dc in directions:
                 dfs(row + dr, col + dc)
@@ -32,7 +39,7 @@ class Solution:
 
         for i in range(rows):
             for j in range(cols):
-                if board[i][j] == 'O':
-                    board[i][j] = 'X'
-                elif board[i][j] == 'S':
-                    board[i][j] = 'O'
+                if board[i][j] == "O":
+                    board[i][j] = "X"
+                elif board[i][j] == "S":
+                    board[i][j] = "O"

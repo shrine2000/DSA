@@ -20,7 +20,9 @@ class Solution:
                 return nums[mid]
 
             # On the left side
-            if (mid % 2 == 1 and nums[mid] == nums[mid - 1]) or (mid % 2 == 0 and nums[mid] == nums[mid + 1]):
+            if (mid % 2 == 1 and nums[mid] == nums[mid - 1]) or (
+                mid % 2 == 0 and nums[mid] == nums[mid + 1]
+            ):
                 low = mid + 1
 
             # On the right side

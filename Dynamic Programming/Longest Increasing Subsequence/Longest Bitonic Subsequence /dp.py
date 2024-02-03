@@ -26,4 +26,3 @@ class Solution:
             bitonic_length = max(bitonic_length, dp1[i] + dp2[i] - 1)
 
         return bitonic_length
-

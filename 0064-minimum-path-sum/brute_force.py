@@ -28,11 +28,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    grid = [
-        [1, 3, 1],
-        [1, 5, 1],
-        [4, 2, 1]
-    ]
+    grid = [[1, 3, 1], [1, 5, 1], [4, 2, 1]]
 
     solution = Solution()
     min_path_sum = solution.minPathSum(grid)

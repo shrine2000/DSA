@@ -1,7 +1,7 @@
 class Solution:
     def maxNumOfMarkedIndices(self, nums):
         nums.sort()
-        
+
         i = 0
         j = len(nums) // 2
         count = 0
@@ -13,5 +13,5 @@ class Solution:
                 count += 2
             else:
                 j += 1
-        
+
         return count

@@ -1,7 +1,7 @@
 from typing import List
 
-class Solution:
 
+class Solution:
     def subArrayRanges(self, nums: List[int]) -> int:
         total_range_sum = 0
         array_size = len(nums)
@@ -17,4 +17,3 @@ class Solution:
                 total_range_sum += max_value - min_value
 
         return total_range_sum
-

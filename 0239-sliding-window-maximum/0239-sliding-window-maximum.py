@@ -9,8 +9,8 @@ class Solution:
             while q and nm[q[-1]] < nm[i]:
                 q.pop()
             q.append(i)
-            
+
             if i >= k - 1:
                 a.append(nm[q[0]])
-                
+
         return a

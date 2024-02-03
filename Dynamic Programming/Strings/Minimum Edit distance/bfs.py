@@ -1,11 +1,11 @@
 class Solution:
     def minDistance(self, word1: str, word2: str) -> int:
         len1, len2 = len(word1), len(word2)
-        
-        queue = [(0, 0)]  
+
+        queue = [(0, 0)]
         visited = set()
         distance = 0
-        
+
         while queue:
             next_level = []
             while queue:

@@ -4,6 +4,7 @@ class Node:
         self.next = None
         self.prev = None
 
+
 class Solution:
     def removeDuplicates(self, head: Node) -> Node:
         current = head

@@ -1,47 +1,48 @@
 # your task is to complete this function
 # function should return new head pointer
 
-'''
+"""
 class node:
     def __init__(self):
         self.data = None
         self.next = None
-'''
+"""
+
 
 def delNode(head, k):
     # Code here
     if not head:
         return head
-        
+
     if k == 1:
         head = head.next
         return head
-        
+
     prev = head
     curr = head.next
     count = 2
-    
+
     while curr:
         if count == k:
             prev.next = curr.next
             return head
-            
+
         prev = curr
         curr = curr.next
         count += 1
-        
+
     return head
 
 
-
-
-#{ 
- # Driver Code Starts
-# Node Class    
+# {
+# Driver Code Starts
+# Node Class
 class node:
     def __init__(self):
         self.data = None
         self.next = None
+
+
 # Linked List Class
 class Linked_List:
     def __init__(self):
@@ -56,19 +57,21 @@ class Linked_List:
             new_node.data = data
             new_node.next = None
             temp = self.head
-            while(temp.next):
-                temp=temp.next
+            while temp.next:
+                temp = temp.next
             temp.next = new_node
+
 
 def printlist(head):
     temp = head
-    while(temp):
+    while temp:
         print(temp.data, end=" ")
         temp = temp.next
-    print('')
+    print("")
+
 
 # Driver Program
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for i in range(t):
         list1 = Linked_List()

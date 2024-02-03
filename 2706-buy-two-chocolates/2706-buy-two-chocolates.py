@@ -6,4 +6,3 @@ class Solution:
             return money
         else:
             return money - amt
-        

@@ -8,6 +8,8 @@ longest increasing subsequence among all the generated subsequences. This method
 (O(2^n)) and is inefficient for large arrays.
 
 """
+
+
 def longest_increasing_subsequence_bruteforce(arr):
     n = len(arr)
     max_length = 0
@@ -26,6 +28,7 @@ def longest_increasing_subsequence_bruteforce(arr):
                 lis = subsequence
 
     return max_length, lis
+
 
 if __name__ == "__main__":
     arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]

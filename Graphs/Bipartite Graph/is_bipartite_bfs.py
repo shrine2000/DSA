@@ -6,7 +6,9 @@ from collections import deque
 def is_bipartite(adj):
     V = len(adj)
 
-    colors = [-1] * V # Initialize colors for nodes: -1 for uncolored, 0 and 1 for two colors
+    colors = [
+        -1
+    ] * V  # Initialize colors for nodes: -1 for uncolored, 0 and 1 for two colors
 
     for i in range(V):
         if colors[i] == -1:
@@ -27,13 +29,7 @@ def is_bipartite(adj):
 
 
 if __name__ == "__main__":
-
-    adjacency_list = [
-        [1, 3],
-        [0, 2],
-        [1, 3],
-        [0, 2]
-    ]
+    adjacency_list = [[1, 3], [0, 2], [1, 3], [0, 2]]
 
     result = is_bipartite(adjacency_list)
     if result:

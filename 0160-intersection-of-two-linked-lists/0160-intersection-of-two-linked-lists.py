@@ -4,8 +4,11 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
-    def getIntersectionNode(self, head1: ListNode, head2: ListNode) -> Optional[ListNode]:
+    def getIntersectionNode(
+        self, head1: ListNode, head2: ListNode
+    ) -> Optional[ListNode]:
         """
         Check if there is an intersection between two linked lists.
 

@@ -8,7 +8,7 @@ def f(ind, W, wt, val, dp):
         return dp[ind][W]
 
     not_take = f(ind - 1, W, wt, val, dp)
-    take = float('-inf')
+    take = float("-inf")
     if wt[ind] <= W:
         take = val[ind] + f(ind - 1, W - wt[ind], wt, val, dp)
 

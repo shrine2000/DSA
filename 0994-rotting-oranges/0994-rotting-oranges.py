@@ -11,7 +11,7 @@ class Solution:
 
         for i in range(r):
             for j in range(c):
-                if grid[i][j] == 1:  
+                if grid[i][j] == 1:
                     o += 1
                 elif grid[i][j] == 2:
                     rtn.append((i, j))
