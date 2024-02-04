@@ -12,17 +12,13 @@
 
 [Binary Tree](https://github.com/shrine2000/DSA/tree/main/Binary%20Trees)
 
-[T-414-ÁFLV: A Competitive Programming Course (2016 edition)](https://algo.is/t-414-aflv-competitive-programming-course-2016)
-
-[CS 290-CP1: Introduction to Competitive Programming
-](https://www.cs.purdue.edu/homes/ninghui/courses/CPi/cp1_2020_fall.html)
+[Segment Trees](https://bit.ly/segment-trees)
 
 ## Machine Coding
 
 [Work@tech](https://workat.tech/)
 
 [Grokking the Object Oriented Design Interview](https://github.com/tssovi/grokking-the-object-oriented-design-interview)
-
 
 ## Design Patterns
 
