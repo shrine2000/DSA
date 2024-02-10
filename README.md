@@ -14,6 +14,8 @@
 
 [Segment Trees](https://bit.ly/segment-trees)
 
+[Strings](https://github.com/shrine2000/DSA/tree/main/Strings)
+
 ## Machine Coding
 
 [Work@tech](https://workat.tech/)
