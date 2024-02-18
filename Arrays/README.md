@@ -1,0 +1,1 @@
+[Prefix Sum - Errichto](https://www.youtube.com/watch?v=PhgtNY_-CiY&ab_channel=ErrichtoAlgorithms)
