@@ -2,6 +2,8 @@
 
 [Study Guide](https://leetcode.com/discuss/study-guide?currentPage=1&orderBy=most_votes&query=)
 
+[Arrays](https://github.com/shrine2000/DSA/tree/main/Arrays)
+
 [Binary Search](https://github.com/shrine2000/DSA/tree/main/Binary%20Search)
 
 [Stack](https://github.com/shrine2000/DSA/tree/main/Stack)
