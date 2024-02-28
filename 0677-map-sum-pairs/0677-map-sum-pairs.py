@@ -24,15 +24,16 @@ class MapSum:
             if char not in node.children:
                 return 0
             node = node.children[char]
-        return self._dfs(node)
-    
-    def _dfs(self, node):
-        total = node.value
-        for child in node.children.values():
-            total += self._dfs(child)
-        return total
         
-
+        stack = [node]
+        total = 0
+        while stack:
+            current_node = stack.pop()
+            total += current_node.value
+            stack.extend(current_node.children.values())
+        return total
+    
+ 
 
 # Your MapSum object will be instantiated and called as such:
 # obj = MapSum()
