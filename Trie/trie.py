@@ -54,6 +54,8 @@ class Trie:
         for root in dictionary:
             trie.insert(root)
 
+        trie.print_trie()
+
         def replace(word: str) -> str:
             for i in range(len(word)):
                 prefix = word[: i + 1]
@@ -65,14 +67,9 @@ class Trie:
         replace_sentence: List[str] = [replace(word) for word in sentence.split()]
         return " ".join(replace_sentence)
 
-    @staticmethod
-    def longestWord(words):
-        trie = Trie()
-        for word in words:
-            trie.insert(word)
-
+    def longestWord(self):
         longest_word = ""
-        queue = deque([(trie.root, "")])
+        queue = deque([(self.root, "")])
         while queue:
             node, current_word = queue.popleft()
             if node.is_end_of_word:
@@ -83,6 +80,23 @@ class Trie:
 
         return longest_word
 
+    def _print_trie(self, node: TrieNode, level: int = 0) -> None:
+        if node is None:
+            return
+        for char, child in node.children.items():
+            print(" " * level + f"Index {char}: Character '{char}'")
+            print(" " * (level + 1) + f"Child Node: {child}")
+            print(" " * (level + 1) + f"Is End of Word: {child.is_end_of_word}")
+            print(
+                " " * (level + 1)
+                + f"Children: {list(child.children.keys()) if child.children else 'None'}"
+            )
+            print()
+            self._print_trie(child, level + 1)
+
+    def print_trie(self) -> None:
+        self._print_trie(self.root)
+
 
 if __name__ == "__main__":
     # Test cases
@@ -92,8 +106,8 @@ if __name__ == "__main__":
     print(replaced_sentence)  # Output: "the cat was rat by the bat"
 
     # Test Trie functionality
-    trie = Trie()
-    words_to_insert = ["apple", "banana", "orange", "app", "ban"]
+    trie: Trie = Trie()
+    words_to_insert = ["apple", "banana", "orange", "app", "ban", "application"]
     for word in words_to_insert:
         trie.insert(word)
 
@@ -108,6 +122,11 @@ if __name__ == "__main__":
     assert trie.startsWith("or") == True
     assert trie.startsWith("gr") == False
 
-    # Test longestWord method
+    trie: Trie = Trie()
     words = ["w", "wo", "wor", "worl", "world", "word", "abc"]
-    print(Trie.longestWord(words))  # Output: "world"
+    for word in words:
+        trie.insert(word)
+
+    print(trie.longestWord())
+
+    trie.print_trie()
