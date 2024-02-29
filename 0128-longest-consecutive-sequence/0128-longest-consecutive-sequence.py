@@ -3,21 +3,16 @@ class Solution:
         if not nums:
             return 0
         
-        priority_queue = []
+        hashset = set(nums)
+        longestStreak = 0
+        
         for num in nums:
-            heapq.heappush(priority_queue, num)
-        
-        max_len = 1
-        current_len = 1
-        prev_num = heapq.heappop(priority_queue)
-        
-        while priority_queue:
-            num = heapq.heappop(priority_queue)
-            if num == prev_num + 1:
-                current_len += 1
-            elif num != prev_num:
-                max_len = max(max_len, current_len)
+            if num - 1 not in hashset:
                 current_len = 1
-            prev_num = num
-        
-        return max(max_len, current_len)
+                while num + 1 in hashset:
+                    num += 1
+                    current_len += 1
+                    
+                longestStreak = max(longestStreak, current_len)
+                
+        return longestStreak
