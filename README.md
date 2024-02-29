@@ -18,6 +18,10 @@
 
 [Strings](https://github.com/shrine2000/DSA/tree/main/Strings)
 
+[Trie](https://github.com/shrine2000/DSA/tree/main/Trie)
+
+[Misc](https://github.com/shrine2000/DSA/tree/main/Misc%20)
+
 ## Machine Coding
 
 [Work@tech](https://workat.tech/)
