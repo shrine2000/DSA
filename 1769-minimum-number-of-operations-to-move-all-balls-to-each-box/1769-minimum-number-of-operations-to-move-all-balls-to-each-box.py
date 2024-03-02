@@ -1,11 +1,18 @@
+from typing import List
+
 class Solution:
     def minOperations(self, boxes: str) -> List[int]:
-        out = []
-        for i in range(len(boxes)):
-            res=0
-            for j in range(len(boxes)):
-                if boxes[j] == '1':
-                    res+=abs(j-i)
-            out.append(res)
-        return out
-        
+        n = len(boxes)
+        ans = [0] * n
+        left_balls = 0
+        right_balls = boxes.count("1")
+        left_sum = 0
+        right_sum = sum(i for i, box in enumerate(boxes) if box == "1")
+        for i, box in enumerate(boxes):
+            ans[i] = left_sum + right_sum
+            if box == "1":
+                left_balls += 1
+                right_balls -= 1
+            left_sum += left_balls
+            right_sum -= right_balls
+        return ans
