@@ -1,12 +1,14 @@
 class Solution:
     def minOperations(self, boxes: str) -> List[int]:
-        n = len(boxes)
-        ans = []
-        for i in range(n):
-            res = 0
-            for j in range(n):
+        out = []
+        
+        for i in range(len(boxes)):
+            res=0
+            for j in range(len(boxes)):
                 if boxes[j] == '1':
-                    res += abs(i - j)
-            ans.append(res)
-        return ans
+                    res+=abs(j-i)
                     
+            out.append(res)
+            
+        return out
+        
