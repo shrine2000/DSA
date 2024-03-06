@@ -8,6 +8,8 @@
 
 [Stack](https://github.com/shrine2000/DSA/tree/main/Stack)
 
+[Greedy](https://github.com/shrine2000/DSA/tree/main/Greedy)
+
 [Dynamic Programming](https://github.com/shrine2000/DSA/tree/main/Dynamic%20Programming)
 
 [Graphs](https://github.com/shrine2000/DSA/tree/main/Graphs)
