@@ -4,11 +4,9 @@ class Solution:
         capacity.sort(reverse=True)
         c = 0
         for cpty in capacity:
-            if total_apples >0:
-                total_apples -= cpty
-                c += 1
-            else:
+            if total_apples <= 0:
                 break
-            
+            total_apples -= cpty
+            c += 1
         return c
             
