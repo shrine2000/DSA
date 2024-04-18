@@ -32,6 +32,7 @@
 * Number of Operations to Make Network Connected: https://leetcode.com/problems/number-of-operations-to-make-network-connected/
 * Accounts Merge: https://leetcode.com/problems/accounts-merge/
 * Critical Connections in a Network: https://leetcode.com/problems/critical-connections-in-a-network/
+* https://emre.me/algorithms/tarjans-algorithm/
 
 ### Dijkstra's problems
 
