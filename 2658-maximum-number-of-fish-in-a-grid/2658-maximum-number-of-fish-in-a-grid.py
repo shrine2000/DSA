@@ -1,7 +1,6 @@
 from collections import deque
 from typing import List
 
-
 class Solution:
     def findMaxFish(self, grid: List[List[int]]) -> int:
         rows = len(grid)
@@ -23,11 +22,7 @@ class Solution:
 
                         for dx, dy in directions:
                             new_x, new_y = x + dx, y + dy
-                            if (
-                                0 <= new_x < rows
-                                and 0 <= new_y < cols
-                                and grid[new_x][new_y] > 0
-                            ):
+                            if 0 <= new_x < rows and 0 <= new_y < cols and grid[new_x][new_y] > 0:
                                 fish_count += grid[new_x][new_y]
                                 grid[new_x][new_y] = 0
                                 queue.append((new_x, new_y))

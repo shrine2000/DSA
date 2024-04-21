@@ -5,12 +5,17 @@ class Solution:
                 return True
             else:
                 return False
-
+        
         if is_triangle(nums[0], nums[1], nums[2]):
             if nums[0] == nums[1] == nums[2]:
                 return "equilateral"
             if nums[0] != nums[1] and nums[0] != nums[2] and nums[1] != nums[2]:
                 return "scalene"
             return "isosceles"
-
+        
         return "none"
+            
+            
+            
+
+        

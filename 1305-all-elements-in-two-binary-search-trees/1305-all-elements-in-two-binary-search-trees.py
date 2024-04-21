@@ -8,7 +8,7 @@ class Solution:
     def getAllElements(self, root1: TreeNode, root2: TreeNode) -> List[int]:
         res = []
         s1, s2 = [], []
-
+        
         while root1 or root2 or s1 or s2:
             while root1:
                 s1.append(root1)
@@ -24,5 +24,5 @@ class Solution:
                 node = s2.pop()
                 res.append(node.val)
                 root2 = node.right
-
+                
         return res

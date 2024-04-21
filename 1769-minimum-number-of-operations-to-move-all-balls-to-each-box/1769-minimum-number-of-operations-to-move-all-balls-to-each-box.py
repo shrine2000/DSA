@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
     def minOperations(self, boxes: str) -> List[int]:
         boxes = [1 if box == "1" else 0 for box in boxes]

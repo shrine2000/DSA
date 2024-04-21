@@ -9,3 +9,4 @@ class Solution:
             total_apples -= cpty
             c += 1
         return c
+            

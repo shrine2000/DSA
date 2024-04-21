@@ -7,14 +7,13 @@
 class Solution:
     def getAllElements(self, root1: TreeNode, root2: TreeNode) -> List[int]:
         tree = []
-
         def inorder(root):
             if root:
                 inorder(root.left)
                 tree.append(root.val)
                 inorder(root.right)
-
+        
         inorder(root1)
         inorder(root2)
-
+        
         return sorted(tree)

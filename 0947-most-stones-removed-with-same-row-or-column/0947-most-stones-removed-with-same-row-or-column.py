@@ -5,7 +5,7 @@ class Solution:
             for i, (nx, ny) in enumerate(stones):
                 if (nx, ny) not in visited and (nx == x or ny == y):
                     dfs(nx, ny)
-
+        
         visited = set()
         count = 0
         for x, y in stones:

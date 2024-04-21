@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
     def returnToBoundaryCount(self, nums: List[int]) -> int:
         count = 0

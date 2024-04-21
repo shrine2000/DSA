@@ -8,22 +8,21 @@ class Node:
         self.next = next
 """
 
-
 class Solution:
-    def connect(self, root: "Optional[Node]") -> "Optional[Node]":
+    def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
         if not root:
             return root
-
+        
         queue = deque()
         queue.append(root)
-
+        
         while queue:
-            level_size = len(queue)
+            level_size = len(queue)            
             for i in range(level_size):
                 node = queue.popleft()
                 if i < level_size - 1:
                     node.next = queue[0]
-
+                    
                 if node.left:
                     queue.append(node.left)
                 if node.right:

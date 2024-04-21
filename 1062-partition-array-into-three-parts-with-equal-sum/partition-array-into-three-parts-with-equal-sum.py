@@ -16,5 +16,7 @@ class Solution:
                 _sum = 0
             if count == 3:
                 return True
-
+            
         return False
+                
+            
