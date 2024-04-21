@@ -5,10 +5,10 @@ class Solution:
         for course, prereq in prerequisites:
             graph[prereq].append(course)
             indegree[course] += 1
-            
-        queue = [i for i in range(numCourses) if indegree[i] == 0 ]
+
+        queue = [i for i in range(numCourses) if indegree[i] == 0]
         order = []
-        
+
         while queue:
             course = queue.pop(0)
             order.append(course)
@@ -16,10 +16,8 @@ class Solution:
                 indegree[ngbr] -= 1
                 if indegree[ngbr] == 0:
                     queue.append(ngbr)
-                    
+
         if len(order) != numCourses:
             return []
-        
+
         return order
-            
-        

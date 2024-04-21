@@ -4,9 +4,9 @@ class Solution:
             return []
 
         rows, cols = len(matrix), len(matrix[0])
-        answer = [row[:] for row in matrix]  
+        answer = [row[:] for row in matrix]
         for j in range(cols):
-            max_value = float('-inf')
+            max_value = float("-inf")
             for i in range(rows):
                 if matrix[i][j] == -1:
                     continue
@@ -17,4 +17,3 @@ class Solution:
                     answer[i][j] = max_value
 
         return answer
-        

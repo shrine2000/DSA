@@ -3,8 +3,8 @@ class TrieNode:
         self.children = {}
         self.is_end_of_word = False
 
-class WordDictionary:
 
+class WordDictionary:
     def __init__(self):
         self.root = TrieNode()
 
@@ -23,9 +23,9 @@ class WordDictionary:
         if not word:
             return node.is_end_of_word
         for i, char in enumerate(word):
-            if char == '.':
+            if char == ".":
                 for child in node.children.values():
-                    if self.search_helper(word[i+1:], child):
+                    if self.search_helper(word[i + 1 :], child):
                         return True
                 return False
             if char not in node.children:

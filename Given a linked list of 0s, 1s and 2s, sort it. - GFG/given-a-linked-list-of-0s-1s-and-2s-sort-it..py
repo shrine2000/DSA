@@ -1,18 +1,18 @@
 # User function Template for python3
 """
-	Your task is to segregate the list of 
-	0s,1s and 2s.
-	
-	Function Arguments: head of the original list.
-	Return Type: head of the new list formed.
+Your task is to segregate the list of
+0s,1s and 2s.
 
-	{
-		# Node Class
-		class Node:
-		    def __init__(self, data):   # data -> value stored in node
-		        self.data = data
-		        self.next = None
-	}
+Function Arguments: head of the original list.
+Return Type: head of the new list formed.
+
+{
+        # Node Class
+        class Node:
+            def __init__(self, data):   # data -> value stored in node
+                self.data = data
+                self.next = None
+}
 
 """
 
