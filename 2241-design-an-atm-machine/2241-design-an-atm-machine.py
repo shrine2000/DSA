@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Banknote:
     def __init__(self, denomination: int, count: int = 0):
         self._denomination = denomination
@@ -30,7 +31,7 @@ class ATM:
             Banknote(50),
             Banknote(100),
             Banknote(200),
-            Banknote(500)
+            Banknote(500),
         ]
 
     def deposit(self, banknotes_count: List[int]) -> None:
@@ -42,8 +43,12 @@ class ATM:
         remaining_amount = amount
 
         for banknote in reversed(self._banknotes):
-            num_banknotes_to_withdraw = min(banknote.count, remaining_amount // banknote.denomination)
-            withdrawn_banknotes[self._denomination_index(banknote.denomination)] = num_banknotes_to_withdraw
+            num_banknotes_to_withdraw = min(
+                banknote.count, remaining_amount // banknote.denomination
+            )
+            withdrawn_banknotes[self._denomination_index(banknote.denomination)] = (
+                num_banknotes_to_withdraw
+            )
             remaining_amount -= num_banknotes_to_withdraw * banknote.denomination
 
         if remaining_amount == 0:
@@ -56,5 +61,3 @@ class ATM:
     @staticmethod
     def _denomination_index(denomination: int) -> int:
         return [20, 50, 100, 200, 500].index(denomination)
-
- 

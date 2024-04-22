@@ -1,5 +1,6 @@
 # https://www.youtube.com/watch?v=lfJlCla-X8Y&ab_channel=AryanMittal
 
+
 class Solution:
     def dfs(self, node, parent, dist, graph, signalSpeed):
         count = 1 if dist % signalSpeed == 0 else 0
@@ -8,7 +9,9 @@ class Solution:
                 count += self.dfs(neighbor, node, dist + weight, graph, signalSpeed)
         return count
 
-    def countPairsOfConnectableServers(self, edges: List[List[int]], signalSpeed: int) -> List[int]:
+    def countPairsOfConnectableServers(
+        self, edges: List[List[int]], signalSpeed: int
+    ) -> List[int]:
         graph = defaultdict(list)
         for u, v, weight in edges:
             graph[u].append((v, weight))
@@ -24,7 +27,7 @@ class Solution:
                 valid_nodes = self.dfs(neighbor, node, weight, graph, signalSpeed)
                 connectable_pairs += total_servers * valid_nodes
                 total_servers += valid_nodes
-            
+
             result.append(connectable_pairs)
 
         return result

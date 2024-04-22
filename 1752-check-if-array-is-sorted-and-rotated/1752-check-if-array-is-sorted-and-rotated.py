@@ -1,5 +1,4 @@
 class Solution:
-
     """
     This approach uses binary search to find the drop point, then checks if there is a decreasing sequence in the rotated array.
 
