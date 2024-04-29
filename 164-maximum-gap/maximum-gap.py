@@ -6,6 +6,6 @@ class Solution:
         nums.sort()
         diff = 0
         for i in range(n - 1):
-            diff = max(diff, nums[i+1] - nums[i])
-            
+            diff = max(diff, nums[i + 1] - nums[i])
+
         return diff

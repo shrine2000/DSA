@@ -7,7 +7,7 @@ class Node:
         self.data = val
         self.left = None
         self.right = None
-        """
+"""
 
 
 class Solution:

@@ -1,8 +1,11 @@
 from typing import List, Set
 from collections import defaultdict
 
+
 class Solution:
-    def maximumScoreAfterOperations(self, edges: List[List[int]], values: List[int]) -> int:
+    def maximumScoreAfterOperations(
+        self, edges: List[List[int]], values: List[int]
+    ) -> int:
         def dfs(node, parent):
             leftout, taken = 0, 0
             for child in g[node]:
@@ -15,8 +18,8 @@ class Solution:
             return taken, leftout
 
         g = defaultdict(list)
-        for a,b in edges:
+        for a, b in edges:
             g[a].append(b)
             g[b].append(a)
-        
+
         return dfs(0, -1)[0]

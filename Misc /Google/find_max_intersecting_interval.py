@@ -2,14 +2,14 @@
 
 # question - https://leetcode.com/discuss/interview-question/3515163/Google-interview-question
 
-Given array of intervals. find the maximum intersecting interval pair. 
-For eg. given intervals [1, 100], [1000, 2000], [50, 200], [60, 80] the maximum intersecting interval pair is [60,80]. 
+Given array of intervals. find the maximum intersecting interval pair.
+For eg. given intervals [1, 100], [1000, 2000], [50, 200], [60, 80] the maximum intersecting interval pair is [60,80].
 
 Solution :
 
-Sorts the intervals based on their start and end points separately. 
+Sorts the intervals based on their start and end points separately.
 
-Checks for overlapping intervals by comparing the start of each interval with the previous interval's end. 
+Checks for overlapping intervals by comparing the start of each interval with the previous interval's end.
 
 The maximum intersecting interval pair is returned. Binary search is used to optimize the process.
 

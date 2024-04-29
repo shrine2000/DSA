@@ -10,15 +10,15 @@ class Solution:
             if root:
                 if root.left == None and root.right == None:
                     a.append(root.val)
-                    
+
                 else:
                     traverse(root.left, a)
                     traverse(root.right, a)
-                    
+
                 return a
+
         a, b = [], []
         x = traverse(root1, a)
         y = traverse(root2, b)
-        
+
         return x == y
-        

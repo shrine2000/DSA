@@ -1,8 +1,6 @@
 class MinStack:
-
     def __init__(self):
         self.list1 = []
-        
 
     def push(self, val: int) -> None:
         self.list1.append(val)

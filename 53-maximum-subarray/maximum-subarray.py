@@ -1,10 +1,11 @@
 from typing import List
 
+
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         def max_crossing_subarray(arr, low, mid, high):
-            left_sum = float('-inf')
-            right_sum = float('-inf')
+            left_sum = float("-inf")
+            right_sum = float("-inf")
             max_left_sum = 0
             max_right_sum = 0
 
@@ -21,7 +22,7 @@ class Solution:
             return left_sum + right_sum
 
         def max_subarray_iterative(arr):
-            max_sum = float('-inf')
+            max_sum = float("-inf")
             curr_sum = 0
 
             for num in arr:
@@ -48,5 +49,3 @@ class Solution:
 
         # Call the recursive implementation of Tamaki and Tokuyama's Algorithm
         return max_subarray_recursive(nums, 0, len(nums) - 1)
-
- 

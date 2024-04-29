@@ -1,10 +1,12 @@
 from collections import deque
 
+
 class TreeNode:
     def __init__(self, value):
         self.val = value
         self.left = None
         self.right = None
+
 
 class BinaryTree:
     def __init__(self):
@@ -114,11 +116,20 @@ class BinaryTree:
 
         return result
 
+
 # Example usage
 if __name__ == "__main__":
     # Create a tree and specify the nodes (value, left child, right child)
     tree = BinaryTree()
-    nodes = [(1, 2, 3), (2, 4, 5), (3, 6, 7), (4, None, None), (5, None, None), (6, None, None), (7, None, None)]
+    nodes = [
+        (1, 2, 3),
+        (2, 4, 5),
+        (3, 6, 7),
+        (4, None, None),
+        (5, None, None),
+        (6, None, None),
+        (7, None, None),
+    ]
     tree.build_tree(nodes)
 
     # Print various traversal results
