@@ -1,17 +1,14 @@
 class Solution:
-    def maximumPopulation(self, logs: List[List[int]]) -> int:
+    def maximumPopulation(self, l: List[List[int]]) -> int:
         y = [0] * 101
-        for b, d in logs:
+        for b, d in l:
             y[b - 1950] += 1
-            y[d - 1950] -= 1
-        
-        max_p = curr_p = 0
-        max_y = 0
-        
+            y[d - 1950] -= 1  
+        p , c = 0, 0
+        r = 0
         for i in range(101):
-            curr_p += y[i]
-            if curr_p > max_p:
-                max_p = curr_p
-                max_y = i
-        
-        return max_y + 1950
+            c += y[i]
+            if c > p:
+                p = c
+                r = i
+        return r + 1950
