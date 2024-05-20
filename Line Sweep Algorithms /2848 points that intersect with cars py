@@ -1,0 +1,19 @@
+from typing import List
+
+
+class Solution:
+    def numberOfPoints(self, nums: List[List[int]]) -> int:
+        arr = [0] * 101
+        for start, end in nums:
+            for i in range(start, end + 1):
+                arr[i] = 1
+        count = sum(arr)
+        return count
+
+
+if __name__ == "__main__":
+    nums1 = [[3, 6], [1, 5], [4, 7]]
+    nums2 = [[1, 3], [5, 8]]
+    solution = Solution()
+    print(solution.numberOfPoints(nums1))  # Output: 7
+    print(solution.numberOfPoints(nums2))  # Output: 7

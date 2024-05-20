@@ -1,0 +1,36 @@
+from typing import List
+
+
+class Solution:
+    def maximumPopulation(self, logs: List[List[int]]) -> int:
+        # Initialize an array to track population changes from 1950 to 2050
+        population_changes = [0] * 101
+
+        # Record the population changes for each birth and death
+        for log in logs:
+            birth, death = log
+            population_changes[birth - 1950] += 1
+            population_changes[death - 1950] -= 1
+
+        # Initialize variables to track the maximum population and corresponding year
+        max_population = 0
+        current_population = 0
+        max_year = 1950
+
+        # Iterate over the years to calculate cumulative population and find the max
+        for year in range(101):
+            current_population += population_changes[year]
+            if current_population > max_population:
+                max_population = current_population
+                max_year = 1950 + year
+
+        return max_year
+
+
+if __name__ == "__main__":
+    # Example usage:
+    logs = [[1950, 1961], [1960, 1971], [1970, 1981]]
+    sol = Solution()
+    print(
+        sol.maximumPopulation(logs)
+    )  # Output should be the year with the maximum population
