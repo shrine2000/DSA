@@ -1,12 +1,11 @@
 class MyQueue:
-
     def __init__(self):
         self.stack_push = []
         self.stack_pop = []
 
     def push(self, x: int) -> None:
         self.stack_push.append(x)
-        
+
     def pop(self) -> int:
         self.peek()
         return self.stack_pop.pop()

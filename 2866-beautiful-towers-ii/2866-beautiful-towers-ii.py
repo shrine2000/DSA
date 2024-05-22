@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def maximumSumOfHeights(self, heights: List[int]) -> int:
         n = len(heights)
@@ -7,7 +8,10 @@ class Solution:
         right_sum = [0] * n
         left_sum = self.calculate_heights_sum(heights)
         right_sum = self.calculate_heights_sum(heights[::-1])[::-1]
-        max_sum = max(left + right - height for left, right, height in zip(left_sum, right_sum, heights))
+        max_sum = max(
+            left + right - height
+            for left, right, height in zip(left_sum, right_sum, heights)
+        )
         return max_sum
 
     def calculate_heights_sum(self, heights: List[int]) -> List[int]:
@@ -20,4 +24,3 @@ class Solution:
             res[i] = res[stack[-1]] + (i - stack[-1]) * heights[i]
             stack.append(i)
         return res
- 

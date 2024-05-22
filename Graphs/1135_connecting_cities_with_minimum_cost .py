@@ -14,7 +14,6 @@ class Solution:
     """
 
     def minimum_cost(self, n: int, connections: List[List[int]]) -> int:
-
         graph = {i: [] for i in range(1, n + 1)}
         for city1, city2, cost in connections:
             graph[city1].append((city2, cost))
