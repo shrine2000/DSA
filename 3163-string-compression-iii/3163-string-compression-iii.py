@@ -6,9 +6,7 @@ class Solution:
             count = 0
             while count < len(word) and count < 9 and word[count] == c:
                 count += 1
-            comp += str(count) + c            
+            comp += str(count) + c
             word = word[count:]
-        
-        return comp
 
- 
+        return comp
