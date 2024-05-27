@@ -7,5 +7,5 @@ class Solution:
             if point[0] > prev:
                 ans += 1
                 prev = point[1]
-                
+
         return ans
