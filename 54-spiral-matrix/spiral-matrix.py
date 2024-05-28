@@ -1,5 +1,6 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        
         """
         00 -> 01 -> 02 -> 12 -> 22 -> 21 -> 20 -> 10 -> 11
         
@@ -9,15 +10,13 @@ class Solution:
         
         9  10 11 12
         
-        
-        
         """
         
         res = []
         top, bottom = 0, len(matrix) - 1
         left, right = 0, len(matrix[0]) - 1
         while top <= bottom and left <= right:
-            # Traverse from left to right along the top row
+
             for i in range(left, right + 1):
                 res.append(matrix[top][i])
             top += 1
