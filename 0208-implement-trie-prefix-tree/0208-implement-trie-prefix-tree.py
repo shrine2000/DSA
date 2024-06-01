@@ -3,6 +3,7 @@ class TrieNode:
         self.children = {}
         self.is_end_of_word = False
 
+
 class Trie:
     def __init__(self):
         self.root = TrieNode()
@@ -30,6 +31,7 @@ class Trie:
                 return False
             node = node.children[char]
         return True
+
 
 # Your Trie object will be instantiated and called as such:
 # obj = Trie()
