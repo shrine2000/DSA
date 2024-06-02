@@ -7,17 +7,18 @@
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         order = []
+
         def in_order(node):
             if not node:
-                return 
+                return
             in_order(node.left)
             order.append(node.val)
             in_order(node.right)
+
         in_order(root)
-        
-        for i in range(len(order)-1):
-            if order[i] >= order[i+1]:
+
+        for i in range(len(order) - 1):
+            if order[i] >= order[i + 1]:
                 return False
-            
+
         return True
-            

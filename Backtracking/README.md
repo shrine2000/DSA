@@ -4,3 +4,4 @@
 2. [Introduction to Backtracking - Brute Force Approach](https://www.youtube.com/watch?v=DKCbsiDBN6c)
 3. [Backtracking - Neetcode](https://www.youtube.com/playlist?list=PLot-Xpze53lf5C3HSjCnyFghlW0G1HHXo)
 4. [Backtracking - Aditya Verma](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdbOTog8Jxk9XOjzUs3egMP)
+5. [Backtracking PDF](https://jeffe.cs.illinois.edu/teaching/algorithms/book/02-backtracking.pdf)
