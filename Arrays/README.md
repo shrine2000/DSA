@@ -12,5 +12,7 @@ Prefix sums are the sums of the first K elements in an array. You can use them t
 5. Product - https://leetcode.com/problems/product-of-array-except-self/
 6. CF article - https://codeforces.com/blog/entry/86420
 
-https://leetcode.com/discuss/study-guide/2719912/Prefix-sum-study-summary
-https://leetcode.com/discuss/study-guide/4023666/prefix-sum-questions-to-practice
+- https://leetcode.com/discuss/study-guide/2719912/Prefix-sum-study-summary
+- https://leetcode.com/discuss/study-guide/4023666/prefix-sum-questions-to-practice
+
+- [lexicographical permutation algorithm](https://www.nayuki.io/page/next-lexicographical-permutation-algorithm)
