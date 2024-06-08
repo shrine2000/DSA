@@ -1,7 +1,7 @@
 from typing import List
 
 
-# https://leetcode.com/problems/product-of-array-except-self/discuss/3186745/Best-C%2B%2B-3-Solution-oror-DP-oror-Space-optimization-oror-Brute-Force-greater-Optimize-oror-One-Stop-Solution.
+# https://www.youtube.com/watch?v=ku4oITayEmk
 
 
 class Solution:
