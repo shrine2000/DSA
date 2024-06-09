@@ -24,6 +24,8 @@
 
 [Line Sweep Algorithms](https://leetcode.com/discuss/study-guide/2166045/line-sweep-algorithms)
 
+[Bit Manipulation](https://github.com/shrine2000/DSA/tree/main/Bit%20Manipulation)
+
 [Misc](https://github.com/shrine2000/DSA/tree/main/Misc%20)
 
 ## Machine Coding
