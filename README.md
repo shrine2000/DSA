@@ -22,7 +22,7 @@
 
 [Trie](https://github.com/shrine2000/DSA/tree/main/Trie)
 
-[Line Sweep Algorithms](https://leetcode.com/discuss/study-guide/2166045/line-sweep-algorithms)
+[Line Sweep Algorithms](https://github.com/shrine2000/DSA/tree/main/Line%20Sweep%20Algorithms%20)
 
 [Bit Manipulation](https://github.com/shrine2000/DSA/tree/main/Bit%20Manipulation)
 
