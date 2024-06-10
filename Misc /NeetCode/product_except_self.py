@@ -1,10 +1,16 @@
 from typing import List
 
 
-# https://leetcode.com/problems/product-of-array-except-self/discuss/3186745/Best-C%2B%2B-3-Solution-oror-DP-oror-Space-optimization-oror-Brute-Force-greater-Optimize-oror-One-Stop-Solution.
+# https://www.youtube.com/watch?v=ku4oITayEmk
 
 
 class Solution:
+    # Approach 1: Brute Force
+    # Approach 2: This approach utilizes extra space to store the products of elements to the left and right of each element in the array.
+    #             It first calculates the product of elements to the left of each element and then calculates the product of elements to the right of each element.
+    #             Finally, it multiplies these two products to get the result.
+    #               - Time Complexity (T.C): O(n) - It requires two passes through the array.
+    #               - Space Complexity (S.C): O(n) - It uses two additional arrays of size n to store left and right products.
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         n = len(nums)
         left_product = [1] * n

@@ -5,7 +5,6 @@ class Solution:
     def isPossible(self, stalls, cows, distance):
         count = 1
         last_position = stalls[0]
-
         for i in range(1, len(stalls)):
             if stalls[i] - last_position >= distance:
                 count += 1
