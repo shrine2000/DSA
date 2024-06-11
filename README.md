@@ -26,6 +26,8 @@
 
 [Bit Manipulation](https://github.com/shrine2000/DSA/tree/main/Bit%20Manipulation)
 
+[Fenwick Tree](https://github.com/shrine2000/DSA/tree/main/Fenwick%20Trees)
+
 [Misc](https://github.com/shrine2000/DSA/tree/main/Misc%20)
 
 ## Machine Coding
