@@ -10,12 +10,8 @@ class Solution:
         while current:
             nodes.append(current)
             current = current.next
-        
+
         n = len(nodes)
         mid = n // 2
-        
-        return nodes[mid]
 
-            
-            
-        
+        return nodes[mid]
