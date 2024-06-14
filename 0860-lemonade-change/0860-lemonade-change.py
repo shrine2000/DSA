@@ -1,9 +1,6 @@
 class Solution:
-    def lemonadeChange(self, bills: List[int]) -> bool:
-        [5,5,10,10,20]
-        
+    def lemonadeChange(self, bills: List[int]) -> bool:        
         five, ten, twenty = 0, 0, 0
-        
         for bill in bills:
             if bill == 5:
                 five += 1
@@ -21,6 +18,5 @@ class Solution:
                     five -= 3
                 else:
                     return False
-        
         return True
                 
