@@ -1,6 +1,6 @@
 class Solution:
     def lemonadeChange(self, bills: List[int]) -> bool:        
-        five, ten, twenty = 0, 0, 0
+        five, ten = 0, 0
         for bill in bills:
             if bill == 5:
                 five += 1
