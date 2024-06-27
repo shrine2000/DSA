@@ -1,12 +1,18 @@
 from collections import deque
 
+
 class Node:
-    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+    def __init__(
+        self,
+        val: int = 0,
+        left: "Node" = None,
+        right: "Node" = None,
+        next: "Node" = None,
+    ):
         self.val = val
         self.left = left
         self.right = right
         self.next = next
-
 
 
 class Solution:
@@ -27,6 +33,7 @@ class Solution:
                     queue.append(node.right)
         return root
 
+
 if __name__ == "__main__":
     # Example usage:
     # Construct the binary tree
@@ -46,7 +53,6 @@ if __name__ == "__main__":
     solution = Solution()
     solution.connect(root)
 
-
     # The tree should now be connected as:
     #        1 -> None
     #       / \
@@ -63,6 +69,5 @@ if __name__ == "__main__":
                 curr = curr.next
             print("None")
             node = node.left
-
 
     print_connections(root)
