@@ -14,38 +14,39 @@ class Node:
         self.right = right
         self.next = next
 
+    # https://www.youtube.com/watch?v=FrD3_PXwhj0
 
-# https://www.youtube.com/watch?v=FrD3_PXwhj0
+
 class Solution:
-    class Solution:
-        def connect(self, root: "Optional[Node]") -> "Optional[Node]":
-            if not root:
-                return root
-            current = root
-            while current.left:
-                next_level = current.left
-                while current:
-                    current.left.next = current.right
-                    if current.next:
-                        current.right.next = current.next.left
-                    current = current.next
-                current = next_level
+    def connect(self, root: "Optional[Node]") -> "Optional[Node]":
+        if not root:
             return root
+        current = root
+        while current.left:
+            next_level = current.left
+            while current:
+                current.left.next = current.right
+                if current.next:
+                    current.right.next = current.next.left
+                current = current.next
+            current = next_level
+        return root
 
 
 if __name__ == "__main__":
     # Example usage:
     # Construct the binary tree
-    #        1
-    #       / \
-    #      2   3
-    #     / \   \
-    #    4   5   7
+    #         1
+    #       /   \
+    #      2     3
+    #     / \   /  \
+    #    4   5  6   7
 
     node7 = Node(7)
+    node6 = Node(6)
     node5 = Node(5)
     node4 = Node(4)
-    node3 = Node(3, None, node7)
+    node3 = Node(3, node6, node7)
     node2 = Node(2, node4, node5)
     root = Node(1, node2, node3)
 
