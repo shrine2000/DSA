@@ -46,9 +46,9 @@ class ATM:
             num_banknotes_to_withdraw = min(
                 banknote.count, remaining_amount // banknote.denomination
             )
-            withdrawn_banknotes[self._denomination_index(banknote.denomination)] = (
-                num_banknotes_to_withdraw
-            )
+            withdrawn_banknotes[
+                self._denomination_index(banknote.denomination)
+            ] = num_banknotes_to_withdraw
             remaining_amount -= num_banknotes_to_withdraw * banknote.denomination
 
         if remaining_amount == 0:

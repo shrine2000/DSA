@@ -14,4 +14,5 @@ class Solution:
             node.left = builder(left, mid - 1)
             node.right = builder(mid + 1, right)
             return node
+
         return builder(0, len(nums) - 1)
