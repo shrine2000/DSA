@@ -15,6 +15,7 @@ class Node:
         self.next = next
 
 
+# https://www.youtube.com/watch?v=FrD3_PXwhj0
 class Solution:
     def connect(self, root: "Optional[Node]") -> "Optional[Node]":
         if not root:
