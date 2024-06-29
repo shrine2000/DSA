@@ -4,12 +4,13 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         check = defaultdict(int)
-        
+
         curr = head
-        
+
         while curr:
             if check[curr] >= 1:
                 return True

@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def bfs_matrix(matrix):
     if not matrix or not matrix[0]:
         return
@@ -25,11 +26,7 @@ def bfs_matrix(matrix):
                 visited.add((nx, ny))
 
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 bfs_matrix(matrix)
 
 
@@ -54,11 +51,8 @@ def dfs_matrix(matrix):
 
     dfs(0, 0)  # Start from the top-left corner (0, 0)
 
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
+
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 dfs_matrix(matrix)
 
 

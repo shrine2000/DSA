@@ -1,4 +1,3 @@
-
 # https://leetcode.com/problems/jump-game/discuss/2375320/INTERVIEW-SCENARIO(recursion-memoization-dp-greedy)
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
@@ -7,5 +6,4 @@ class Solution:
             if i > mr:
                 return False
             mr = max(mr, i + nums[i])
-
         return mr >= len(nums) - 1

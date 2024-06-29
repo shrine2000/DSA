@@ -8,7 +8,9 @@ class Solution:
             mp[m[1] + 1] -= 1
 
         sorted_mp_keys = sorted(mp.keys())
-        ans += sorted_mp_keys[0] - 1  # add to the answer, all the days those are available from day 1 to first meeting day
+        ans += (
+            sorted_mp_keys[0] - 1
+        )  # add to the answer, all the days those are available from day 1 to first meeting day
 
         prev_val = mp[sorted_mp_keys[0]]
         for i in range(1, len(sorted_mp_keys)):
