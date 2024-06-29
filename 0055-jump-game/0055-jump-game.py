@@ -1,5 +1,7 @@
 # https://leetcode.com/problems/jump-game/discuss/2375320/INTERVIEW-SCENARIO(recursion-memoization-dp-greedy)
 class Solution:
+    # greedy - https://www.youtube.com/watch?v=muDPTDrpS28&t=658s
+
     def canJump(self, nums: List[int]) -> bool:
         mr = 0
         for i in range(len(nums)):
