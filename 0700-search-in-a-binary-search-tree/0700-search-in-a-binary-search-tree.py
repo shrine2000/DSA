@@ -12,7 +12,7 @@ class TreeNode:
 class Solution:
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         # Base case: root is None or root's value equals the search value
-        if root is None or root.val == val:
+        if root     is None or root.val == val:
             return root
 
         # If the value to search for is less than root's value, search the left subtree
