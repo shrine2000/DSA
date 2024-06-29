@@ -4,6 +4,8 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+# https://www.youtube.com/watch?v=4fiDs7CCxkc&t=134s
 class Solution:
     def maxSumBST(self, root: Optional[TreeNode]) -> int:
         self.max_val = 0
