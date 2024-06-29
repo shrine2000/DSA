@@ -55,10 +55,8 @@ if __name__ == "__main__":
 
     # The tree should now be connected as:
     #        1 -> None
-    #       / \
-    #      2 -> 3 -> None
-    #     / \    \
-    #    4-> 5 -> 7 -> None
+    #        2 -> 3 -> None
+    #        4 -> 5 -> 6 -> 7 -> None
 
     # Print connections
     def print_connections(node):
