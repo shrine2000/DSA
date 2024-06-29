@@ -6,27 +6,12 @@
 #         self.right = right
 class Solution:
     def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
-        if not root:
-            return root
-        
-        self.arr = []
-        
-        def inorder(node):
+        seen = set()
+        def dfs(node):
             if not node:
-                return
-            inorder(node.left)
-            self.arr.append(node.val)
-            inorder(node.right)
-        inorder(root)
-        
-        n = len(self.arr)
-        for i in range(n):
-            for j in range(i):
-                if self.arr[i] + self.arr[j] == k:
-                    return True
-        return False
-            
-            
-            
-        
-            
+                return False
+            if k - node.val in seen:
+                return True
+            seen.add(node.val)
+            return dfs(node.left) or dfs(node.right)
+        return dfs(root)
