@@ -13,7 +13,7 @@ class Solution:
             while current.left is not None:
                 current = current.left
             return current
-        
+
         if not root:
             return None
         if key < root.val:
@@ -29,10 +29,5 @@ class Solution:
             temp = find_min(root.right)
             root.val = temp.val
             root.right = self.deleteNode(root.right, temp.val)
-                    
-        
-        
-        
+
         return root
-            
-            

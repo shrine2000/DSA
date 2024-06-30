@@ -5,7 +5,6 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-
     # https://algo.monster/liteproblems/450
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
         def find_min(node):
@@ -15,7 +14,7 @@ class Solution:
             while current.left is not None:
                 current = current.left
             return current
-        
+
         if not root:
             return None
         if key < root.val:
@@ -31,10 +30,5 @@ class Solution:
             temp = find_min(root.right)
             root.val = temp.val
             root.right = self.deleteNode(root.right, temp.val)
-                    
-        
-        
-        
+
         return root
-            
-            
