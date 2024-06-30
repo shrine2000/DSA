@@ -5,8 +5,6 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-
-    # https://algo.monster/liteproblems/450
     def deleteNode(self, root: Optional[TreeNode], key: int) -> Optional[TreeNode]:
         def find_min(node):
             if not node:
