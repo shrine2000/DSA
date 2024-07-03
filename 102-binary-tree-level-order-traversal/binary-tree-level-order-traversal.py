@@ -21,10 +21,5 @@ class Solution:
                 if curr.right:
                     queue.append(curr.right)
             res.append(current_level)
-            
+
         return res
-                
-            
-            
-        
-        

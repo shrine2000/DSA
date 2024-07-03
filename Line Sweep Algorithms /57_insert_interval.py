@@ -24,6 +24,9 @@ class Solution:
 
         return merged_intervals
 
+    # Time Complexity: O((N+1) log (N+1)) due to the sorting step
+    # Space Complexity: O(N) for storing the merged intervals
+
     def optimized_insert(
         self, intervals: List[List[int]], newInterval: List[int]
     ) -> List[List[int]]:
@@ -54,8 +57,8 @@ class Solution:
         return merged_intervals
 
 
-# Time Complexity: O((N+1) log (N+1)) due to the sorting step
-# Space Complexity: O(N) for storing the merged intervals
+# Time Complexity: O(N) since we only iterate through the list of intervals once
+# Space Complexity: O(N) for storing the result
 
 if __name__ == "__main__":
     sol = Solution()
