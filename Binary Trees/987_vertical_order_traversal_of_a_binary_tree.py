@@ -54,9 +54,7 @@ class Solution:
 
         column_table = defaultdict(list)
         min_column = max_column = 0
-
         queue = deque([(root, 0, 0)])
-
         while queue:
             node, row, column = queue.popleft()
             if node:
@@ -69,7 +67,6 @@ class Solution:
         result = []
         for column in range(min_column, max_column + 1):
             result.append([val for row, val in sorted(column_table[column])])
-
         return result
 
 
