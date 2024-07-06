@@ -1,3 +1,4 @@
+from collections import defaultdict, deque
 from typing import List
 
 
@@ -47,7 +48,7 @@ class Solution:
         return result
 
     @staticmethod
-    def verticalTraversal(root: Node) -> List[List[int]]:
+    def verticalTraversalBfs(root: Node) -> List[List[int]]:
         if not root:
             return []
 
@@ -84,3 +85,6 @@ if __name__ == "__main__":
     root.right.left = Node(9)
 
     print(Solution.verticalTraversalDfs(root))
+
+    print(Solution.verticalTraversalBfs(root))
+
