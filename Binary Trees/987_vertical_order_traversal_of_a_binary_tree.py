@@ -84,4 +84,3 @@ if __name__ == "__main__":
     print(Solution.verticalTraversalDfs(root))
 
     print(Solution.verticalTraversalBfs(root))
-
