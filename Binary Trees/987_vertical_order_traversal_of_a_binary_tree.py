@@ -1,3 +1,4 @@
+from collections import defaultdict, deque
 from typing import List
 
 
@@ -47,15 +48,13 @@ class Solution:
         return result
 
     @staticmethod
-    def verticalTraversal(root: Node) -> List[List[int]]:
+    def verticalTraversalBfs(root: Node) -> List[List[int]]:
         if not root:
             return []
 
         column_table = defaultdict(list)
         min_column = max_column = 0
-
         queue = deque([(root, 0, 0)])
-
         while queue:
             node, row, column = queue.popleft()
             if node:
@@ -68,7 +67,6 @@ class Solution:
         result = []
         for column in range(min_column, max_column + 1):
             result.append([val for row, val in sorted(column_table[column])])
-
         return result
 
 
@@ -84,3 +82,5 @@ if __name__ == "__main__":
     root.right.left = Node(9)
 
     print(Solution.verticalTraversalDfs(root))
+
+    print(Solution.verticalTraversalBfs(root))
