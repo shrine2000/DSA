@@ -8,18 +8,13 @@ class Solution:
             if arr[i] > arr[i - 1] and arr[i] > arr[i + 1]:
                 left = i
                 right = i
-                
+
                 while left > 0 and arr[left - 1] < arr[left]:
                     left -= 1
-                    
+
                 while right < n - 1 and arr[right + 1] < arr[right]:
                     right += 1
-                
+
                 ans = max(ans, right - left + 1)
-            
+
         return ans
-                    
-            
-                
-            
-            

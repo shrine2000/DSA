@@ -8,10 +8,9 @@ class Solution:
             else:
                 final_str += temp[::-1]
                 final_str += " "
-                temp =""
-                
+                temp = ""
+
         if temp:
             final_str += temp[::-1]
-            
+
         return final_str
-                
