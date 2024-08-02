@@ -25,4 +25,3 @@ class Solution:
                     max_width = max(max_width, idx - first_idx + 1)
 
         return max_width
-                
