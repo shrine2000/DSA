@@ -8,9 +8,9 @@ class Solution:
     def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return []
-        
+
         column_table = defaultdict(list)
-        min_col = max_col = 0        
+        min_col = max_col = 0
         queue = deque([(root, 0, 0)])
         while queue:
             node, row, column = queue.popleft()
@@ -24,4 +24,3 @@ class Solution:
         for col in range(min_col, max_col + 1):
             result.append([v for r, v in sorted(column_table[col])])
         return result
-                

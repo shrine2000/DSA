@@ -25,4 +25,3 @@ class Solution:
         for column in range(min_column, max_column + 1):
             result.append([val for row, val in sorted(column_table[column])])
         return result
-                

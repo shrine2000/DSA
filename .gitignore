@@ -13,3 +13,4 @@ Thumbs.db
 /.history
 /.ruff_cache/
 /.mypy_cache/
+Stack/__pycache__/

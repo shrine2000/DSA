@@ -24,6 +24,6 @@ class Solution:
             if is_left_right:
                 result.append(current_level)
             else:
-                result.append(current_level[::-1])  
+                result.append(current_level[::-1])
             is_left_right = not is_left_right
         return result
