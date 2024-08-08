@@ -8,4 +8,3 @@ class Solution:
             else:
                 stack.append(s[i])
         return "".join(stack)
-        

@@ -25,7 +25,11 @@ class Solution:
             x, y = queue.popleft()
             for dx, dy in directions:
                 nx, ny = x + dx, y + dy
-                if is_valid(nx, ny) and (nx, ny) not in visited and matrix[nx][ny] == word[idx]:
+                if (
+                    is_valid(nx, ny)
+                    and (nx, ny) not in visited
+                    and matrix[nx][ny] == word[idx]
+                ):
                     queue.append((nx, ny))
                     visited.add((nx, ny))
                     idx += 1
