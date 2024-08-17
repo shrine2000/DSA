@@ -23,7 +23,6 @@ class Solution:
 # Driver Code Starts
 # Initial Template for Python 3
 
-import math
 
 
 def main():
