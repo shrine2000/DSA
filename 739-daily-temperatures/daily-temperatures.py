@@ -10,5 +10,3 @@ class Solution:
                 answer[i] = stack[-1] - i
             stack.append(i)
         return answer
-        
-        

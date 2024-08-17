@@ -11,4 +11,3 @@ class Solution:
             elif command == "UP":
                 i -= 1
         return (i * n) + j
-                

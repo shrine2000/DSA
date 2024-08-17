@@ -1,10 +1,9 @@
 class MyStack:
-
     def __init__(self):
         self.q = deque()
 
     def push(self, x: int) -> None:
-        self.q.append(x)        
+        self.q.append(x)
 
     def pop(self) -> int:
         if self.q:
@@ -18,7 +17,6 @@ class MyStack:
 
     def empty(self) -> bool:
         return len(self.q) == 0
-        
 
 
 # Your MyStack object will be instantiated and called as such:
