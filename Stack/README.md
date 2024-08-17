@@ -4,7 +4,19 @@ https://leetcode.com/discuss/study-guide/2347639/a-comprehensive-guide-and-templ
 
 [Stack Playlist YT](https://www.youtube.com/watch?v=aiB9r8oeVp4&list=PL-Jc9J83PIiE1_SifBEWRsD-fzxrvkja9)
 
-```
+### Table
+
+| **Function**             | **Stack Type**                   | **Comparison in `while` loop** | **Result Assignment** | **Loop Direction** |
+|--------------------------|----------------------------------|---------------------------------|-----------------------|--------------------|
+| `next_greater_to_right`  | Decreasing (equal allowed)       | `stack[-1] <= arr[i]`           | Inside `while` loop   | Right to Left      |
+| `next_greater_to_left`   | Decreasing (strict)              | `stack[-1] <= arr[i]`           | Outside `while` loop  | Left to Right      |
+| `next_smaller_to_right`  | Increasing (equal allowed)       | `stack[-1] >= arr[i]`           | Inside `while` loop   | Right to Left      |
+| `next_smaller_to_left`   | Increasing (strict)              | `stack[-1] >= arr[i]`           | Outside `while` loop  | Left to Right      |
+
+
+
+### Selected Questions
+
 739. Daily Temperatures (Medium)
 
 503. Next Greater Element II (Medium)
@@ -36,4 +48,3 @@ https://leetcode.com/discuss/study-guide/2347639/a-comprehensive-guide-and-templ
 1856. Maximum Subarray Min-Product (Medium)
 
 1124. Longest Well-Performing Interval (Medium)
-```
