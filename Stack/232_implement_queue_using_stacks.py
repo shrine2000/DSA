@@ -1,3 +1,6 @@
+# https://takeuforward.org/data-structure/implement-queue-using-stack/
+
+
 class MyQueue:
     def __init__(self):
         self.input_stack = []
