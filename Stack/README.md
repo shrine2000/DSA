@@ -1,3 +1,5 @@
+### Blogs
+
 https://leetcode.com/discuss/study-guide/2347639/a-comprehensive-guide-and-template-for-monotonic-stack-based-problems
 
 [Monotonic Stack — Identify Pattern](https://itnext.io/monotonic-stack-identify-pattern-3da2d491a61e)
@@ -6,12 +8,12 @@ https://leetcode.com/discuss/study-guide/2347639/a-comprehensive-guide-and-templ
 
 ### Table
 
-| **Function**             | **Stack Type**                   | **Comparison in `while` loop** | **Result Assignment** | **Loop Direction** |
-|--------------------------|----------------------------------|---------------------------------|-----------------------|--------------------|
-| `next_greater_to_right`  | Decreasing (equal allowed)       | `stack[-1] <= arr[i]`           | Inside `while` loop   | Right to Left      |
-| `next_greater_to_left`   | Decreasing (strict)              | `stack[-1] <= arr[i]`           | Outside `while` loop  | Left to Right      |
-| `next_smaller_to_right`  | Increasing (equal allowed)       | `stack[-1] >= arr[i]`           | Inside `while` loop   | Right to Left      |
-| `next_smaller_to_left`   | Increasing (strict)              | `stack[-1] >= arr[i]`           | Outside `while` loop  | Left to Right      |
+| **Function**             | **Stack Type**                   | **Comparison in `while` loop** | **Loop Direction** |
+|--------------------------|----------------------------------|---------------------------------|--------------------|
+| `next_greater_to_right`  | Decreasing (equal allowed)       | `stack[-1] <= arr[i]`           | Right to Left      |
+| `next_greater_to_left`   | Decreasing (strict)              | `stack[-1] <= arr[i]`           | Left to Right      |
+| `next_smaller_to_right`  | Increasing (equal allowed)       | `stack[-1] >= arr[i]`           | Right to Left      |
+| `next_smaller_to_left`   | Increasing (strict)              | `stack[-1] >= arr[i]`           | Left to Right      |
 
 
 
