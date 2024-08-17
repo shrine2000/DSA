@@ -19,34 +19,34 @@ https://leetcode.com/discuss/study-guide/2347639/a-comprehensive-guide-and-templ
 
 ### Selected Questions
 
-739. Daily Temperatures (Medium)
+1. Daily Temperatures (Medium)
 
-503. Next Greater Element II (Medium)
+2. Next Greater Element II (Medium)
 
-1081. Smallest Subsequence of Distinct Characters (Medium)
+3. Smallest Subsequence of Distinct Characters (Medium)
 
-42. Trapping Rain Water (Hard)
+4. Trapping Rain Water (Hard)
 
-84. Largest Rectangle in Histogram (Hard)
+5. Largest Rectangle in Histogram (Hard)
 
-85. Maximal Rectangle (Hard)
+6. Maximal Rectangle (Hard)
 
-402. Remove K Digits (Medium)
+7. Remove K Digits (Medium)
 
-496. Next Greater Element I (Easy)
+8. Next Greater Element I (Easy)
 
-1019. Next Greater Node In Linked List (Medium)
+9. Next Greater Node In Linked List (Medium)
 
-1475. Final Prices With a Special Discount in a Shop (Easy)
+10. Final Prices With a Special Discount in a Shop (Easy)
 
-456. 132 Pattern (Medium)
+11. 132 Pattern (Medium)
 
-1504. Count Submatrices With All Ones (Medium)
+12. Count Submatrices With All Ones (Medium)
 
-1673. Find the Most Competitive Subsequence (Medium)
+13. Find the Most Competitive Subsequence (Medium)
 
-907. Sum of Subarray Minimums (Medium)
+14. Sum of Subarray Minimums (Medium)
 
-1856. Maximum Subarray Min-Product (Medium)
+15. Maximum Subarray Min-Product (Medium)
 
-1124. Longest Well-Performing Interval (Medium)
+16. Longest Well-Performing Interval (Medium)
