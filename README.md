@@ -24,6 +24,8 @@
 
 [Line Sweep Algorithms](https://github.com/shrine2000/DSA/tree/main/Line%20Sweep%20Algorithms%20)
 
+[Backtracking](https://github.com/shrine2000/DSA/tree/main/Backtracking)
+
 [Bit Manipulation](https://github.com/shrine2000/DSA/tree/main/Bit%20Manipulation)
 
 [Fenwick Tree](https://github.com/shrine2000/DSA/tree/main/Fenwick%20Trees)
