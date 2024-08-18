@@ -4,7 +4,7 @@ class Solution:
         res = [-1] * (n - k + 1)
 
         for i in range(n - k + 1):
-            subarray = nums[i:i + k]
+            subarray = nums[i : i + k]
             if self.is_consecutive_sorted(subarray):
                 res[i] = max(subarray)
         return res

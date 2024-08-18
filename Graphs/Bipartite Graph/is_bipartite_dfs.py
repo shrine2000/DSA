@@ -1,6 +1,3 @@
-
-
-
 def is_bipartite(adj):
     V = len(adj)
 
