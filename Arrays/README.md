@@ -14,5 +14,6 @@ Prefix sums are the sums of the first K elements in an array. You can use them t
 
 - https://leetcode.com/discuss/study-guide/2719912/Prefix-sum-study-summary
 - https://leetcode.com/discuss/study-guide/4023666/prefix-sum-questions-to-practice
+- https://www.youtube.com/playlist?list=PL9TOCZErLZcNp_S9t5D3J0qCwzs35-qZF
 
 - [lexicographical permutation algorithm](https://www.nayuki.io/page/next-lexicographical-permutation-algorithm)
