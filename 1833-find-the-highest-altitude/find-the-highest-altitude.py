@@ -9,4 +9,3 @@ class Solution:
             m += gain[i]
             max_altitude = max(max_altitude, m)
         return max_altitude
-        
