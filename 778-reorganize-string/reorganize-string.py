@@ -4,15 +4,6 @@ class Solution:
         heap = []
         for char, freq in char_freq.items():
             heapq.heappush(heap, (-freq, char))
-            
-        """
-        {
-        "v" : 3,
-        "l" : 1,
-        "o" : 1,
-        }
-        
-        """
         prev_char, prev_freq = "", 0
         result_str = []
         while heap:
@@ -25,7 +16,6 @@ class Solution:
             prev_char = char
             prev_freq = freq + 1
         res = "".join(result_str)
-        print(res)
         if len(res) == len(s):
             return res
         return ""
