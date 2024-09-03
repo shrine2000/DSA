@@ -28,6 +28,8 @@
 
 [Fenwick Tree](https://github.com/shrine2000/DSA/tree/main/Fenwick%20Trees)
 
+[Top K Problems](https://github.com/shrine2000/DSA/tree/main/Top%20K%20Problems)
+
 [Misc](https://github.com/shrine2000/DSA/tree/main/Misc%20)
 
 ## Machine Coding
