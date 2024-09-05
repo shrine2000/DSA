@@ -65,7 +65,7 @@
 
 * Find the City With the Smallest Number of Neighbors at a Threshold Distance: https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/
 * Network delay time: https://leetcode.com/problems/network-delay-time/
-* 
+
 ### Bellman Ford problems
 
 * Network delay time: https://leetcode.com/problems/network-delay-time/
@@ -103,3 +103,5 @@ https://github.com/MAZHARMIK/Interview_DS_Algo/tree/master/Graph
 [Graph (Beginners to Advanced) All Algorithms - Python](https://leetcode.com/discuss/interview-question/4283222/Graph-(Beginners-to-Advanced)-All-Algorithms-Python)
 
 [[Python] Graph Algorithms One Place for quick revision](https://leetcode.com/discuss/general-discussion/971272/Python-Graph-Algorithms-One-Place-for-quick-revision)
+
+[Introduction to Topological Sort](https://leetcode.com/discuss/general-discussion/1078072/introduction-to-topological-sort)
