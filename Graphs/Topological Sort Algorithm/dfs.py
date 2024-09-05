@@ -26,7 +26,6 @@ class Graph:
 
 
 if __name__ == "__main__":
-    graph = Graph(6)
     g = Graph(6)
     g.add_edge(5, 2)
     g.add_edge(5, 0)
