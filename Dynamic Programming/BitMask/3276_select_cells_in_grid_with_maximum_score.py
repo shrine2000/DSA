@@ -32,4 +32,4 @@ class Solution:
 if __name__ == "__main__":
     sol = Solution()
 
-    print(sol.maxScore([[1, 2, 3], [4, 3, 2], [1, 1, 1]])) # 8
+    print(sol.maxScore([[1, 2, 3], [4, 3, 2], [1, 1, 1]]))  # 8

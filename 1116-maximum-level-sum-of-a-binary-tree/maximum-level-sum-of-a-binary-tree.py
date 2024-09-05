@@ -8,11 +8,10 @@ class Solution:
     def maxLevelSum(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
-        
-        
+
         queue = deque([(root, 1)])
-        max_sum = float('-inf')
-        max_level= 0
+        max_sum = float("-inf")
+        max_level = 0
         while queue:
             level_sum = 0
             level_length = len(queue)
@@ -28,7 +27,3 @@ class Solution:
                 max_sum = level_sum
                 max_level = current_level
         return max_level
-    
-                
-            
-            

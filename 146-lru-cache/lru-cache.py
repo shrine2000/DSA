@@ -5,6 +5,7 @@ class Node:
         self.next: Node | None = None
         self.prev: Node | None = None
 
+
 class LRUCache:
     def __init__(self, capacity: int):
         self.capacity: int = capacity
@@ -51,7 +52,6 @@ class LRUCache:
         new_node = Node(key, value)
         self._add(new_node)
         self.cache[key] = new_node
-        
 
 
 # Your LRUCache object will be instantiated and called as such:
