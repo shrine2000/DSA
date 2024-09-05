@@ -48,7 +48,7 @@
 * Largest Component Size by Common Factor: https://leetcode.com/problems/largest-component-size-by-common-factor/
 * Most Stones Removed with Same Row or Column: https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/
 * Number of Connected Components in an Undirected Graph: https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
-* 
+
 ### Minimum Spanning Tree problems
 
 * Connecting Cities With Minimum Cost: https://leetcode.com/problems/connecting-cities-with-minimum-cost/
