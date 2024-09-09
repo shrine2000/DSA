@@ -3,3 +3,6 @@
 [LIS Video Explanation](https://www.youtube.com/watch?v=E6us4nmXTHs)
 
 https://cp-algorithms.com/sequences/longest_increasing_subsequence.html
+
+base condition -> each element is LIS of length 1.
+start i = 1 (we found LIS for 0) , j always starts at 0
