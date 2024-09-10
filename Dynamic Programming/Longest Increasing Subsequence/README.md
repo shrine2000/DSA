@@ -4,5 +4,10 @@
 
 https://cp-algorithms.com/sequences/longest_increasing_subsequence.html
 
-base condition -> each element is LIS of length 1.
-start i = 1 (we found LIS for 0) , j always starts at 0
+base condition -> 
+
+1. each element is LIS of length 1.
+2. start i = 1 (we found LIS for 0) & j always starts at 0
+
+
+[Solution in  O(n log n)  with dynamic programming and binary search](https://cp-algorithms.com/sequences/longest_increasing_subsequence.html#solution-in-on-log-n-with-dynamic-programming-and-binary-search)
