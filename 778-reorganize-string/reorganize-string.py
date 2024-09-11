@@ -9,10 +9,10 @@ class Solution:
         while heap:
             freq, char = heapq.heappop(heap)
             result_str.append(char)
-            
+
             if prev_freq < 0:
                 heapq.heappush(heap, (prev_freq, prev_char))
-                
+
             prev_char = char
             prev_freq = freq + 1
         res = "".join(result_str)
