@@ -48,7 +48,7 @@
 * Largest Component Size by Common Factor: https://leetcode.com/problems/largest-component-size-by-common-factor/
 * Most Stones Removed with Same Row or Column: https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/
 * Number of Connected Components in an Undirected Graph: https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
-* 
+
 ### Minimum Spanning Tree problems
 
 * Connecting Cities With Minimum Cost: https://leetcode.com/problems/connecting-cities-with-minimum-cost/
@@ -65,7 +65,7 @@
 
 * Find the City With the Smallest Number of Neighbors at a Threshold Distance: https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/
 * Network delay time: https://leetcode.com/problems/network-delay-time/
-* 
+
 ### Bellman Ford problems
 
 * Network delay time: https://leetcode.com/problems/network-delay-time/
@@ -103,3 +103,5 @@ https://github.com/MAZHARMIK/Interview_DS_Algo/tree/master/Graph
 [Graph (Beginners to Advanced) All Algorithms - Python](https://leetcode.com/discuss/interview-question/4283222/Graph-(Beginners-to-Advanced)-All-Algorithms-Python)
 
 [[Python] Graph Algorithms One Place for quick revision](https://leetcode.com/discuss/general-discussion/971272/Python-Graph-Algorithms-One-Place-for-quick-revision)
+
+[Introduction to Topological Sort](https://leetcode.com/discuss/general-discussion/1078072/introduction-to-topological-sort)

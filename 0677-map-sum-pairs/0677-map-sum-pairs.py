@@ -11,7 +11,7 @@ class MapSum:
     def insert(self, key: str, val: int) -> None:
         node = self.root
         for k in key:
-            if not k in node.children:
+            if k not in node.children:
                 node.children[k] = TrieNode()
             node = node.children[k]
         node.value = val

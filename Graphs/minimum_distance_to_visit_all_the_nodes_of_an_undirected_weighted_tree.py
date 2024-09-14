@@ -1,6 +1,3 @@
-from typing import List
-
-
 # https://www.geeksforgeeks.org/minimum-distance-to-visit-all-the-nodes-of-an-undirected-weighted-tree/
 
 

@@ -1,5 +1,5 @@
 from collections import deque
-from typing import List, Dict, Set, Optional
+from typing import List, Dict, Set
 
 
 class Graph:

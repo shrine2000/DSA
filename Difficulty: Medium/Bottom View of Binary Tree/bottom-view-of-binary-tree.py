@@ -33,7 +33,6 @@ import sys
 sys.setrecursionlimit(50000)
 # Contributed by Sudarshan Sharma
 from collections import deque
-from collections import defaultdict
 
 
 # Tree Node

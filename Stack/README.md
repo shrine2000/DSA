@@ -1,39 +1,52 @@
+### Blogs
+
 https://leetcode.com/discuss/study-guide/2347639/a-comprehensive-guide-and-template-for-monotonic-stack-based-problems
 
 [Monotonic Stack — Identify Pattern](https://itnext.io/monotonic-stack-identify-pattern-3da2d491a61e)
 
 [Stack Playlist YT](https://www.youtube.com/watch?v=aiB9r8oeVp4&list=PL-Jc9J83PIiE1_SifBEWRsD-fzxrvkja9)
 
-```
-739. Daily Temperatures (Medium)
+### Table
 
-503. Next Greater Element II (Medium)
+| **Function**             | **Stack Type**                   | **Comparison in `while` loop** | **Loop Direction** |
+|--------------------------|----------------------------------|---------------------------------|--------------------|
+| `next_greater_to_right`  | Decreasing (equal allowed)       | `stack[-1] <= arr[i]`           | Right to Left      |
+| `next_greater_to_left`   | Decreasing (strict)              | `stack[-1] <= arr[i]`           | Left to Right      |
+| `next_smaller_to_right`  | Increasing (equal allowed)       | `stack[-1] >= arr[i]`           | Right to Left      |
+| `next_smaller_to_left`   | Increasing (strict)              | `stack[-1] >= arr[i]`           | Left to Right      |
 
-1081. Smallest Subsequence of Distinct Characters (Medium)
 
-42. Trapping Rain Water (Hard)
 
-84. Largest Rectangle in Histogram (Hard)
+### Selected Questions
 
-85. Maximal Rectangle (Hard)
+1. Daily Temperatures (Medium)
 
-402. Remove K Digits (Medium)
+2. Next Greater Element II (Medium)
 
-496. Next Greater Element I (Easy)
+3. Smallest Subsequence of Distinct Characters (Medium)
 
-1019. Next Greater Node In Linked List (Medium)
+4. Trapping Rain Water (Hard)
 
-1475. Final Prices With a Special Discount in a Shop (Easy)
+5. Largest Rectangle in Histogram (Hard)
 
-456. 132 Pattern (Medium)
+6. Maximal Rectangle (Hard)
 
-1504. Count Submatrices With All Ones (Medium)
+7. Remove K Digits (Medium)
 
-1673. Find the Most Competitive Subsequence (Medium)
+8. Next Greater Element I (Easy)
 
-907. Sum of Subarray Minimums (Medium)
+9. Next Greater Node In Linked List (Medium)
 
-1856. Maximum Subarray Min-Product (Medium)
+10. Final Prices With a Special Discount in a Shop (Easy)
 
-1124. Longest Well-Performing Interval (Medium)
-```
+11. 132 Pattern (Medium)
+
+12. Count Submatrices With All Ones (Medium)
+
+13. Find the Most Competitive Subsequence (Medium)
+
+14. Sum of Subarray Minimums (Medium)
+
+15. Maximum Subarray Min-Product (Medium)
+
+16. Longest Well-Performing Interval (Medium)

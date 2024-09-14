@@ -1,5 +1,4 @@
 from typing import List
-from itertools import islice
 
 
 class Solution:
