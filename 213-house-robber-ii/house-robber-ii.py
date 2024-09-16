@@ -13,7 +13,7 @@ class Solution:
         for i in range(2, n):
             dp[i] = max(dp[i - 1], dp[i - 2] + nums[i])
         return dp[-1]
-    
+
     def rob(self, nums: List[int]) -> int:
         n = len(nums)
         if n == 1:
@@ -21,4 +21,3 @@ class Solution:
         max1 = self.helper(nums[1:])
         max2 = self.helper(nums[:-1])
         return max(max1, max2)
-        

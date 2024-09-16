@@ -1,10 +1,10 @@
 class Solution:
     def countSubstrings(self, s: str) -> int:
         n = len(s)
-        dp = [[0] *n for _ in range(n)]
+        dp = [[0] * n for _ in range(n)]
         count = 0
         for diff in range(n):
-            for i in range(n-diff):
+            for i in range(n - diff):
                 j = i + diff
                 if i == j:
                     dp[i][j] = 1
@@ -16,4 +16,3 @@ class Solution:
                 if dp[i][j] > 0:
                     count += 1
         return count
-                

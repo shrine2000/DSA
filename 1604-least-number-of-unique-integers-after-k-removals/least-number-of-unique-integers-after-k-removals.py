@@ -6,10 +6,10 @@ class Solution:
             heapq.heappush(min_heap, (freq, char))
             res = ""
         while k > 0 and min_heap:
-            freq, char  = heapq.heappop(min_heap)
+            freq, char = heapq.heappop(min_heap)
             if k >= freq:
                 del char_freq[char]
-                k-=freq
+                k -= freq
             else:
                 break
         return len(char_freq.items())

@@ -18,7 +18,6 @@ class Solution:
 
         @lru_cache(None)
         def helper(idx, current_sum):
-
             if current_sum == target_sum:
                 return True
 
