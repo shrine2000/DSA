@@ -1,4 +1,6 @@
 # https://leetcode.com/problems/partition-equal-subset-sum/
+# Subset Sum Problem Dynamic Programming - https://www.youtube.com/watch?v=s6FhG--P7z0
+# Partition subset sum - https://www.youtube.com/watch?v=obhWqDfzwQQ
 
 from typing import List
 from functools import lru_cache
