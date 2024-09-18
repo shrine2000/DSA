@@ -16,3 +16,4 @@ https://www.youtube.com/watch?v=i9OAOk0CUQE
 
 [DSA + CP Problem Solving Booster Series](https://www.youtube.com/playlist?list=PLjeQ9Mb66hM1VsmVaQ9Xf3d98kNHun66f)
 
+[Classic Dynamic Programming Problems](https://cp-algorithms.com/dynamic_programming/intro-to-dp.html#classic-dynamic-programming-problems)
