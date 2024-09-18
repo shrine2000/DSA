@@ -9,10 +9,8 @@ class Solution:
             a, b = False, False
             if i < len(s1) and s1[i] == s3[k]:
                 a = dfs(i + 1, j, k + 1)
-            
+        
             if j < len(s2) and s2[j] == s3[k]:
                 b = dfs(i, j + 1, k + 1)
-            
             return a or b
-        
         return dfs(0, 0, 0)
