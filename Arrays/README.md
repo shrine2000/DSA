@@ -17,3 +17,4 @@ Prefix sums are the sums of the first K elements in an array. You can use them t
 - https://www.youtube.com/playlist?list=PL9TOCZErLZcNp_S9t5D3J0qCwzs35-qZF
 
 - [lexicographical permutation algorithm](https://www.nayuki.io/page/next-lexicographical-permutation-algorithm)
+- [Solved all two pointers problems in 100 days.](https://leetcode.com/discuss/study-guide/1688903/Solved-all-two-pointers-problems-in-100-days.)
