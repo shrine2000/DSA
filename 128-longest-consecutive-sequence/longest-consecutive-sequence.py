@@ -9,12 +9,10 @@ class Solution:
         for i in range(n - 1):
             if nums[i] == nums[i + 1]:
                 continue
-                
+
             if nums[i + 1] - nums[i] == 1:
                 l += 1
             else:
                 l = 1
             maxlen = max(maxlen, l)
         return maxlen
-    
- 

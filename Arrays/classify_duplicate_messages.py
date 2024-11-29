@@ -4,9 +4,7 @@ from typing import List
 
 
 def classify_messages_optimized(logs):
-    last_printed_time = (
-        {}
-    )  # Dictionary to store the last printed timestamp of each message
+    last_printed_time = {}  # Dictionary to store the last printed timestamp of each message
     printed_messages = []  # List to store the printed messages
 
     for log in logs:
@@ -18,9 +16,9 @@ def classify_messages_optimized(logs):
             or current_time - last_printed_time[current_message] > 10
         ):
             printed_messages.append(current_message)
-            last_printed_time[current_message] = (
-                current_time  # Update the last printed time
-            )
+            last_printed_time[
+                current_message
+            ] = current_time  # Update the last printed time
 
     return printed_messages
 

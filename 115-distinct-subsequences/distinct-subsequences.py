@@ -10,6 +10,5 @@ class Solution:
                 return helper(i + 1, j + 1) + helper(i + 1, j)
             else:
                 return helper(i + 1, j)
-        
+
         return helper(0, 0)
- 

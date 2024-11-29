@@ -9,5 +9,5 @@ class Solution:
             right = dfs(i, j + 1)
             down = dfs(i + 1, j)
             return right + down
+
         return dfs(0, 0)
-            

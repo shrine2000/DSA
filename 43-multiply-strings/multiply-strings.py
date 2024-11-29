@@ -13,14 +13,13 @@ class Solution:
                 "8": 8,
                 "9": 9,
             }
-            
+
             i = 1
             value = 0
             for num in nums[::-1]:
                 value += convert[num] * i
                 i *= 10
             return value
-                
+
         res = convert(num1) * convert(num2)
         return str(res)
-                

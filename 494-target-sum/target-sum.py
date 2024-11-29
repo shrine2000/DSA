@@ -4,10 +4,8 @@ class Solution:
         def helper(idx, remaining):
             if idx == len(nums):
                 return 1 if remaining == 0 else 0
-            take = helper(idx + 1,  remaining + nums[idx])
-            not_take = helper(idx + 1,  remaining - nums[idx])
+            take = helper(idx + 1, remaining + nums[idx])
+            not_take = helper(idx + 1, remaining - nums[idx])
             return take + not_take
+
         return helper(0, target)
-            
-            
-                

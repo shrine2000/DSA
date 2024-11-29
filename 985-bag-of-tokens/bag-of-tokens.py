@@ -13,8 +13,8 @@ class Solution:
             elif score > 0:
                 power += tokens[right]
                 score -= 1
-                right -=1
+                right -= 1
             else:
                 break
-                
+
         return max_score

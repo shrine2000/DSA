@@ -3,7 +3,7 @@ class Solution:
         people.sort()
         left, right = 0, len(people) - 1
         boat = 0
-                
+
         while left <= right:
             if people[left] + people[right] <= limit:
                 boat += 1

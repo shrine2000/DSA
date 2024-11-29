@@ -10,8 +10,8 @@ class Solution:
             if idx == len(coins):
                 return 0
 
-            take = helper(idx, remaining_amount - coins[idx]) 
-            not_take = helper(idx + 1, remaining_amount) 
+            take = helper(idx, remaining_amount - coins[idx])
+            not_take = helper(idx + 1, remaining_amount)
 
             return take + not_take
 

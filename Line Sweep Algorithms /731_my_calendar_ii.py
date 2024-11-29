@@ -2,7 +2,6 @@ from collections import defaultdict
 
 
 class MyCalendarTwo:
-
     def __init__(self):
         self.arr = defaultdict(int)
 
