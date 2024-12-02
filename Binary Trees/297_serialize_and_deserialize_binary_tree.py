@@ -1,5 +1,6 @@
 from collections import deque
 
+
 # Definition for a binary tree node.
 class TreeNode(object):
     def __init__(self, x):
@@ -49,4 +50,3 @@ class Codec:
         values = data.split(",")
         index = 0
         return build_tree()
-
