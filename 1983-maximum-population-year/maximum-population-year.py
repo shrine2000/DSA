@@ -1,9 +1,8 @@
 class Solution:
     def maximumPopulation(self, logs: List[List[int]]) -> int:
-        count = 0 
+        count = 0
         arr = defaultdict(int)
 
-        
         for log in logs:
             start = log[0]
             end = log[1]
@@ -21,5 +20,3 @@ class Solution:
                 max_pop = cur_pop
                 max_yr = yr
         return max_yr
-
-

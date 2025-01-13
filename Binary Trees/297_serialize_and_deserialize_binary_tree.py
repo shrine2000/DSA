@@ -10,7 +10,6 @@ class TreeNode(object):
 
 
 class Codec:
-
     def serialize(self, root):
         """Encodes a tree to a single string using preorder traversal."""
 

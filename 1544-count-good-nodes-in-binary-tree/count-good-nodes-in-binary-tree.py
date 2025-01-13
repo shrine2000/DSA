@@ -7,7 +7,7 @@
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         self.good = 0
-        
+
         def dfs(root, check):
             if root.val >= check:
                 self.good += 1
@@ -15,6 +15,6 @@ class Solution:
                 dfs(root.left, max(root.val, check))
             if root.right:
                 dfs(root.right, max(root.val, check))
-                
+
         dfs(root, root.val)
         return self.good

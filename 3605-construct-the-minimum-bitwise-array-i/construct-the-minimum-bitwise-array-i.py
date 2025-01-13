@@ -5,5 +5,5 @@ class Solution:
                 if ans | (ans + 1) == num:
                     return ans
             return -1
-        
+
         return [find_ans_for_prime(num) for num in nums]
