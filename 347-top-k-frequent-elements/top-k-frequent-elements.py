@@ -12,5 +12,4 @@ class Solution:
             heapq.heappush(pq, (count, num))
             if len(pq) > k:
                 heapq.heappop(pq)
-
         return [num for count, num in pq]
