@@ -1,29 +1,25 @@
 class Solution:
     def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
-        if not matrix:
+        if not matrix or not matrix[0]:
             return 0
 
+        global_max = 0
         m, n = len(matrix), len(matrix[0])
-        dp = [[0 for _ in range(n)] for _ in range(m)]
 
-        def dfs(i, j):
-            if dp[i][j]:
-                return dp[i][j]
+        @lru_cache(None)
+        def dfs(i, j, prev):
+            if i < 0 or i >= m or j < 0 or j >= n or matrix[i][j] <= prev:
+                return 0
+            current_val = matrix[i][j]
+            a = dfs(i + 1, j, current_val) + 1
+            b = dfs(i - 1, j, current_val) + 1
+            c = dfs(i, j + 1, current_val) + 1
+            d = dfs(i, j - 1, current_val) + 1
+            return max(a, b, c, d)
 
-            directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
-            max_length = 1
-
-            for dx, dy in directions:
-                x, y = i + dx, j + dy
-                if 0 <= x < m and 0 <= y < n and matrix[x][y] > matrix[i][j]:
-                    max_length = max(max_length, 1 + dfs(x, y))
-
-            dp[i][j] = max_length
-            return max_length
-
-        max_path = 0
         for i in range(m):
             for j in range(n):
-                max_path = max(max_path, dfs(i, j))
+                val = dfs(i, j, -1)
+                global_max = max(global_max, val)
 
-        return max_path
+        return global_max

@@ -41,7 +41,6 @@ class Solution:
 
 
 if __name__ == "__main__":
-    # Example usage
     solution = Solution()
     grid = [[0, 1, -1], [1, 0, -1], [1, 1, 1]]
-    print(solution.cherryPickup(grid))  # Output: 5
+    print(solution.cherryPickup(grid))
