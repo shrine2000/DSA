@@ -4,9 +4,7 @@ class Solution:
             return 0
 
         max_len = 1
-        cur_len = 1
         n = len(s)
-
         for i in range(n - 1):
             char_map = set()
             char_map.add(s[i])
