@@ -9,6 +9,5 @@ class Solution:
                 char_set.remove(s[l])
                 l += 1
             char_set.add(s[r])
-            print(f"r - {r}, l - {l}, char_set - {list(char_set)}")
             max_len = max(max_len, r - l + 1)
         return max_len
