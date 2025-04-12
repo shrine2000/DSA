@@ -50,3 +50,10 @@ https://leetcode.com/discuss/study-guide/2347639/a-comprehensive-guide-and-templ
 15. Maximum Subarray Min-Product (Medium)
 
 16. Longest Well-Performing Interval (Medium)
+
+Sentinel Value → Concept
+At the end of the array, push a synthetic value that is strictly smaller than everything else.
+
+This forces the stack to flush, popping every remaining element off the stack, hence allowing us to compute the next smaller element to the right for every unprocessed item.
+
+https://leetcode.com/problems/sum-of-subarray-minimums/solutions/2118729/very-detailed-stack-explanation-o-n-images-comments/
