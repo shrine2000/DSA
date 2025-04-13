@@ -1,39 +1,42 @@
+from typing import List
+
 class Solution:
-    def sumSubarrayMins(self, array: List[int]) -> int:
+    def sumSubarrayMins(self, arr: List[int]) -> int:
+        n = len(arr)
         MODULO = 10**9 + 7
-        size = len(array)
 
-        stack = []
-        next_smaller_left = [0] * size
-        next_smaller_right = [0] * size
+        def nsr(arr):
+            stack = []
+            res = [n] * n
+            for i in range(n - 1, -1, -1):
+                while stack and arr[stack[-1]] > arr[i]: 
+                    stack.pop()
+                if stack:
+                    res[i] = stack[-1]
+                stack.append(i)
+            return res
 
-        for current_index in range(size):
-            while stack and array[stack[-1]] > array[current_index]:
-                stack.pop()
+        def nsl(arr):
+            stack = []
+            res = [-1] * n
+            for i in range(n):
+                while stack and arr[stack[-1]] >= arr[i]:
+                    stack.pop()
+                if stack:
+                    res[i] = stack[-1]
+                stack.append(i)
+            return res
 
-            next_smaller_left[current_index] = stack[-1] if stack else -1
-            stack.append(current_index)
-
-        stack.clear()
-
-        for current_index in range(size - 1, -1, -1):
-            while stack and array[stack[-1]] >= array[current_index]:
-                stack.pop()
-            next_smaller_right[current_index] = stack[-1] if stack else size
-            stack.append(current_index)
+        left = nsl(arr)
+        right = nsr(arr)
 
         total_sum = 0
 
-        for index in range(size):
-            count_of_subarrays_with_current_min = (
-                (index - next_smaller_left[index]) *
-                (next_smaller_right[index] - index)
-            )
-            contribution = array[index] * count_of_subarrays_with_current_min
+        for i in range(n):
+            left_count = i - left[i]
+            right_count = right[i] - i
+
+            contribution = arr[i] * left_count * right_count
             total_sum = (total_sum + contribution) % MODULO
 
         return total_sum
-
-
-    
-            
