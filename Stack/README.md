@@ -57,3 +57,6 @@ At the end of the array, push a synthetic value that is strictly smaller than ev
 This forces the stack to flush, popping every remaining element off the stack, hence allowing us to compute the next smaller element to the right for every unprocessed item.
 
 https://leetcode.com/problems/sum-of-subarray-minimums/solutions/2118729/very-detailed-stack-explanation-o-n-images-comments/
+
+[85. Maximal Rectangle | 221. Maximal Square | 84. Largest Rectangle in Histogram | Monotonic Stack |
+](https://www.youtube.com/watch?v=Jr9rLDWN3Fg&ab_channel=AryanMittal)

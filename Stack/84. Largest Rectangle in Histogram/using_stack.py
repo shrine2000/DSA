@@ -1,39 +1,39 @@
-from typing import List
-
-
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
         n = len(heights)
-        area = 0
 
-        def calculate_nsl():
+        def nsr():
             stack = []
-            nsl = [-1] * n
-            for i in range(n):
-                while stack and heights[stack[-1]] >= heights[i]:
-                    stack.pop()
-                nsl[i] = stack[-1] if stack else -1
-                stack.append(i)
-            return nsl
-
-        def calculate_nsr():
-            stack = []
-            nsr = [n] * n
+            res = [n] * n
             for i in range(n - 1, -1, -1):
                 while stack and heights[stack[-1]] >= heights[i]:
                     stack.pop()
-                nsr[i] = stack[-1] if stack else n
+                if stack:
+                    res[i] = stack[-1]
                 stack.append(i)
-            return nsr
+            return res
 
-        nsl = calculate_nsl()
-        nsr = calculate_nsr()
+        def nsl():
+            stack = []
+            res = [-1] * n
+            for i in range(n):
+                while stack and heights[stack[-1]] >= heights[i]:
+                    stack.pop()
+                if stack:
+                    res[i] = stack[-1]
+                stack.append(i)
+            return res
+
+        left = nsl()
+        right = nsr()
+        total_area = 0
 
         for i in range(n):
-            temp_area = (nsr[i] - nsl[i] - 1) * heights[i]
-            area = max(temp_area, area)
+            height = heights[i]
+            width = right[i] - left[i] - 1
+            total_area = max(total_area, height * width)
+        return total_area
 
-        return area
 
-
-print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
+if __name__ == "__main__":
+    print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
