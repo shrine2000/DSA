@@ -4,28 +4,38 @@ from typing import List
 class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
         n = len(heights)
-        area = 0
+
+        def nsr():
+            stack = []
+            res = [n] * n
+            for i in range(n - 1, -1, -1):
+                while stack and heights[stack[-1]] >= heights[i]:
+                    stack.pop()
+                if stack:
+                    res[i] = stack[-1]
+                stack.append(i)
+            return res
+
+        def nsl():
+            stack = []
+            res = [-1] * n
+            for i in range(n):
+                while stack and heights[stack[-1]] >= heights[i]:
+                    stack.pop()
+                if stack:
+                    res[i] = stack[-1]
+                stack.append(i)
+            return res
+
+        left = nsl()
+        right = nsr()
+        total_area = 0
 
         for i in range(n):
-            left, right = 10e5, 10e5
-
-            # NSL
-            j = i
-            while j > 0 and heights[j - 1] >= heights[i]:
-                j -= 1
-            left = j
-
-            # NSR
-            j = i
-            while j < n - 1 and heights[j + 1] >= heights[i]:
-                j += 1
-            right = j
-
-            temp_area = (right - left + 1) * heights[i]
-
-            area = max(temp_area, area)
-
-        return area
+            height = heights[i]
+            width = right[i] - left[i] - 1
+            total_area = max(total_area, height * width)
+        return total_area
 
 
 height: list[int] = [
