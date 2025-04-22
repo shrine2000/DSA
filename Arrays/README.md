@@ -20,3 +20,6 @@ Prefix sums are the sums of the first K elements in an array. You can use them t
 - [Solved all two pointers problems in 100 days.](https://leetcode.com/discuss/study-guide/1688903/Solved-all-two-pointers-problems-in-100-days.)
 
 In total, for an array of length n, the number of contiguous subarrays is: n * (n + 1) / 2
+
+
+https://liuzhenglaichn.gitbook.io/algorithm/array/sliding-window
