@@ -21,7 +21,10 @@ Prefix sums are the sums of the first K elements in an array. You can use them t
 
 In total, for an array of length n, the number of contiguous subarrays is: n * (n + 1) / 2
 
+**Sliding Window**
 
 https://liuzhenglaichn.gitbook.io/algorithm/array/sliding-window
 
 https://labuladong.online/algo/en/essential-technique/sliding-window-framework/#overview-of-the-sliding-window-framework
+
+https://leetcode.com/problems/frequency-of-the-most-frequent-element/solutions/1175088/c-maximum-sliding-window-cheatsheet-temp-bxw4/
