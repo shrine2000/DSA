@@ -1,13 +1,12 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        char_idx_map = {}
+        last_found = {}
         left = 0
-        max_length = 0
+        max_len = 0
 
         for right, char in enumerate(s):
-            if char in char_idx_map and char_idx_map[char] >= left:
-                left = char_idx_map[char] + 1
-
-            char_idx_map[char] = right
-            max_length = max(max_length, right - left + 1)
-        return max_length
+            if char in last_found and last_found[char] >= left:
+                left = last_found[char] + 1
+            last_found[char] = right
+            max_len = max(max_len, right - left + 1)
+        return max_len
