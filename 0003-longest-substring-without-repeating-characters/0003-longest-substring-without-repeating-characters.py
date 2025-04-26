@@ -3,6 +3,11 @@ class Solution:
     def lengthOfLongestSubstring(s: str) -> int:
         # Map to store the last index of each character
         char_index_map: dict[str, int] = {}
+        # why a char idx map
+        # 1. each element is processed only once, because we skip to latest found idx
+        # 2. valid window is maintained without duplicates
+        # 3. no need to remove chars from set
+
         left = 0  # Left boundary of the window
         max_length = 0  # Result: max length of substring
 
