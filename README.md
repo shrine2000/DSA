@@ -32,6 +32,8 @@
 
 [Top K Problems](https://github.com/shrine2000/DSA/tree/main/Top%20K%20Problems)
 
+[Linked List](https://github.com/shrine2000/DSA/tree/main/LinkedList)
+
 [Misc](https://github.com/shrine2000/DSA/tree/main/Misc%20)
 
 ## Machine Coding
