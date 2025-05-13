@@ -11,12 +11,8 @@ class Solution:
                 nums3.append(nums2[j])
                 j+=1
             
-        while i < n:
-            nums3.append(nums1[i])
-            i+=1
-        while j < m:
-            nums3.append(nums2[j])
-            j+=1
+        nums3.extend(nums1[i:])
+        nums3.extend(nums2[j:])
         n = len(nums3)
         if n % 2 == 0:
             return (nums3[n // 2 - 1] + nums3[n // 2]) / 2
