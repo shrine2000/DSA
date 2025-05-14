@@ -1,5 +1,4 @@
 class TimeMap:
-
     def __init__(self):
         self.m = defaultdict(list)
 
@@ -9,7 +8,7 @@ class TimeMap:
     def get(self, key: str, timestamp: int) -> str:
         if key not in self.m.keys():
             return ""
-        
+
         values = self.m[key]
         left, right = 0, len(values) - 1
         result = ""
@@ -19,16 +18,12 @@ class TimeMap:
             if values[mid][1] == timestamp:
                 return values[mid][0]
             elif values[mid][1] < timestamp:
-                result = values[mid][0]  
+                result = values[mid][0]
                 left = mid + 1
             else:
                 right = mid - 1
-        
-        return result
-        
-        
 
-        
+        return result
 
 
 # Your TimeMap object will be instantiated and called as such:

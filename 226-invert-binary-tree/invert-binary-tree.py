@@ -15,6 +15,6 @@ class Solution:
             node.left, node.right = node.right, node.left
             helper(node.left)
             helper(node.right)
+
         helper(root)
-        return root 
-            
+        return root

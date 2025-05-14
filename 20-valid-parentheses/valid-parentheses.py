@@ -1,9 +1,9 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         char_map = {
-            '(': ')',
-            '{': '}',
-            '[': ']',
+            "(": ")",
+            "{": "}",
+            "[": "]",
         }
 
         stack = []
@@ -14,6 +14,6 @@ class Solution:
             elif stack and char_map.get(stack[-1]) == bracket:
                 stack.pop()
             else:
-                return False 
+                return False
 
         return not bool(stack)

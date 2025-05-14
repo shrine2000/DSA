@@ -17,11 +17,9 @@ class Solution:
         while j < n2:
             nums3.append(nums2[j])
             j += 1
-        
+
         n3 = len(nums3)
         if n3 % 2 == 1:
-            return nums3[ n3 // 2]
+            return nums3[n3 // 2]
         else:
-            return (nums3[n3 // 2 - 1] + nums3[n3 // 2]) / 2 
-
-        
+            return (nums3[n3 // 2 - 1] + nums3[n3 // 2]) / 2

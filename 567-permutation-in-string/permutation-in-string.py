@@ -4,13 +4,13 @@ class Solution:
 
         if n > m:
             return False
-        
+
         s1_counts = Counter(s1)
         window_counts = Counter(s2[:n])
 
         if s1_counts == window_counts:
             return True
-        
+
         for right in range(n, m):
             window_counts[s2[right]] += 1
 

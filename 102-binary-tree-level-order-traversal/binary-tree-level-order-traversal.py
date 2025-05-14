@@ -20,6 +20,5 @@ class Solution:
                     queue.append(current.left)
                 if current.right:
                     queue.append(current.right)
-            res.append(list_arr) 
+            res.append(list_arr)
         return res
-        

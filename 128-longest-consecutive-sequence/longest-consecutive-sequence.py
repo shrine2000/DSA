@@ -12,7 +12,5 @@ class Solution:
                 while temp + 1 in arr:
                     curr_len += 1
                     temp += 1
-            max_len=max(max_len, curr_len)
+            max_len = max(max_len, curr_len)
         return max_len
-
-

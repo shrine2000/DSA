@@ -6,7 +6,7 @@ class Solution:
         pq = []
 
         for value, occurrences in count.items():
-            heapq.heappush(pq, ( occurrences, value))
+            heapq.heappush(pq, (occurrences, value))
             if len(pq) > k:
                 heapq.heappop(pq)
 

@@ -17,13 +17,13 @@ class Solution:
             for i in range(n - diff):
                 j = i + diff
                 if i == j:
-                    dp[i][j] = 1 # Single character is always a palindrome
+                    dp[i][j] = 1  # Single character is always a palindrome
                 elif diff == 1:
-                    dp[i][j] = 2 if s[i] == s[j] else 0 # Two characters
+                    dp[i][j] = 2 if s[i] == s[j] else 0  # Two characters
                 else:
                     if s[i] == s[j] and dp[i + 1][j - 1] > 0:
                         dp[i][j] = dp[i + 1][j - 1] + 2
                 if dp[i][j] > max_len:
                     max_len = dp[i][j]
-                    ans = s[i:j + 1]
+                    ans = s[i : j + 1]
         return ans

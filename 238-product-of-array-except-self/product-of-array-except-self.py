@@ -7,12 +7,11 @@ class Solution:
 
         for i in range(1, n):
             p[i] = p[i - 1] * nums[i - 1]
-        
+
         for i in range(n - 2, -1, -1):
             s[i] = s[i + 1] * nums[i + 1]
-        
+
         for i in range(n):
             o[i] = p[i] * s[i]
-        
-        return o
 
+        return o

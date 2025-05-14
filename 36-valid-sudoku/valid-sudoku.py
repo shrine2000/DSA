@@ -7,10 +7,10 @@ class Solution:
         for r in range(9):
             for c in range(9):
                 num = board[r][c]
-                if num == '.':
+                if num == ".":
                     continue
-                
-                box_idx = (r // 3 ) * 3 + (c // 3)
+
+                box_idx = (r // 3) * 3 + (c // 3)
                 if num in cols[c] or num in rows[r] or num in boxes[box_idx]:
                     return False
                 rows[r].add(num)
@@ -18,5 +18,3 @@ class Solution:
                 boxes[box_idx].add(num)
 
         return True
-                
-

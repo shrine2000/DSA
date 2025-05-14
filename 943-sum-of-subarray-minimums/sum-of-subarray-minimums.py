@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def sumSubarrayMins(self, arr: List[int]) -> int:
         n = len(arr)
@@ -9,7 +10,7 @@ class Solution:
             stack = []
             res = [n] * n
             for i in range(n - 1, -1, -1):
-                while stack and arr[stack[-1]] > arr[i]: 
+                while stack and arr[stack[-1]] > arr[i]:
                     stack.pop()
                 if stack:
                     res[i] = stack[-1]

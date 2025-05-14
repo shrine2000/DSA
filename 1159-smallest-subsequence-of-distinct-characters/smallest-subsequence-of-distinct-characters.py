@@ -8,8 +8,8 @@ class Solution:
             if char in seen:
                 continue
 
-            while stack and char < stack[-1]  and i < last[stack[-1]]:
+            while stack and char < stack[-1] and i < last[stack[-1]]:
                 seen.remove(stack.pop())
             stack.append(char)
             seen.add(char)
-        return ''.join(stack)
+        return "".join(stack)

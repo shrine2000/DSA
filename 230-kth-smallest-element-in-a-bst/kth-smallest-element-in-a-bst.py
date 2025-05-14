@@ -7,6 +7,7 @@
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         res = []
+
         def inorder(node):
             nonlocal res
             if node.left:
@@ -14,8 +15,7 @@ class Solution:
             res.append(node.val)
             if node.right:
                 inorder(node.right)
-            
+
         inorder(root)
         res.sort()
-        return res[k-1]
- 
+        return res[k - 1]

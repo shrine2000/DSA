@@ -1,7 +1,7 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         m, n = len(s), len(t)
-        
+
         if m < n:
             return ""
 
@@ -13,7 +13,7 @@ class Solution:
 
         total = len(nFreq)
         formed = 0
-        min_len = float('inf')
+        min_len = float("inf")
         ans = (0, 0)
 
         window_counts = defaultdict(int)
@@ -41,4 +41,4 @@ class Solution:
             r += 1
 
         l, r = ans
-        return "" if min_len == float('inf') else s[l:r+1]
+        return "" if min_len == float("inf") else s[l : r + 1]

@@ -17,7 +17,7 @@ class Solution:
                 if i == level_range - 1:
                     res.append(current_level.val)
                 if current_level.left:
-                    queue.append(current_level.left) 
+                    queue.append(current_level.left)
                 if current_level.right:
                     queue.append(current_level.right)
         return res

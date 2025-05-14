@@ -17,5 +17,6 @@ class Solution:
 
             self.max_len = max(self.max_len, left + right)
             return max(left, right) + 1
+
         depth(root)
         return self.max_len

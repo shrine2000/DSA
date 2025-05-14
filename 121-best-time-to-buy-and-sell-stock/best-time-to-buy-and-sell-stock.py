@@ -13,4 +13,3 @@ class Solution:
             min_price = min(min_price, curr_price)
 
         return max_profit
-

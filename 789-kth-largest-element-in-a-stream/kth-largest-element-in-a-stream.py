@@ -1,5 +1,4 @@
 class KthLargest:
-
     def __init__(self, k: int, nums: List[int]):
         self.k = k
         self.stream = nums
@@ -12,8 +11,6 @@ class KthLargest:
         if len(self.stream) > self.k:
             heappop(self.stream)
         return self.stream[0]
-
-        
 
 
 # Your KthLargest object will be instantiated and called as such:

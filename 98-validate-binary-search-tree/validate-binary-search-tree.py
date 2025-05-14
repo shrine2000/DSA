@@ -9,8 +9,10 @@ class Solution:
         def helper(node, min_val, max_val):
             if not node:
                 return True
-            if not (min_val < node.val <  max_val):
+            if not (min_val < node.val < max_val):
                 return False
-            return helper( node.left, min_val,node.val) and helper(node.right, node.val, max_val)   
-        return helper(root, float('-inf'), float('inf'))
-            
+            return helper(node.left, min_val, node.val) and helper(
+                node.right, node.val, max_val
+            )
+
+        return helper(root, float("-inf"), float("inf"))
