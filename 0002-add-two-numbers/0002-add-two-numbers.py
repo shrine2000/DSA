@@ -7,6 +7,12 @@ class ListNode:
         self.val = val
         self.next = next
 
+    def __repr__(self):
+        return f"ListNode(val={self.val}, next={repr(self.next)})"
+
+    def __str__(self):
+        return str(self.val)
+
 
 class Solution:
     def addTwoNumbers(
