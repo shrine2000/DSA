@@ -1,17 +1,34 @@
+from typing import Optional, Dict
+
+
 class Node:
     def __init__(self, key, value):
         self.key = key
         self.value = value
-        self.next: Node | None = None
-        self.prev: Node | None = None
+        self.next: Optional["Node"] = None
+        self.prev: Optional["Node"] = None
 
 
 class LRUCache:
+    """
+    implemented using hashmap + doubly linked list (DLL)
+    head represents Least Recently Used
+    tail represents Most Recently Used
+
+    def get() -> corresponding node is moved to MRU
+    def put() -> updates an existing entry (moving it to MRU) or adds a new entry
+
+    if cache exceeds, LRU node (ie one next to head) is removed
+
+    """
+
     def __init__(self, capacity: int):
         self.capacity: int = capacity
         self.cache: dict[int, Node] = {}  # hold keys and their corresponding nodes
         self.head: Node = Node(0, 0)  # dummy head
         self.tail: Node = Node(0, 0)  # dummy tail
+
+        # initialize doubly linked list
         self.head.next = (
             self.tail
         )  # prev of dummy head points to NULL and next point to dummy tail
@@ -20,12 +37,14 @@ class LRUCache:
         )  # prev of dummy tail points to head, next point to NULL
 
     def _remove(self, node: Node):
+        """remove node from dll"""
         prev = node.prev
         nxt = node.next
         prev.next = nxt
         nxt.prev = prev
 
-    def _add(self, node: Node):
+    def _add_to_tail(self, node: Node):
+        """add node right before the tail (most recently used)"""
         prev = self.tail.prev
         prev.next = node
         node.prev = prev
@@ -35,8 +54,8 @@ class LRUCache:
     def get(self, key):
         if key in self.cache:
             node = self.cache[key]
-            self._remove(node)
-            self._add(node)
+            self._remove(node)  # move the accessed node to tail (MRU)
+            self._add_to_tail(node)
             return node.value
         return -1
 
@@ -50,7 +69,7 @@ class LRUCache:
             del self.cache[lru.key]
         # add new node or update the existing node
         new_node = Node(key, value)
-        self._add(new_node)
+        self._add_to_tail(new_node)
         self.cache[key] = new_node
 
 
