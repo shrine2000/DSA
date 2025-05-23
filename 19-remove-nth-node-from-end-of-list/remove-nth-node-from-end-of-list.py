@@ -15,11 +15,14 @@ class Solution:
         if idx == 0:
             return head.next
 
+        counter = 0
         curr = head
-        for _ in range(idx - 1):
+        while curr:
+            if counter == idx - 1:
+                if curr.next:
+                    curr.next = curr.next.next
+                break
+            counter += 1
             curr = curr.next
-
-        if curr.next:
-            curr.next = curr.next.next
-
+        
         return head
