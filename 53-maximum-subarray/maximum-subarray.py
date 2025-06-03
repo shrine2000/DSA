@@ -1,19 +1,12 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        memo = {}
-
-        def solve(nums, pick, idx):
+        
+        @lru_cache(maxsize=None)
+        def dp(idx, picked):
             if idx >= len(nums):
-                return 0 if pick else float("-inf")
-            if (pick, idx) in memo:
-                return memo[(pick, idx)]
-            if pick:
-                result = max(0, nums[idx] + solve(nums, True, idx + 1))
+                return 0 if picked else float('-inf')
+            if picked:
+                return max(0, nums[idx] + dp(idx + 1, True))
             else:
-                result = max(
-                    nums[idx] + solve(nums, True, idx + 1), solve(nums, False, idx + 1)
-                )
-            memo[(pick, idx)] = result
-            return result
-
-        return solve(nums, False, 0)
+                return max(nums[idx]+ dp(idx + 1, True), dp(idx + 1, False))
+        return dp(0, False)
