@@ -5,10 +5,17 @@ class Solution:
             return False
 
         hand.sort()
-        while hand:
-            start = hand[0]
-            for card in range(start, start + groupSize):
-                if card not in hand:
+        card_count = Counter(hand)
+        min_heap = list(card_count.keys())
+        heapq.heapify(min_heap)
+        while min_heap:
+            first = min_heap[0]
+            for i in range(first, first + groupSize):
+                if card_count[i] == 0:
                     return False
-                hand.remove(card)
+                card_count[i] -= 1
+                if card_count[i] == 0:
+                    if i != min_heap[0]:
+                        return False
+                    heapq.heappop(min_heap)
         return True
