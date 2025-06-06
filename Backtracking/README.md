@@ -11,3 +11,20 @@
 3. [Backtracking - Neetcode](https://www.youtube.com/playlist?list=PLot-Xpze53lf5C3HSjCnyFghlW0G1HHXo)
 4. [Backtracking - Aditya Verma](https://www.youtube.com/playlist?list=PL_z_8CaSLPWdbOTog8Jxk9XOjzUs3egMP)
 5. [Backtracking PDF](https://jeffe.cs.illinois.edu/teaching/algorithms/book/02-backtracking.pdf)
+
+
+### Template
+
+```python
+
+def backtrack(candidate):
+    if base_case:
+        add_to_result()
+        return
+    for choice in choices:
+        if not is_valid():
+            continue
+        make_choice()
+        backtrack(new_candidate)
+        unmake_choice()
+```
