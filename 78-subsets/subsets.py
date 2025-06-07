@@ -5,10 +5,11 @@ class Solution:
 
         def backtrack(idx, current_combination):
             result.append(current_combination[:])
-            
+
             for i in range(idx, N):
                 current_combination.append(nums[i])
                 backtrack(i + 1, current_combination)
                 current_combination.pop()
+
         backtrack(0, [])
         return result

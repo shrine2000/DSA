@@ -15,7 +15,7 @@ class Solution:
 
         dummy_head = ListNode(0)
         dummy_head.next = head
-        
+
         prev_group_end = dummy_head
 
         while True:
@@ -30,7 +30,7 @@ class Solution:
             if count < k:
                 break
 
-            next_segment_start = k_nodes_end 
+            next_segment_start = k_nodes_end
 
             new_group_head = reverse_segment(k_nodes_start, k_nodes_end)
 
@@ -38,5 +38,5 @@ class Solution:
 
             k_nodes_start.next = next_segment_start
             prev_group_end = k_nodes_start
-        
+
         return dummy_head.next

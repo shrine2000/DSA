@@ -2,7 +2,7 @@ class Solution:
     def wiggleMaxLength(self, nums: List[int]) -> int:
         if len(nums) < 2:
             return len(nums)
-        
+
         prev = nums[0]
         count = 1
         dir = 0

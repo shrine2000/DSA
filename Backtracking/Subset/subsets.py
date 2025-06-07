@@ -27,8 +27,8 @@ def test_subsets() -> None:
     expected_output = [[], [1], [1, 2], [2]]
 
     actual_output = sol.subsets(input_nums)
-    assert sorted(map(sorted, actual_output)) == sorted(
-        map(sorted, expected_output)
+    assert (
+        sorted(map(sorted, actual_output)) == sorted(map(sorted, expected_output))
     ), f"Test failed for input {input_nums}. Expected {expected_output}, got {actual_output}"
 
 

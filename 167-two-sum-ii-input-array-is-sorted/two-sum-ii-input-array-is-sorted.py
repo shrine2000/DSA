@@ -4,9 +4,9 @@ class Solution:
 
         while l < r:
             if nums[l] + nums[r] == target:
-                return [l+1, r+1]
+                return [l + 1, r + 1]
             if nums[l] + nums[r] < target:
-                l += 1          
-            else :
+                l += 1
+            else:
                 r -= 1
         return []

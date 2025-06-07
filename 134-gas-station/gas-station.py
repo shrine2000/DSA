@@ -7,7 +7,7 @@ class Solution:
             delta = gas[i] - cost[i]
             total_surplus += delta
             current_surplus += delta
-        
+
             if current_surplus < 0:
                 current_surplus = 0
                 idx = i + 1

@@ -17,10 +17,8 @@ class Solution:
             val, list_idx, node = heapq.heappop(pq)
             current.next = node
             current = current.next
-        
+
             if node.next:
                 heapq.heappush(pq, (node.next.val, list_idx, node.next))
 
         return dummy_head.next
-
- 

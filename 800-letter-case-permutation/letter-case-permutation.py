@@ -4,13 +4,13 @@ class Solution:
 
         def backtrack(idx, path):
             if idx == len(s):
-                results.append(''.join(path))
+                results.append("".join(path))
                 return
 
-            char =s[idx]
+            char = s[idx]
             if char.isalpha():
                 path.append(char.lower())
-                backtrack(idx+1, path)
+                backtrack(idx + 1, path)
                 path.pop()
 
                 path.append(char.upper())
@@ -20,5 +20,6 @@ class Solution:
                 path.append(char)
                 backtrack(idx + 1, path)
                 path.pop()
+
         backtrack(0, [])
         return results

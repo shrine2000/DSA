@@ -4,7 +4,7 @@ class Solution:
             if len(path) == len(nums):
                 result.append(path[:])
                 return
-            
+
             for i in range(len(nums)):
                 if visited[i]:
                     continue
@@ -16,6 +16,7 @@ class Solution:
                 backtrack(path, visited)
                 path.pop()
                 visited[i] = False
+
         nums.sort()
         result = []
         backtrack([], [False] * len(nums))

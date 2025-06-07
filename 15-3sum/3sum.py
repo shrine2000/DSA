@@ -7,9 +7,9 @@ class Solution:
 
         result = []
         for i in range(n - 2):
-            if i > 0 and nums[i] == nums[i-1]:
+            if i > 0 and nums[i] == nums[i - 1]:
                 continue
-            
+
             if nums[i] > 0:
                 break
 
@@ -31,7 +31,3 @@ class Solution:
                 else:
                     right -= 1
         return result
-         
-
-
-

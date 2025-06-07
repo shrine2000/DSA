@@ -14,21 +14,17 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
         mid = slow
-        prev=None
-        current=mid
+        prev = None
+        current = mid
         while current:
-            next_node=current.next
-            current.next=prev
-            prev=current
-            current=next_node
-        first, second=head, prev
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        first, second = head, prev
         while second and second.next:
             temp1, temp2 = first.next, second.next
-            first.next=second
-            second.next=temp1
-            first=temp1
-            second=temp2
-
-
-
-
+            first.next = second
+            second.next = temp1
+            first = temp1
+            second = temp2
