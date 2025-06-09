@@ -6,7 +6,11 @@ class Solution:
             if inp in seen:
                 return False
             seen.add(inp)
-            s = sum(int(digit) ** 2 for digit in str(inp))
+            nums=str(inp)
+            s = 0
+            for num in nums:
+                square = int(num) * int(num)
+                s += square
             return dfs(s, seen)
         return bool(dfs(n,set()))
 
