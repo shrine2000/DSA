@@ -17,14 +17,15 @@
 
 ```python
 
-def backtrack(candidate):
-    if base_case:
-        add_to_result()
+def backtrack(choices: List[Any], current_path: List[Any], result: List[List[Any]]):
+    if is_solution(current_path):
+        result.append(current_path[:])
         return
+
     for choice in choices:
-        if not is_valid():
-            continue
-        make_choice()
-        backtrack(new_candidate)
-        unmake_choice()
+        if is_valid(choice, current_path):
+            current_path.append(choice)
+            backtrack(choices, current_path, result)
+            current_path.pop()  # backtrack
+
 ```
