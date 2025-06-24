@@ -1,33 +1,34 @@
-from typing import List
-
-
 class Solution:
-    def numIslands(self, matrix: List[List[str]]) -> int:
-        count = 0
-
-        if not matrix or not matrix[0]:
+    def numIslands(self, grid):
+        if not grid or not grid[0]:
             return 0
 
-        rows, cols = len(matrix), len(matrix[0])
-        directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-        visited = set()
+        R, C = len(grid), len(grid[0])
+        vis = set()
+        count = 0
+        dirs = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 
-        def is_valid(x, y):
-            return 0 <= x < rows and 0 <= y < cols
+        def bfs(r, c):
+            q = deque([(r, c)])
+            vis.add((r, c))
 
-        def dfs(x, y):
-            if not is_valid(x, y) or (x, y) in visited or matrix[x][y] == "0":
-                return
-            visited.add((x, y))
+            while q:
+                x, y = q.popleft()
+                for dx, dy in dirs:
+                    nx, ny = x + dx, y + dy
+                    if 0 <= nx < R and 0 <= ny < C and grid[nx][ny] == "1" and (nx, ny) not in vis:
+                        q.append((nx, ny))
+                        vis.add((nx, ny))
 
-            for dx, dy in directions:
-                new_x, new_y = x + dx, y + dy
-                dfs(new_x, new_y)
-
-        for i in range(rows):
-            for j in range(cols):
-                if matrix[i][j] == "1" and (i, j) not in visited:
+        for r in range(R):
+            for c in range(C):
+                if grid[r][c] == "1" and (r, c) not in vis:
+                    bfs(r, c)
                     count += 1
-                    dfs(i, j)
 
         return count
+
+
+
+
+            
