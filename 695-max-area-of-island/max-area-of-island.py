@@ -1,35 +1,36 @@
-from collections import deque
-from typing import List
-
-
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-        def is_valid(x, y):
-            return 0 <= x < len(grid) and 0 <= y < len(grid[0])
+        if not grid or not grid[0]:
+            return 0
 
+        rows, cols = len(grid), len(grid[0])
+        visited = set()
+        max_area = 0
         directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
-        def bfs(x, y):
-            queue = deque([(x, y)])
-            area = 0
-            grid[x][y] = 0
-
+        def bfs(i, j):
+            queue = deque([(i,j)])
+            visited.add((i,j))
+            area = 1
             while queue:
-                cx, cy = queue.popleft()
-                area += 1
+                x, y = queue.popleft()
                 for dx, dy in directions:
-                    nx, ny = cx + dx, cy + dy
-                    if is_valid(nx, ny) and grid[nx][ny] == 1:
-                        grid[nx][ny] = 0
+                    nx, ny = x + dx, y + dy
+                    if 0 <= nx < rows and 0 <= ny < cols and grid[nx][ny] == 1 and not (nx, ny) in visited:
+                        area += 1
+                        visited.add((nx, ny))
                         queue.append((nx, ny))
-
             return area
 
-        max_area = 0
-
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if grid[i][j] == 1:
+        for i in range(rows):
+            for j in range(cols):
+                if grid[i][j] == 1 and not(i, j) in visited:
                     max_area = max(max_area, bfs(i, j))
 
         return max_area
+
+
+
+
+
+
