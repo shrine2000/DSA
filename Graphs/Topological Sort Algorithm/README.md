@@ -1,4 +1,4 @@
-topo sort only works in directed acyclic graphs
+Topo sort only works in directed acyclic graphs (DAG)
 
 TC - O (V+E)
 
