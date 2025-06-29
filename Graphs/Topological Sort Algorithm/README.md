@@ -1,11 +1,11 @@
-Topo sort only works in directed acyclic graphs (DAG)
+* Topological sort is applicable only to Directed Acyclic Graphs (DAGs).
+* A DAG always has at least one node with in-degree 0, but not necessarily a node with out-degree 0.
 
-TC - O (V+E)
+**Time Complexity:** O(V + E)
 
-topo sort - https://www.youtube.com/watch?v=dis_c84ejhQ&ab_channel=Jenny%27sLecturesCSIT
+**Topological Sort Resources:**
 
-bfs / khan 's algo -  https://www.youtube.com/watch?v=tggiFvaxjrY
-
-dfs - https://www.youtube.com/watch?v=eL-KzMXSXXI
-
-problems - https://leetcode.com/problem-list/topological-sort/
+* [Topological Sort - Jenny's Lectures](https://www.youtube.com/watch?v=dis_c84ejhQ&ab_channel=Jenny%27sLecturesCSIT)
+* [BFS / Kahn’s Algorithm - Jenny's Lectures](https://www.youtube.com/watch?v=tggiFvaxjrY)
+* [DFS-Based Topological Sort - Jenny's Lectures](https://www.youtube.com/watch?v=eL-KzMXSXXI)
+* [Topological Sort Problems - LeetCode](https://leetcode.com/problem-list/topological-sort/)
