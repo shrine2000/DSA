@@ -1,21 +1,29 @@
 class Solution:
-    def canFinish(self, numCourses, prerequisites):
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         graph = defaultdict(list)
-        in_degree = [0] * numCourses
+        for course, prereq in prerequisites:
+            graph[prereq].append(course)
+        
+        visited = [False] * numCourses
+        on_path = [False] * numCourses
 
-        for dest, src in prerequisites:
-            graph[src].append(dest)
-            in_degree[dest] += 1
+        def has_cycle(node) -> bool:
+            if on_path[node]:
+                return True
+            if visited[node]:
+                return False
+            
+            visited[node] =True
+            on_path[node] = True
 
-        queue = deque([i for i in range(numCourses) if in_degree[i] == 0])
-        taken_courses = 0
+            for ngbr in graph[node]:
+                if has_cycle(ngbr):
+                    return True
+            on_path[node] = False
+            return False
+        
+        for course in range(numCourses):
+            if not visited[course] and has_cycle(course):
+                return False
+        return True
 
-        while queue:
-            course = queue.popleft()
-            taken_courses += 1
-            for neighbor in graph[course]:
-                in_degree[neighbor] -= 1
-                if in_degree[neighbor] == 0:
-                    queue.append(neighbor)
-
-        return taken_courses == numCourses
