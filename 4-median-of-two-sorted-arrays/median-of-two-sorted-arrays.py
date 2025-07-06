@@ -1,25 +1,32 @@
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        n1, n2 = len(nums1), len(nums2)
-        i, j = 0, 0
-        nums3 = []
-        while i < n1 and j < n2:
-            if nums1[i] < nums2[j]:
-                nums3.append(nums1[i])
-                i += 1
+        if len(nums1) > len(nums2):
+            nums1, nums2 = nums2, nums1  
+
+        m, n = len(nums1), len(nums2)
+        total = m + n
+        half = total // 2
+
+        left, right = 0, m
+
+        while left <= right:
+            i = (left + right) // 2
+            j = half - i
+
+            nums1_left_max = float('-inf') if i == 0 else nums1[i - 1]
+            nums1_right_min = float('inf') if i == m else nums1[i]
+
+            nums2_left_max = float('-inf') if j == 0 else nums2[j - 1]
+            nums2_right_min = float('inf') if j == n else nums2[j]
+
+            if nums1_left_max <= nums2_right_min and nums2_left_max <= nums1_right_min:
+                if total % 2 == 1:
+                    return float(min(nums1_right_min, nums2_right_min))
+                return (max(nums1_left_max, nums2_left_max) + min(nums1_right_min, nums2_right_min)) / 2
+
+            elif nums1_left_max > nums2_right_min:
+                right = i - 1
             else:
-                nums3.append(nums2[j])
-                j += 1
+                left = i + 1
 
-        while i < n1:
-            nums3.append(nums1[i])
-            i += 1
-        while j < n2:
-            nums3.append(nums2[j])
-            j += 1
-
-        n3 = len(nums3)
-        if n3 % 2 == 1:
-            return nums3[n3 // 2]
-        else:
-            return (nums3[n3 // 2 - 1] + nums3[n3 // 2]) / 2
+        raise ValueError("Input arrays are not sorted properly.")
