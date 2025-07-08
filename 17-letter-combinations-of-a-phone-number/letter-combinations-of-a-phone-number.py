@@ -13,18 +13,16 @@ class Solution:
             9: "wxyz",
         }
         res = []
+
         def backtrack(idx, path):
             if idx == len(digits):
-                res.append(''.join(path))
+                res.append("".join(path))
                 return
             current_digit = digits[idx]
             for char in mappings[int(current_digit)]:
                 path.append(char)
-                backtrack(idx +1, path)
+                backtrack(idx + 1, path)
                 path.pop()
+
         backtrack(0, [])
         return res
-
-
-
-        

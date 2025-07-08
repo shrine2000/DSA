@@ -1,6 +1,5 @@
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
-        
         def _get_dist(x, y):
             return sqrt(x**2 + y**2)
 

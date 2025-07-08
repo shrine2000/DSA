@@ -4,7 +4,6 @@ class Solution:
         l, r = 0, 0
         max_len = 0
 
-
         n = len(s)
 
         while r < n:

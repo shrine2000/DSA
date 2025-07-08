@@ -1,5 +1,4 @@
 class MedianFinder:
-
     def __init__(self):
         self.lower_half = []
         self.upper_half = []
@@ -15,7 +14,6 @@ class MedianFinder:
         if len(self.lower_half) > len(self.upper_half):
             return float(-self.lower_half[0])
         return (-self.lower_half[0] + self.upper_half[0]) / 2
-        
 
 
 # Your MedianFinder object will be instantiated and called as such:

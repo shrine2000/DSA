@@ -14,5 +14,3 @@ class Solution:
                     current_num += 1
                 longest = max(longest, current_max)
         return longest
-
-                    

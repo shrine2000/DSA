@@ -16,7 +16,12 @@ class Solution:
                 x, y = q.popleft()
                 for dx, dy in dirs:
                     nx, ny = x + dx, y + dy
-                    if 0 <= nx < R and 0 <= ny < C and grid[nx][ny] == "1" and (nx, ny) not in vis:
+                    if (
+                        0 <= nx < R
+                        and 0 <= ny < C
+                        and grid[nx][ny] == "1"
+                        and (nx, ny) not in vis
+                    ):
                         q.append((nx, ny))
                         vis.add((nx, ny))
 
@@ -27,8 +32,3 @@ class Solution:
                     count += 1
 
         return count
-
-
-
-
-            

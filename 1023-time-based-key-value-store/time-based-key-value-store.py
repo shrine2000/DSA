@@ -1,5 +1,4 @@
 class TimeMap:
-
     def __init__(self):
         self.timestamps = defaultdict(list)
         self.values = defaultdict(list)
@@ -25,4 +24,3 @@ class TimeMap:
             else:
                 right = mid - 1
         return val_list[best_idx] if best_idx != -1 else ""
-                

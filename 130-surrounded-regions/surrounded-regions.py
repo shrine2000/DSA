@@ -7,26 +7,26 @@ class Solution:
         queue = deque()
 
         for i in range(rows):
-            if board[i][0] == 'O':
+            if board[i][0] == "O":
                 queue.append((i, 0))
-            if board[i][cols - 1] == 'O':
+            if board[i][cols - 1] == "O":
                 queue.append((i, cols - 1))
         for j in range(cols):
-            if board[0][j] == 'O':
+            if board[0][j] == "O":
                 queue.append((0, j))
-            if board[rows - 1][j] == 'O':
+            if board[rows - 1][j] == "O":
                 queue.append((rows - 1, j))
 
         while queue:
             r, c = queue.popleft()
-            if 0 <= r < rows and 0 <= c < cols and board[r][c] == 'O':
-                board[r][c] = 'S'
-                for dr, dc in [(-1,0), (1,0), (0,-1), (0,1)]:
+            if 0 <= r < rows and 0 <= c < cols and board[r][c] == "O":
+                board[r][c] = "S"
+                for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
                     queue.append((r + dr, c + dc))
 
         for r in range(rows):
             for c in range(cols):
-                if board[r][c] == 'O':
-                    board[r][c] = 'X'
-                elif board[r][c] == 'S':
-                    board[r][c] = 'O'
+                if board[r][c] == "O":
+                    board[r][c] = "X"
+                elif board[r][c] == "S":
+                    board[r][c] = "O"

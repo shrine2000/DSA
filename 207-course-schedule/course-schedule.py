@@ -3,7 +3,7 @@ class Solution:
         graph = defaultdict(list)
         for course, prereq in prerequisites:
             graph[prereq].append(course)
-        
+
         visited = [False] * numCourses
         on_path = [False] * numCourses
 
@@ -12,8 +12,8 @@ class Solution:
                 return True
             if visited[node]:
                 return False
-            
-            visited[node] =True
+
+            visited[node] = True
             on_path[node] = True
 
             for ngbr in graph[node]:
@@ -21,9 +21,8 @@ class Solution:
                     return True
             on_path[node] = False
             return False
-        
+
         for course in range(numCourses):
             if not visited[course] and has_cycle(course):
                 return False
         return True
-
