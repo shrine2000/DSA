@@ -1,18 +1,18 @@
 class Solution:
-    def generateParenthesis(self, n):
+    def generateParenthesis(self, n: int) -> List[str]:
         result = []
-        stack = [("", 0, 0)]
-
-        while stack:
-            current, open_count, close_count = stack.pop()
-
+        def backtrack(current, open_count, closed_count):
             if len(current) == 2 * n:
                 result.append(current)
-                continue
-
+                return
+            
             if open_count < n:
-                stack.append((current + "(", open_count + 1, close_count))
-            if close_count < open_count:
-                stack.append((current + ")", open_count, close_count + 1))
+                backtrack(current + "(", open_count + 1, closed_count)
+            
+            if closed_count < open_count:
+                backtrack(current + ")", open_count, closed_count+1)
+            
 
+        backtrack("", 0, 0)
         return result
+            
