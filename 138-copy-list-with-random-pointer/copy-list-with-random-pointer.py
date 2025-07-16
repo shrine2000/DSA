@@ -12,29 +12,19 @@ class Solution:
         if not head:
             return None
 
-        curr=head
+        old_to_new = {}
+
+        curr = head
+
         while curr:
-            new_node= Node(curr.val)
-            new_node.next = curr.next
-            curr.next = new_node
-            curr=new_node.next
+            old_to_new[curr] = Node(curr.val)
+            curr = curr.next
 
-        curr=head
+        curr = head
         while curr:
-            if curr.random:
-                curr.next.random=curr.random.next
-            curr=curr.next.next
+            copy = old_to_new[curr]
+            copy.next = old_to_new.get(curr.next)
+            copy.random = old_to_new.get(curr.random)
+            curr = curr.next
 
-        curr=head
-        pseudo_head=Node(0)
-        copy_curr=pseudo_head
-        while curr:
-            copy=curr.next
-            curr.next=copy.next
-            copy_curr.next=copy
-            copy_curr=copy
-            curr=curr.next
-        return pseudo_head.next
-
-        
-
+        return old_to_new[head]
