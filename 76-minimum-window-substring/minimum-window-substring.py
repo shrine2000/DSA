@@ -1,44 +1,31 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        m, n = len(s), len(t)
-
-        if m < n:
+        if not s or not t or len(t) > len(s):
             return ""
 
-        l, r = 0, 0
-        nFreq = defaultdict(int)
+        char_map = [0] * 128
+        count = len(t)
+        start,end = 0, 0
+        min_len = float('inf')
+        start_idx = 0
 
         for char in t:
-            nFreq[char] += 1
+            char_map[ord(char)] += 1
+        
+        while end < len(s):
+            if char_map[ord(s[end])] > 0:
+                count -= 1
+            
+            char_map[ord(s[end])] -=  1
+            end += 1
 
-        total = len(nFreq)
-        formed = 0
-        min_len = float("inf")
-        ans = (0, 0)
-
-        window_counts = defaultdict(int)
-
-        while r < len(s):
-            char = s[r]
-            window_counts[char] += 1
-
-            if char in nFreq and window_counts[char] == nFreq[char]:
-                formed += 1
-
-            while l <= r and formed == total:
-                if r - l + 1 < min_len:
-                    min_len = r - l + 1
-                    ans = (l, r)
-
-                left_char = s[l]
-                window_counts[left_char] -= 1
-
-                if left_char in nFreq and window_counts[left_char] < nFreq[left_char]:
-                    formed -= 1
-
-                l += 1
-
-            r += 1
-
-        l, r = ans
-        return "" if min_len == float("inf") else s[l : r + 1]
+            while count == 0:
+                if end - start < min_len:
+                    min_len = end - start
+                    start_idx = start
+                
+                if char_map[ord(s[start])] == 0:
+                    count += 1
+                char_map[ord(s[start])] += 1
+                start += 1
+        return "" if min_len == float('inf') else s[start_idx:start_idx + min_len]
