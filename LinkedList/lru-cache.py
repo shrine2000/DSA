@@ -1,5 +1,7 @@
 from typing import Optional, Dict
 
+# https://www.enjoyalgorithms.com/blog/implement-least-recently-used-cache
+
 
 class Node:
     def __init__(self, key, value):

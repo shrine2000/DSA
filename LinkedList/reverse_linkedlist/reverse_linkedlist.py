@@ -22,8 +22,7 @@ class LinkedList:
         current.next = new_node
 
     def reverse_iterative(self):
-        prev = None
-        current = self.head
+        prev, current = None, self.head
 
         while current:
             next_node = current.next  # Store the next node
