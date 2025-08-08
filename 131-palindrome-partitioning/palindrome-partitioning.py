@@ -1,23 +1,20 @@
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
-        N = len(s)
-        result = []
+        def is_valid(substring):
+            return substring == substring[::-1]
 
-        def is_valid(string):
-            if not string:
-                return False
-            return string.lower() == string.lower()[::-1]
-
-        def backtrack(start, path):
-            if start == N:
+        def backtrack(start, path, result):
+            if start == len(s):
                 result.append(path[:])
                 return
-            for end in range(start + 1, N + 1):
+
+            for end in range(start + 1, len(s) + 1):
                 substring = s[start:end]
                 if is_valid(substring):
                     path.append(substring)
-                    backtrack(end, path)
+                    backtrack(end, path, result)
                     path.pop()
 
-        backtrack(0, [])
+        result = []
+        backtrack(0, [], result)
         return result
