@@ -2,22 +2,19 @@ class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         res = []
 
-        def backtrack(path, used):
+        def backtrack(path):
             if len(path) == len(nums):
                 res.append(path.copy())
                 return
             for i in range(len(nums)):
-                if used[i]:
+                if nums[i] in path:
                     continue
                 
-                used[i] = True
                 path.append(nums[i])
-                backtrack(path, used)
+                backtrack(path)
                 path.pop()
-                used[i] = False
 
-
-        backtrack([], [False] * len(nums))
+        backtrack([])
         return res
 
 
