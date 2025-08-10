@@ -1,15 +1,17 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        N = len(nums)
-        result: List[List[int]] = []
+        res = []
+        n = len(nums)
 
-        def backtrack(idx, current_combination):
-            result.append(current_combination[:])
+        def backtrack(idx, curr):
+            res.append(curr[:])
 
-            for i in range(idx, N):
-                current_combination.append(nums[i])
-                backtrack(i + 1, current_combination)
-                current_combination.pop()
-
+            for i in range(idx, n):
+                curr.append(nums[i])
+                backtrack(i + 1, curr)
+                curr.pop()
         backtrack(0, [])
-        return result
+        return res
+            
+
+            
