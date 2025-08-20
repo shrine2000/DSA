@@ -16,4 +16,4 @@ class Solution:
                 dp[i] = max(dp[i - 1], _nums[i] + dp[i - 2])
             return dp[-1]
 
-        return max(helper(nums[: - 1]), helper(nums[1:]))
+        return max(helper(nums[:-1]), helper(nums[1:]))
