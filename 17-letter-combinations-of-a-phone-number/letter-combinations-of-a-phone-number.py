@@ -1,28 +1,23 @@
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-        if not digits:
-            return []
-        mappings = {
-            2: "abc",
-            3: "def",
-            4: "ghi",
-            5: "jkl",
-            6: "mno",
-            7: "pqrs",
-            8: "tuv",
-            9: "wxyz",
+        mapping = {
+            "2": "abc",
+            "3": "def",
+            "4": "ghi",
+            "5": "jkl",
+            "6": "mno",
+            "7": "pqrs",
+            "8": "tuv",
+            "9": "wxyz",
         }
         res = []
 
         def backtrack(idx, path):
             if idx == len(digits):
-                res.append("".join(path))
+                res.append(path)
                 return
-            current_digit = digits[idx]
-            for char in mappings[int(current_digit)]:
-                path.append(char)
-                backtrack(idx + 1, path)
-                path.pop()
+            for letter in mapping[digits[idx]]:
+                backtrack(idx + 1, path + letter)
 
-        backtrack(0, [])
-        return res
+        backtrack(0, "")
+        return res if digits else []
