@@ -1,19 +1,19 @@
-https://leetcode.com/discuss/general-discussion/1000929/solved-all-dynamic-programming-dp-problems-in-7-months
+[Solved All Dynamic Programming (DP) Problems in 7 Months](https://leetcode.com/discuss/general-discussion/1000929/solved-all-dynamic-programming-dp-problems-in-7-months) (LeetCode)
 
-https://leetcode.com/discuss/general-discussion/592146/Dynamic-Programming-Summary
+[Dynamic Programming Summary](https://leetcode.com/discuss/general-discussion/592146/Dynamic-Programming-Summary) (LeetCode)
 
-https://codeforces.com/blog/entry/67679
+[Dynamic Programming on Trees](https://codeforces.com/blog/entry/67679) (Codeforces)
 
-https://codeforces.com/blog/entry/43256
+[Dynamic Programming Optimizations](https://codeforces.com/blog/entry/43256) (Codeforces)
 
-https://leetcode.com/discuss/study-guide/662866/DP-for-Beginners-Problems-or-Patterns-or-Sample-Solutions
+[DP for Beginners: Problems, Patterns, and Sample Solutions](https://leetcode.com/discuss/study-guide/662866/DP-for-Beginners-Problems-or-Patterns-or-Sample-Solutions) (LeetCode)
 
-[[VERY GOOD VIDEO ON DP + GRAPHS] Maximum Points After Collecting Coins From All Nodes | Memoization](https://www.youtube.com/watch?v=kJUhjb0K4_M&ab_channel=codestorywithMIK)
+[Maximum Points After Collecting Coins From All Nodes - Memoization](https://www.youtube.com/watch?v=kJUhjb0K4_M&ab_channel=codestorywithMIK) (YouTube)
 
-[From good to great. How to approach most of DP problems.](https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.)
+[From Good to Great: How to Approach Most DP Problems](https://leetcode.com/problems/house-robber/discuss/156523/From-good-to-great.-How-to-approach-most-of-DP-problems.) (LeetCode)
 
-https://www.youtube.com/watch?v=i9OAOk0CUQE
+[Dynamic Programming Fundamentals](https://www.youtube.com/watch?v=i9OAOk0CUQE) (YouTube)
 
-[DSA + CP Problem Solving Booster Series](https://www.youtube.com/playlist?list=PLjeQ9Mb66hM1VsmVaQ9Xf3d98kNHun66f)
+[DSA + CP Problem Solving Booster Series](https://www.youtube.com/playlist?list=PLjeQ9Mb66hM1VsmVaQ9Xf3d98kNHun66f) (YouTube)
 
-[Classic Dynamic Programming Problems](https://cp-algorithms.com/dynamic_programming/intro-to-dp.html#classic-dynamic-programming-problems)
+[Classic Dynamic Programming Problems](https://cp-algorithms.com/dynamic_programming/intro-to-dp.html#classic-dynamic-programming-problems) (CP-Algorithms)
