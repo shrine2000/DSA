@@ -5,20 +5,25 @@
 #         self.next = next
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        res = []
-
-        for lst in lists:
-            while lst:
-                res.append(lst)
-                lst = lst.next
-                
-        if not res:
+        if not lists:
             return None
-        
-        res.sort(key=lambda node: node.val)
-        for i in range(len(res) - 1):
-            res[i].next = res[i + 1]
-        res[-1].next = None
 
+        def merge(l1, l2):
+            dummy = ListNode()
+            current = dummy
 
-        return res[0]
+            while l1 and l2:
+                if l1.val < l2.val:
+                    current.next = l1
+                    l1 = l1.next
+                else:
+                    current.next = l2
+                    l2 = l2.next
+                current = current.next
+            current.next = l1 if l1 else l2
+            return dummy.next
+
+        res = None
+        for linked_list in lists:
+            res = merge(linked_list, res)
+        return res
