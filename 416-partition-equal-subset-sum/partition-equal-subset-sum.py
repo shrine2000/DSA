@@ -1,12 +1,19 @@
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
-        total_sum = sum(nums)
-        if total_sum % 2 != 0:
+        total = sum(nums)
+        if total % 2 != 0:
             return False
-        target = total_sum // 2
-        dp = [False] * (target + 1)
-        dp[0] = True
-        for num in nums:
-            for j in range(target, num - 1, -1):
-                dp[j] = dp[j] or dp[j - num]
-        return dp[target]
+
+        target = total // 2
+        n = len(nums)
+        @cache
+        def dfs(idx, curr_sum):
+            if curr_sum == target:
+                return True
+
+            if idx == n or curr_sum > target:
+                return False
+
+            return dfs(idx + 1, curr_sum + nums[idx]) or dfs(idx + 1, curr_sum)
+
+        return dfs(0, 0)
