@@ -17,3 +17,5 @@
 [DSA + CP Problem Solving Booster Series](https://www.youtube.com/playlist?list=PLjeQ9Mb66hM1VsmVaQ9Xf3d98kNHun66f) (YouTube)
 
 [Classic Dynamic Programming Problems](https://cp-algorithms.com/dynamic_programming/intro-to-dp.html#classic-dynamic-programming-problems) (CP-Algorithms)
+
+[Friends Pairing Problem](https://leetcode.com/discuss/post/1349122/friends-pairing-problem-by-vidhuv9-cem1/) (LeetcCode)
