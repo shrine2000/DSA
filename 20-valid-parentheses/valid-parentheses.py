@@ -14,3 +14,19 @@ class Solution:
         return not stack
 
         
+# "([])"
+
+# char = '('
+# stack => "("
+
+
+
+# char = '['
+# stack => "(]"
+
+
+# char = ']'
+# stack => "("
+
+# char = ')'
+# stack => ''
