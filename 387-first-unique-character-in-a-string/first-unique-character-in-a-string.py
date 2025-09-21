@@ -3,8 +3,8 @@ class Solution:
         counter = defaultdict(int)
 
         for char in s:
-            counter[char] = counter.get(char, 0) + 1
-        for k, v in counter.items():
-            if v == 1:
-                return s.index(k)  
+            counter[char] += 1
+        for index, char in enumerate(s):
+            if counter[char] == 1:
+                return index
         return -1
