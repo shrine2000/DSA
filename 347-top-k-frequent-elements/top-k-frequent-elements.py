@@ -1,13 +1,11 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        count = defaultdict(int)
-        for num in nums:
-            count[num] += 1
-        pq = []
+        frequency_map = Counter(nums)
+        min_heap = []
 
-        for value, occurrences in count.items():
-            heapq.heappush(pq, (occurrences, value))
-            if len(pq) > k:
-                heapq.heappop(pq)
+        for num, freq in frequency_map.items():
+            heapq.heappush(min_heap, (freq, num))
+            if len(min_heap) > k:
+                heapq.heappop(min_heap)
 
-        return [val for _, val in pq]
+        return [num for _, num in min_heap]
