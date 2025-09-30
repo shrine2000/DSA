@@ -1,28 +1,24 @@
+from typing import List
+from collections import defaultdict, deque
+
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         graph = defaultdict(list)
+        indegree = defaultdict(int)
+
         for course, prereq in prerequisites:
             graph[prereq].append(course)
+            indegree[course] += 1
 
-        visited = [False] * numCourses
-        on_path = [False] * numCourses
+        queue = deque([i for i in range(numCourses) if indegree[i] == 0])
+        visited = 0
 
-        def has_cycle(node) -> bool:
-            if on_path[node]:
-                return True
-            if visited[node]:
-                return False
+        while queue:
+            course = queue.popleft()
+            visited += 1
+            for next_course in graph[course]:
+                indegree[next_course] -= 1
+                if indegree[next_course] == 0:
+                    queue.append(next_course)
 
-            visited[node] = True
-            on_path[node] = True
-
-            for ngbr in graph[node]:
-                if has_cycle(ngbr):
-                    return True
-            on_path[node] = False
-            return False
-
-        for course in range(numCourses):
-            if not visited[course] and has_cycle(course):
-                return False
-        return True
+        return visited == numCourses
