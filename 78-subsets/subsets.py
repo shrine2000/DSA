@@ -1,17 +1,15 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = []
-        n = len(nums)
+        solutions = []
+        N = len(nums)
 
         def backtrack(idx, curr):
-            res.append(curr[:])
+            solutions.append(curr[:])
 
-            for i in range(idx, n):
+            for i in range(idx, N):
                 curr.append(nums[i])
                 backtrack(i + 1, curr)
                 curr.pop()
-        backtrack(0, [])
-        return res
-            
 
-            
+        backtrack(0, [])
+        return solutions
