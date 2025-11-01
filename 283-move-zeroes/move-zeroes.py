@@ -3,16 +3,12 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        lnz = 0
 
-        zero_count = 0
-        n = len(nums)
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[lnz], nums[i] = nums[i], nums[lnz]
+                lnz += 1
 
-        i = 0
-        while i < len(nums):
-            if nums[i] == 0:
-                nums.pop(i)
-                zero_count += 1
-            else:
-                i += 1
+            
 
-        nums.extend([0] * zero_count)
