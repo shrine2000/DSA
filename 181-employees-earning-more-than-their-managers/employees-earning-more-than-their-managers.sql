@@ -1,4 +1,8 @@
-SELECT e1.name AS Employee
-FROM Employee e1
-JOIN Employee e2 ON e1.managerId = e2.id
-WHERE e1.salary > e2.salary;
+-- Write your PostgreSQL query statement below
+
+
+select e.name as Employee
+from Employee as e
+join Employee as m
+on e.managerId = m.id
+where e.salary > m.salary
