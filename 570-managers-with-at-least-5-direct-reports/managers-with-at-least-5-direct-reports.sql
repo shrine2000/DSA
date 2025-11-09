@@ -1,0 +1,11 @@
+-- Write your PostgreSQL query statement below
+
+SELECT e.name
+FROM Employee AS e
+WHERE e.id IN (
+    SELECT managerId
+    FROM Employee
+    WHERE managerId IS NOT NULL
+    GROUP BY managerId
+    HAVING COUNT(*) >= 5
+);
