@@ -1,32 +1,15 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        count_map = {")": "(", "}": "{", "]": "["}
+        char_map = { ")": "(", "}":"{", "]":"["}
         stack = []
 
         for char in s:
-            if char in count_map:
-                if stack and stack[-1] == count_map[char]:
-                    stack.pop()
-                else:
-                    return False
-            else:
+            if char in char_map.values():
                 stack.append(char)
+            elif char in char_map:
+                if not stack or stack[-1] != char_map[char]:
+                    return False
+                stack.pop()
+            else:
+                return False
         return not stack
-
-        
-# "([])"
-
-# char = '('
-# stack => "("
-
-
-
-# char = '['
-# stack => "(]"
-
-
-# char = ']'
-# stack => "("
-
-# char = ')'
-# stack => ''
