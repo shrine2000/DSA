@@ -9,6 +9,44 @@ class Solution:
     def getIntersectionNode(
         self, headA: ListNode, headB: ListNode
     ) -> Optional[ListNode]:
+        AheadMap = {}
+
+        tempA =headA
+        while tempA:
+            AheadMap[tempA] = tempA.val
+            tempA = tempA.next
+
+
+        tempB = headB
+        while tempB:
+            if tempB in AheadMap:
+                return tempB
+            tempB = tempB.next
+        
+        return None
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         headAMap = {}
 
         tempA = headA
