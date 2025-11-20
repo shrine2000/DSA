@@ -1,8 +1,5 @@
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
- 
-         
-
         if not grid or not grid[0]:
             return 0
 
@@ -16,29 +13,24 @@ class Solution:
                     rotten.append((r, c, 0))
                 elif grid[r][c] == 1:
                     fresh_count += 1
-
         if fresh_count == 0:
             return 0
 
+        time = 0
         directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
-        def bfs():
-            nonlocal fresh_count
-            minutes = 0
+        while rotten:
 
-            while rotten:
-                r, c, time = rotten.popleft()
-                minutes = max(minutes, time)
+            r, c, count = rotten.popleft()
 
-                for dx, dy in directions:
-                    nx, ny = r + dx, c + dy
+            time = max(time, count)
 
-                    if 0 <= nx < rows and 0 <= ny < cols and grid[nx][ny] == 1:
-                        grid[nx][ny] = 2
-                        fresh_count -= 1
-                        rotten.append((nx, ny, time + 1))
+            for dr, dc in directions:
+                dx, dy = dr + r, dc + c
 
-            return minutes if fresh_count == 0 else -1
+                if 0 <= dx < rows and 0 <= dy < cols and grid[dx][dy] == 1:
+                    grid[dx][dy] = 2
+                    fresh_count -= 1
+                    rotten.append((dx, dy, time + 1))
 
-        minutes_passed = bfs()
-        return minutes_passed
+        return time if fresh_count == 0 else -1
