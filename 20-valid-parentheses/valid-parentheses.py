@@ -1,5 +1,7 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+        # make dict of parentheses and use stack,
+        #
         char_map = { ")": "(", "}":"{", "]":"["}
         stack = []
         for char in s:
