@@ -3,34 +3,32 @@ class Solution:
         if not grid or not grid[0]:
             return 0
 
-        rows, cols = len(grid), len(grid[0])
-        rotten = deque()
-        fresh_count = 0
+        R, C = len(grid), len(grid[0])
+        fresh = 0
+        queue= deque()
 
-        for r in range(rows):
-            for c in range(cols):
+        for r in range(R):
+            for c in range(C):
                 if grid[r][c] == 2:
-                    rotten.append((r, c, 0))
+                    queue.append((r, c, 0))
                 elif grid[r][c] == 1:
-                    fresh_count += 1
-        if fresh_count == 0:
+                    fresh += 1
+
+        if fresh == 0:
             return 0
 
-        time = 0
-        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        minutes = 0
 
-        while rotten:
+        while queue:
+            x, y, t = queue.popleft()
+            minutes = max(minutes, t)
 
-            r, c, count = rotten.popleft()
+            for dx, dy in directions:
+                nx, ny = x + dx, y + dy
 
-            time = max(time, count)
-
-            for dr, dc in directions:
-                dx, dy = dr + r, dc + c
-
-                if 0 <= dx < rows and 0 <= dy < cols and grid[dx][dy] == 1:
-                    grid[dx][dy] = 2
-                    fresh_count -= 1
-                    rotten.append((dx, dy, time + 1))
-
-        return time if fresh_count == 0 else -1
+                if 0 <= nx < R and 0 <= ny < C and grid[nx][ny] == 1:
+                    grid[nx][ny] = 2
+                    fresh -= 1
+                    queue.append((nx, ny, t + 1))
+        return minutes if fresh == 0 else -1
