@@ -5,7 +5,7 @@ class Solution:
 
         R, C = len(grid), len(grid[0])
         fresh = 0
-        queue= deque()
+        queue = deque()
 
         for r in range(R):
             for c in range(C):
