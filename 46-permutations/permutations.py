@@ -6,15 +6,22 @@ class Solution:
             if len(path) == len(nums):
                 res.append(path.copy())
                 return
+
             for i in range(len(nums)):
                 if nums[i] in path:
                     continue
-                
+
                 path.append(nums[i])
                 backtrack(path)
                 path.pop()
-
         backtrack([])
         return res
+
+            
+
+
+
+
+
 
 
