@@ -1,14 +1,17 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        result = []
+        res = []
+        subset = []
 
 
-        def backtrack(start, current_subset):
-            result.append(current_subset[:])
+        def dfs(i):
+            if i >= len(nums):
+                res.append(subset[:])
+                return
+            subset.append(nums[i])
+            dfs(i + 1)
 
-            for i in range(start, len(nums)):
-                current_subset.append(nums[i])
-                backtrack(i + 1, current_subset)
-                current_subset.pop()
-        backtrack(0, [])
-        return result
+            subset.pop()
+            dfs(i + 1)
+        dfs(0)
+        return res
