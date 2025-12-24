@@ -1,8 +1,6 @@
 -- Write your PostgreSQL query statement below
 
-
-select e.name as Employee
-from Employee as e
-join Employee as m
-on e.managerId = m.id
-where e.salary > m.salary
+ select  e2.name AS Employee from Employee e1
+ inner join Employee e2 on e1.id= e2.managerid
+ where e2.salary > e1.salary;
+ 
