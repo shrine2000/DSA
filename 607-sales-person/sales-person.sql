@@ -1,15 +1,8 @@
--- Write your PostgreSQL query statement below
-
- 
-
-select sp.name
-from SalesPerson as sp
-where sp.sales_id not in (
-    select os.sales_id 
-    from Orders as os
-    join Company as cp
-    on os.com_id = cp.com_id
-    where cp.name in ('RED')
-)
-
-
+SELECT name
+FROM SalesPerson
+WHERE sales_id NOT IN (
+    SELECT o.sales_id
+    FROM Orders o
+    JOIN Company c ON o.com_id = c.com_id
+    WHERE c.name = 'RED'
+);
