@@ -12,12 +12,8 @@ class Solution:
 
             if left_max < right_max:
                 water += left_max - height[left]
-                left +=1
+                left += 1
             else:
                 water += right_max - height[right]
-                right-=1
+                right -= 1
         return water
-
-
-
-
