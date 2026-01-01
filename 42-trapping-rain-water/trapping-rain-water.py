@@ -2,18 +2,16 @@ class Solution:
     def trap(self, height: List[int]) -> int:
         if not height:
             return 0
-
-        left, right = 0, len(height) - 1
-        left_max, right_max = 0, 0
+        n = len(height)
+        left = [0] * n
+        right = [0] * n
         water = 0
-        while left < right:
-            left_max = max(left_max, height[left])
-            right_max = max(right_max, height[right])
-
-            if left_max < right_max:
-                water += left_max - height[left]
-                left += 1
-            else:
-                water += right_max - height[right]
-                right -= 1
+        left[0] = height[0]
+        for i in range(1, n):
+            left[i] = max(left[i - 1], height[i])
+        right[n - 1] = height[n - 1]
+        for i in range(n - 2, -1, -1):
+            right[i] = max(right[i + 1], height[i])
+        for i in range(n):
+            water += min(left[i], right[i]) - height[i]
         return water
