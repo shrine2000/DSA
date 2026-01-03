@@ -1,9 +1,9 @@
--- Write your PostgreSQL query statement below
-
- 
-select customer_id 
-from Customer 
-where product_key in 
-    (select product_key from Product) 
-group by customer_id 
-having count(distinct product_key) = (select count(product_key) from Product)
+SELECT customer_id
+FROM Customer
+WHERE product_key IN (
+    SELECT product_key FROM Product
+)
+GROUP BY customer_id
+HAVING COUNT(DISTINCT product_key) = (
+    SELECT COUNT(*) FROM Product
+);
