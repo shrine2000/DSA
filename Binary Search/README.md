@@ -45,7 +45,35 @@ https://leetcode.com/problems/maximum-tastiness-of-candy-basket/
   
 [An opinionated guide to binary search (comprehensive resource with a bulletproof template)](https://leetcode.com/discuss/study-guide/2371234/An-opinionated-guide-to-binary-search-(comprehensive-resource-with-a-bulletproof-template))
 
-
 https://usaco.guide/silver/binary-search?lang=cpp#usaco
 
 [Binary Search in Detail by labuladong](https://labuladong.gitbook.io/algo-en/iii.-algorithmic-thinking/detailedbinarysearch)
+
+
+## Minimization Template (most common)
+
+```python
+left, right = MIN, MAX
+
+while left < right:
+    mid = left + (right - left) // 2
+    if condition(mid):
+        right = mid
+    else:
+        left = mid + 1
+return left
+```
+
+## Maximization Template
+
+```python
+left, right = MIN, MAX
+
+while left < right:
+    mid = left + (right - left + 1) // 2
+    if condition(mid):
+        left = mid
+    else:
+        right = mid - 1
+return left
+```
