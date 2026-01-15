@@ -1,15 +1,16 @@
 class Solution:
     def totalFruit(self, fruits: List[int]) -> int:
-        left, right = 0, 0
-        res = 0
+        l = 0
+        n = len(fruits)
+        freq = defaultdict(int)
+        count = 0
 
-        basket = defaultdict(int)
-        for right in range(len(fruits)):
-            basket[fruits[right]] += 1
-            while len(basket) > 2:
-                basket[fruits[left]] -= 1
-                if basket[fruits[left]] == 0:
-                    del basket[fruits[left]]
-                left += 1
-            res = max(res, right - left + 1)
-        return res
+        for r in range(n):
+            freq[fruits[r]] += 1
+            while len(freq) > 2:
+                freq[fruits[l]] -= 1
+                if freq[fruits[l]] == 0:
+                    del freq[fruits[l]] 
+                l += 1
+            count = max(count, r - l + 1)
+        return count
