@@ -3,7 +3,6 @@ class Solution:
         count = 0
         people.sort()
         l, r = 0, len(people) - 1
-        # 1 2 2 3
         while l <= r:
             if people[l] + people[r] <= limit:
                 l += 1
