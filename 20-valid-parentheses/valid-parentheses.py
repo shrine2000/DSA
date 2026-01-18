@@ -1,15 +1,17 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        char_map = {"}": "{", "]": "[", ")": "("}
         stack = []
 
+        char_map = {')':'(', '}':'{', ']':'['}
+
+
         for char in s:
-            if char in char_map.values():
-                stack.append(char)
-            elif char in char_map:
-                if not stack or stack[-1] != char_map[char]:
+            if char in char_map:
+                if stack and stack[-1] == char_map[char]:
+                    stack.pop()
+                else:
                     return False
-                stack.pop()
             else:
-                continue
+                stack.append(char)
         return not stack
+
