@@ -1,19 +1,19 @@
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
-        N = len(nums)
-        result: List[List[int]] = []
-
-        def backtrack(idx, current_combination):
-            result.append(current_combination[:])
-
-            for i in range(idx, N):
-                if i > idx and nums[i] == nums[i - 1]:
-                    continue
-
-                current_combination.append(nums[i])
-                backtrack(i + 1, current_combination)
-                current_combination.pop()
-
+        res = []
+        subset = []
         nums.sort()
-        backtrack(0, [])
-        return result
+
+        def dfs(idx):
+            if idx == len(nums):
+                res.append(subset.copy())
+                return
+            subset.append(nums[idx])
+            dfs(idx + 1)
+
+            while idx < len(nums) - 1 and nums[idx] == nums[idx + 1]:
+                idx += 1
+            subset.pop()
+            dfs(idx + 1)
+        dfs(0)
+        return res
