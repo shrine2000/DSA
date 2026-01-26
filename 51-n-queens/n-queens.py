@@ -1,32 +1,35 @@
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
-        def is_safe(board, row, col):
-            for i in range(row):
-                if board[i][col] == "Q":
-                    return False
+        cols = set()
+        nd =set()
+        pd =set()
+        res = []
 
-            for i, j in zip(range(row - 1, -1, -1), range(col - 1, -1, -1)):
-                if board[i][j] == "Q":
-                    return False
+        board = [["."] * n for _ in range(n)]
 
-            for i, j in zip(range(row - 1, -1, -1), range(col + 1, n)):
-                if board[i][j] == "Q":
-                    return False
-
-            return True
-
-        def backtrack(board, row):
-            if row == n:
-                solutions.append(["".join(row) for row in board])
+        def backtrack(r):
+            if r == n:
+                copy = ["".join(row) for row in board]
+                res.append(copy)
                 return
+            
+            for c in range(n):
+                if c in cols or (r + c) in pd or (r - c) in nd:
+                    continue
 
-            for col in range(n):
-                if is_safe(board, row, col):
-                    board[row][col] = "Q"
-                    backtrack(board, row + 1)
-                    board[row][col] = "."
+                cols.add(c)
+                pd.add(r + c)
+                nd.add(r - c)
+                board[r][c] = "Q"
+                backtrack(r + 1)
+                cols.remove(c)
+                pd.remove(r + c)
+                nd.remove(r - c)
+                board[r][c] = "."
 
-        solutions = []
-        empty_board = [["." for _ in range(n)] for _ in range(n)]
-        backtrack(empty_board, 0)
-        return solutions
+        backtrack(0)
+        return res
+
+
+
+
