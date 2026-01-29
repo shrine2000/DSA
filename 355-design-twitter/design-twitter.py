@@ -1,40 +1,31 @@
 class Twitter:
 
     def __init__(self):
-        self.tweets_by_user = defaultdict(list)
-        self.follow_map = defaultdict(set)
-        self.timestamp = 0
-        
+        self.tweetMap =defaultdict(list) 
+        self.followers = defaultdict(set)
+        self.time = 0
     def postTweet(self, userId: int, tweetId: int) -> None:
-        self.timestamp += 1
-        self.tweets_by_user[userId].append((self.timestamp, tweetId))
-        
+        self.time += 1
+        self.tweetMap[userId].append((self.time, tweetId))
 
     def getNewsFeed(self, userId: int) -> List[int]:
-        followees = self.follow_map[userId] | {userId}
-        max_heap = []
-        for uid in followees:
-            tweets = self.tweets_by_user[uid]
-            if tweets:
-                index = len(tweets) - 1
-                timestamp, tid = tweets[index]
-                heapq.heappush(max_heap, (-timestamp, uid, index))
+        tweets = []
+        self.followers[userId].add(userId)
 
-        result = []
-        while max_heap and len(result) < 10:
-            neg_time, uid, idx = heapq.heappop(max_heap)
-            result.append(self.tweets_by_user[uid][idx][1])
-            if idx > 0:
-                prev_time, prev_tid = self.tweets_by_user[uid][idx - 1]
-                heapq.heappush(max_heap, (-prev_time, uid, idx -1))
-        return result
+        for followee in self.followers[userId]:
+            tweets.extend(self.tweetMap[followee])
+        
+        tweets.sort(key=lambda x:x[0], reverse=True)
+        return [tweetId for _, tweetId in tweets[:10]]
 
     def follow(self, followerId: int, followeeId: int) -> None:
         if followerId != followeeId:
-            self.follow_map[followerId].add(followeeId)
+            self.followers[followerId].add(followeeId)
+        
 
     def unfollow(self, followerId: int, followeeId: int) -> None:
-        self.follow_map[followerId].discard(followeeId)
+        if followeeId in self.followers[followerId]:
+            self.followers[followerId].remove(followeeId)
         
 
 
