@@ -1,6 +1,6 @@
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        max_area = float('-inf')
+        max_area = float("-inf")
 
         left, right = 0, len(height) - 1
 
@@ -15,4 +15,4 @@ class Solution:
                 left += 1
             else:
                 right -= 1
-        return 0 if max_area == float('-inf') else max_area
+        return 0 if max_area == float("-inf") else max_area

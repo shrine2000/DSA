@@ -11,41 +11,18 @@ class Solution:
     ) -> Optional[ListNode]:
         AheadMap = {}
 
-        tempA =headA
+        tempA = headA
         while tempA:
             AheadMap[tempA] = tempA.val
             tempA = tempA.next
-
 
         tempB = headB
         while tempB:
             if tempB in AheadMap:
                 return tempB
             tempB = tempB.next
-        
+
         return None
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         headAMap = {}
 

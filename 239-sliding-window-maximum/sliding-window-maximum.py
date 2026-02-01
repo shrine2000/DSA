@@ -12,8 +12,3 @@ class Solution:
                 res.append(-pq[0][0])
 
         return res
-
-
-        
-        
-       

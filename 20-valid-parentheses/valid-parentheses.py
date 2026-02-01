@@ -2,8 +2,7 @@ class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
 
-        char_map = {')':'(', '}':'{', ']':'['}
-
+        char_map = {")": "(", "}": "{", "]": "["}
 
         for char in s:
             if char in char_map:
@@ -14,4 +13,3 @@ class Solution:
             else:
                 stack.append(char)
         return not stack
-

@@ -11,4 +11,3 @@ class Solution:
             m2[ord(c2)] = idx + 1
 
         return True
- 

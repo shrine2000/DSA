@@ -3,7 +3,7 @@ class Solution:
         if not strs:
             return ""
 
-        prefix  = strs[0]
+        prefix = strs[0]
 
         for s in strs[1:]:
             while not s.startswith(prefix):
@@ -11,4 +11,3 @@ class Solution:
                 if not prefix:
                     return ""
         return prefix
-

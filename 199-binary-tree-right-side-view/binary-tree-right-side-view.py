@@ -12,7 +12,6 @@ class Solution:
         res = []
         queue = deque([root])
         while queue:
-
             level_size = len(queue)
             for i in range(level_size):
                 node = queue.popleft()

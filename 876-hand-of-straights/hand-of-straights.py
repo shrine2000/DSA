@@ -2,7 +2,7 @@ class Solution:
     def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
         if len(hand) % groupSize != 0:
             return False
-        
+
         freq_map = Counter(hand)
         for num in sorted(freq_map):
             while freq_map[num] > 0:

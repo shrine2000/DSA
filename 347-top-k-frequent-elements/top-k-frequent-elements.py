@@ -3,7 +3,6 @@ class Solution:
         pq = []
         count = Counter(nums)
 
-
         for key, value in count.items():
             heapq.heappush(pq, (value, key))
 

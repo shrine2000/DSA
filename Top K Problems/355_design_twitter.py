@@ -4,7 +4,6 @@ from typing import List, Tuple, Dict, Set
 
 
 class Twitter:
-
     def __init__(self):
         self.tweets_by_user = defaultdict(list)
         self.follow_map = defaultdict(set)

@@ -5,8 +5,8 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        #"malayalam"
-        #"malaymala"
+        # "malayalam"
+        # "malaymala"
 
         slow = fast = head
 
@@ -28,6 +28,3 @@ class Solution:
             head = head.next
             prev = prev.next
         return True
-            
-
-        

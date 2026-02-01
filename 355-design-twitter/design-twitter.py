@@ -1,5 +1,4 @@
 class Twitter:
-
     def __init__(self):
         self.tweetMap = defaultdict(list)
         self.followers = defaultdict(set)
@@ -27,7 +26,6 @@ class Twitter:
                 time, tweetId = self.tweetMap[user][idx - 1]
                 heapq.heappush(pq, (-time, tweetId, user, idx - 1))
         return res
-
 
     def follow(self, followerId: int, followeeId: int) -> None:
         if followerId != followeeId:

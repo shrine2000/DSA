@@ -9,6 +9,7 @@ class Solution:
         if not root:
             return []
         res = []
+
         def dfs(node, path):
             if not node:
                 return
@@ -22,5 +23,6 @@ class Solution:
                 dfs(node.right, path)
             if not node.left and not node.right:
                 res.append(path)
-        dfs(root,"")
+
+        dfs(root, "")
         return res

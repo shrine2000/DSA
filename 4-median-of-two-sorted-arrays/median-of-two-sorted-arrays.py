@@ -6,7 +6,7 @@ class Solution:
             heapq.heappush(pq, (num))
         for num in nums2:
             heapq.heappush(pq, (num))
-        
+
         n = len(pq)
         if n % 2 == 1:
             mid = n // 2

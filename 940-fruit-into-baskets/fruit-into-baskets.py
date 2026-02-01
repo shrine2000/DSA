@@ -10,7 +10,7 @@ class Solution:
             while len(freq) > 2:
                 freq[fruits[l]] -= 1
                 if freq[fruits[l]] == 0:
-                    del freq[fruits[l]] 
+                    del freq[fruits[l]]
                 l += 1
             count = max(count, r - l + 1)
         return count

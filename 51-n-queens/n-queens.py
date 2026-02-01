@@ -1,8 +1,8 @@
 class Solution:
     def solveNQueens(self, n: int) -> List[List[str]]:
         cols = set()
-        nd =set()
-        pd =set()
+        nd = set()
+        pd = set()
         res = []
 
         board = [["."] * n for _ in range(n)]
@@ -12,7 +12,7 @@ class Solution:
                 copy = ["".join(row) for row in board]
                 res.append(copy)
                 return
-            
+
             for c in range(n):
                 if c in cols or (r + c) in pd or (r - c) in nd:
                     continue
@@ -29,7 +29,3 @@ class Solution:
 
         backtrack(0)
         return res
-
-
-
-

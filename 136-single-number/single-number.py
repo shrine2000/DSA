@@ -3,5 +3,5 @@ class Solution:
         res = 0
 
         for num in nums:
-            res ^= num 
+            res ^= num
         return res

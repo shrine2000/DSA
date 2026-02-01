@@ -27,7 +27,7 @@ class Solution:
                     max_len = dp[i][j]
                     ans = s[i : j + 1]
         return ans
-    
+
     def longestPalindromeExpandFromCenter(self, s: str) -> str:
         if not s:
             return ""
@@ -43,17 +43,17 @@ class Solution:
                 right += 1
 
         for i in range(len(s)):
-            expand(i, i)       # odd-length palindromes
-            expand(i, i + 1)   # even-length palindromes
+            expand(i, i)  # odd-length palindromes
+            expand(i, i + 1)  # even-length palindromes
 
-        return s[start:end + 1]
-    
+        return s[start : end + 1]
+
     # TC = O(n²)
     # SC = O(1)
-    
+
+
 if __name__ == "__main__":
     print(Solution().longestPalindromeExpandFromCenter("babad"))  # "bab" or "aba"
-    print(Solution().longestPalindromeExpandFromCenter("cbbd"))   # "bb"
-    print(Solution().longestPalindromeExpandFromCenter("a"))      # "a"
-    print(Solution().longestPalindromeExpandFromCenter(""))       # ""
-
+    print(Solution().longestPalindromeExpandFromCenter("cbbd"))  # "bb"
+    print(Solution().longestPalindromeExpandFromCenter("a"))  # "a"
+    print(Solution().longestPalindromeExpandFromCenter(""))  # ""

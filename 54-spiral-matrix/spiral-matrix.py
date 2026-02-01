@@ -20,7 +20,7 @@ class Solution:
             if top <= bottom:
                 for c in range(right, left - 1, -1):
                     res.append(matrix[bottom][c])
-                bottom -=1
+                bottom -= 1
 
             if left <= right:
                 for r in range(bottom, top - 1, -1):

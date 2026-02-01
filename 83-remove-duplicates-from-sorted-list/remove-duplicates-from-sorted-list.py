@@ -11,5 +11,5 @@ class Solution:
                 temp.next = temp.next.next
             else:
                 temp = temp.next
-        
+
         return head

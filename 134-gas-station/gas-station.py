@@ -11,4 +11,3 @@ class Solution:
                 start = i + 1
                 total_gas = 0
         return start
-

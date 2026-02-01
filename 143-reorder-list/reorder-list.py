@@ -14,7 +14,7 @@ class Solution:
         while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
-        
+
         prev, curr = None, slow
         while curr:
             next_node = curr.next
@@ -32,14 +32,3 @@ class Solution:
 
             first = first_next
             second = second_next
-            
-
-        
-
-
-
-        
-
-
-
-        

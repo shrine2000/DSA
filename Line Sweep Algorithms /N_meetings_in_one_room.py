@@ -2,7 +2,6 @@ from typing import List
 
 
 class Solution:
-
     def maximumMeetings(self, n, start, end):
         # Pair the start and end times together and sort by end time
         meetings = sorted(zip(start, end), key=lambda x: x[1])

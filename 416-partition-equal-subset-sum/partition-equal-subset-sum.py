@@ -6,6 +6,7 @@ class Solution:
 
         target = total // 2
         n = len(nums)
+
         @cache
         def dfs(idx, curr_sum):
             if curr_sum == target:
