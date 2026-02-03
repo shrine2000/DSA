@@ -1,18 +1,16 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
-        @lru_cache(None)
-        def helper(idx, remaining_amount):
-            if remaining_amount == 0:
+        n = len(coins)
+        @cache
+        def dfs(idx, remaining):
+            if remaining == 0:
                 return 1
-            if remaining_amount < 0:
+            
+            if remaining < 0 or idx == n:
                 return 0
 
-            if idx == len(coins):
-                return 0
-
-            take = helper(idx, remaining_amount - coins[idx])
-            not_take = helper(idx + 1, remaining_amount)
-
-            return take + not_take
-
-        return helper(0, amount)
+            ways = 0
+            ways += dfs(idx, remaining - coins[idx])
+            ways += dfs(idx + 1, remaining)
+            return ways
+        return dfs(0, amount)
