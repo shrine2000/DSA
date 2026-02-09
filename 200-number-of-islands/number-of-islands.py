@@ -4,7 +4,6 @@ class Solution:
             return 0
 
         R, C = len(grid), len(grid[0])
-
         dir = [(1, 0), (0, 1), (-1, 0), (0, -1)]
         visited = set()
 
@@ -24,12 +23,10 @@ class Solution:
                     ):
                         visited.add((i, j))
                         queue.append((i, j))
-
         count = 0
         for i in range(R):
             for j in range(C):
                 if grid[i][j] == "1" and (i, j) not in visited:
                     bfs(i, j)
                     count += 1
-
         return count
