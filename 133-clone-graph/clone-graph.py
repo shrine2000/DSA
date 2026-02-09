@@ -11,16 +11,17 @@ from typing import Optional
 
 class Solution:
     def cloneGraph(self, node: Optional["Node"]) -> Optional["Node"]:
-        if not node:
-            return None
-        visited = {}
 
-        def dfs(n):
-            if n in visited:
-                return visited[n]
-            clone = Node(n.val)
-            visited[n] = clone
-            for ngbr in n.neighbors:
+        visit = {}
+
+        def dfs(root):
+            if not root:
+                return None
+            if root in visit:
+                return visit[root]
+            clone = Node(root.val)
+            visit[root] = clone
+            for ngbr in root.neighbors:
                 clone.neighbors.append(dfs(ngbr))
             return clone
 
