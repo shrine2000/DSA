@@ -26,7 +26,7 @@ class Solution:
         count = 0
         for i in range(R):
             for j in range(C):
-                if grid[i][j] == "1" and (i, j) not in visited:
+                if grid[i][j] == "1"and (i, j) not in visited:
                     bfs(i, j)
                     count += 1
         return count
