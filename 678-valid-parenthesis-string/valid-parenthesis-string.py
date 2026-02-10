@@ -8,17 +8,17 @@ class Solution:
             if i == len(s):
                 return balance == 0
 
-            if s[i] == '(':
-                return dfs(i+1, balance+1)
+            if s[i] == "(":
+                return dfs(i + 1, balance + 1)
 
-            elif s[i] == ')':
-                return dfs(i+1, balance-1)
+            elif s[i] == ")":
+                return dfs(i + 1, balance - 1)
 
-            else: 
+            else:
                 return (
-                    dfs(i+1, balance+1) or
-                    dfs(i+1, balance-1) or
-                    dfs(i+1, balance)
+                    dfs(i + 1, balance + 1)
+                    or dfs(i + 1, balance - 1)
+                    or dfs(i + 1, balance)
                 )
 
         return dfs(0, 0)
