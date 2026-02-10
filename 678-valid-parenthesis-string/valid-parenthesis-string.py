@@ -1,21 +1,18 @@
 class Solution:
     def checkValidString(self, s: str) -> bool:
-        @cache
-        def dfs(i, balance):
-            if balance < 0:
-                return False
-            if i == len(s):
-                return balance == 0
+        min_open = max_open = 0
 
-            if s[i] == "(":
-                return dfs(i + 1, balance + 1)
-            elif s[i] == ")":
-                return dfs(i + 1, balance - 1)
+        for c in s:
+            if c == '(':
+                min_open += 1
+                max_open += 1
+            elif c == ')':
+                min_open -= 1
+                max_open -= 1
             else:
-                return (
-                    dfs(i + 1, balance + 1)
-                    or dfs(i + 1, balance - 1)
-                    or dfs(i + 1, balance)
-                )
-
-        return dfs(0, 0)
+                min_open -= 1
+                max_open += 1
+            if max_open < 0:
+                return False
+            min_open = max(min_open, 0)
+        return min_open == 0
