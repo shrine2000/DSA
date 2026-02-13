@@ -13,7 +13,6 @@ class LRUCache:
         self.tail = Node(0)
         self.capacity = capacity
         self.cache = {}
-
         self.head.next = self.tail
         self.tail.prev = self.head
 
@@ -24,7 +23,6 @@ class LRUCache:
 
     def remove(self, node):
         prev_node, next_node = node.prev, node.next
-
         prev_node.next = next_node
         next_node.prev = prev_node
 
