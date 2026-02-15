@@ -34,7 +34,7 @@
 
 [Linked List](https://github.com/shrine2000/DSA/tree/main/LinkedList)
 
-[Math & Geometry](https://github.com/shrine2000/DSA/tree/main/Math%&%Geometry)
+[Math & Geometry](https://github.com/shrine2000/DSA/tree/main/Math%20%26%20Geometry)
 
 [TC/SC Reference](https://github.com/shrine2000/DSA/tree/main/TC%20SC%20Reference)
 
