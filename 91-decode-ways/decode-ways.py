@@ -1,20 +1,18 @@
 class Solution:
     def numDecodings(self, s: str) -> int:
-        @lru_cache(None)
-        def helper(idx):
-            if idx == len(s):
+
+        @cache
+        def dfs(i):
+            if i == len(s):
                 return 1
 
-            if s[idx] == "0":
+            if s[i] == '0':
                 return 0
 
-            single_digit = helper(idx + 1)
-            two_digit = 0
-            if idx + 1 < len(s) and (
-                s[idx] == "1" or (s[idx] == "2" and s[idx + 1] <= "6")
-            ):
-                two_digit = helper(idx + 2)
+            count = dfs(i + 1)
+            if i + 1 < len(s) and 10 <= int(s[i:i+2]) <= 26:
+                count += dfs(i + 2)
 
-            return single_digit + two_digit
+            return count
 
-        return helper(0)
+        return dfs(0)

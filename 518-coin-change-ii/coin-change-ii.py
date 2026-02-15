@@ -1,18 +1,15 @@
 class Solution:
     def change(self, amount: int, coins: List[int]) -> int:
-        @lru_cache(None)
-        def helper(idx, remaining_amount):
-            if remaining_amount == 0:
-                return 1
-            if remaining_amount < 0:
-                return 0
+        # dp[i][a] = number of ways to make amount a using coins from index i onward
+        n = len(coins)
+        dp = [[0] * (amount + 1) for _ in range(n + 1)]
 
-            if idx == len(coins):
-                return 0
+        for i in range(n + 1):
+            dp[i][0] = 1
 
-            take = helper(idx, remaining_amount - coins[idx])
-            not_take = helper(idx + 1, remaining_amount)
-
-            return take + not_take
-
-        return helper(0, amount)
+        for i in range(n - 1, -1, -1):
+            for a in range(1, amount + 1):
+                dp[i][a] = dp[i + 1][a]
+                if a >= coins[i]:
+                    dp[i][a] += dp[i][a - coins[i]]
+        return dp[0][amount]
