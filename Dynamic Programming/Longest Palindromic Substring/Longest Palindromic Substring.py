@@ -6,6 +6,7 @@
 
 # https://www.youtube.com/watch?v=fxwvVnBMN6I
 
+
 # https://www.youtube.com/watch?v=fxwvVnBMN6I
 class Solution:
     def longestPalindrome(self, s: str) -> str:
@@ -53,7 +54,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution().longestPalindromeExpandFromCenter("babad"))  # "bab" or "aba"
+    print(Solution().longestPalindromeExpandFromCenter("cbbd"))  # "bab" or "aba"
     print(Solution().longestPalindromeExpandFromCenter("cbbd"))  # "bb"
     print(Solution().longestPalindromeExpandFromCenter("a"))  # "a"
     print(Solution().longestPalindromeExpandFromCenter(""))  # ""
