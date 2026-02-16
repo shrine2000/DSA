@@ -1,11 +1,18 @@
 class Solution:
     def partitionLabels(self, s: str) -> List[int]:
-        last_ocurrance = {char: idx for idx, char in enumerate(s)}
-        partitions = []
-        start = end = 0
+        last_idx = {}
+
         for i, char in enumerate(s):
-            end = max(end, last_ocurrance[char])
+            last_idx[char] = i
+
+        result = []
+        start = 0
+        end = 0
+
+        for i, char in enumerate(s):
+            end = max(end, last_idx[char])
+
             if i == end:
-                partitions.append(end - start + 1)
+                result.append(end - start + 1)
                 start = i + 1
-        return partitions
+        return result
