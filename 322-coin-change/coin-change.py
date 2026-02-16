@@ -1,10 +1,20 @@
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        INF = amount + 1
-        dp = [INF] * (amount + 1)
-        dp[0] = 0
+        memo = {}
+        def dfs(idx, remaining):
+            if (idx, remaining) in memo:
+                return memo[(idx, remaining)]
 
-        for coin in coins:
-            for a in range(coin, amount + 1):
-                dp[a] = min(dp[a], 1 + dp[a - coin])
-        return -1 if dp[amount] == INF else dp[amount]
+            if remaining == 0:
+                return 0
+            if idx == len(coins) or remaining < 0:
+                return float("inf")
+
+            pick = 1 + dfs(idx, remaining - coins[idx])
+            not_pick = dfs(idx + 1, remaining)
+
+            res =  min(pick, not_pick)
+            memo[(idx, remaining)] = res
+            return res
+        count = -1 if dfs(0, amount) == float('inf') else dfs(0, amount) 
+        return count
