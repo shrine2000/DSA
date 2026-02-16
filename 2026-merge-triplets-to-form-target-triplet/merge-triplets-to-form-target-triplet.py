@@ -1,12 +1,12 @@
 class Solution:
     def mergeTriplets(self, triplets: List[List[int]], target: List[int]) -> bool:
-        found = [False, False, False]
+        found = [False] * 3
 
-        for t in triplets:
-            if t[0] > target[0] or t[1] > target[1] or t[2] > target[2]:
+        for tpts in triplets:
+            if tpts[0] > target[0] or tpts[1] > target[1] or tpts[2] > target[2]:
                 continue
-
+            
             for i in range(3):
-                if t[i] == target[i]:
+                if tpts[i] == target[i]:
                     found[i] = True
         return all(found)
