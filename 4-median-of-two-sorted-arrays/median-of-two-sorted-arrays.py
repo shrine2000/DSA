@@ -1,22 +1,11 @@
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        pq = []
+        sorted_arr = sorted(nums1 + nums2)
 
-        for num in nums1:
-            heapq.heappush(pq, (num))
-        for num in nums2:
-            heapq.heappush(pq, (num))
+        n = len(sorted_arr)
+        mid = n // 2
 
-        n = len(pq)
         if n % 2 == 1:
-            mid = n // 2
-            for _ in range(mid):
-                heapq.heappop(pq)
-            return heapq.heappop(pq)
+            return sorted_arr[mid]
         else:
-            mid = n // 2
-            for _ in range(mid - 1):
-                heapq.heappop(pq)
-            a = heappop(pq)
-            b = heappop(pq)
-            return (a + b) / 2
+            return (sorted_arr[mid - 1] + sorted_arr[mid]) / 2
