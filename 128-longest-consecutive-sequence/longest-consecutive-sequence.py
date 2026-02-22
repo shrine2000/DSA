@@ -13,4 +13,3 @@ class Solution:
                     count += 1
                 max_count = max(count, max_count)
         return max_count
-

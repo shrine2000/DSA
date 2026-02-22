@@ -8,10 +8,10 @@ class Solution:
 
         res = [0] * (m + n)
 
-        for i in range(m - 1, -1, - 1):
-            for j in range(n -1, -1, -1):
-                digit1 = ord(nums1[i]) - ord('0')
-                digit2 = ord(nums2[j]) - ord('0')
+        for i in range(m - 1, -1, -1):
+            for j in range(n - 1, -1, -1):
+                digit1 = ord(nums1[i]) - ord("0")
+                digit2 = ord(nums2[j]) - ord("0")
 
                 product = digit1 * digit2
 
@@ -19,8 +19,8 @@ class Solution:
                 pos_high = i + j
 
                 total = product + res[pos_low]
-                
+
                 res[pos_low] = total % 10
                 res[pos_high] += total // 10
-        result_str = ''.join(map(str, res))
-        return result_str.lstrip('0')
+        result_str = "".join(map(str, res))
+        return result_str.lstrip("0")

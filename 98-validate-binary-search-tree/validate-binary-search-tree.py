@@ -12,12 +12,10 @@ class Solution:
         def dfs(node, lower, upper):
             if not node:
                 return True
-                
+
             if not (lower < node.val < upper):
                 return False
 
-            return (
-                dfs(node.left, lower, node.val) and
-                dfs(node.right, node.val, upper)
-            )
-        return dfs(root, float('-inf'), float('inf'))
+            return dfs(node.left, lower, node.val) and dfs(node.right, node.val, upper)
+
+        return dfs(root, float("-inf"), float("inf"))

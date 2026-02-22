@@ -8,8 +8,7 @@ class Solution:
         curr, prev = head, None
         while curr:
             nxt_node = curr.next
-            curr.next = prev # reverse the link
+            curr.next = prev  # reverse the link
             prev = curr
             curr = nxt_node
         return prev
-

@@ -19,5 +19,5 @@ class Solution:
             dfs(node.left, curr_max)
             dfs(node.right, curr_max)
 
-        dfs(root, float('-inf'))
+        dfs(root, float("-inf"))
         return self.count
