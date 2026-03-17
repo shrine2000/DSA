@@ -12,7 +12,8 @@ class Codec:
         def dfs(node):
             if not node:
                 return "#"
-            return str(node.val) + ',' + dfs(node.left) + ',' + dfs(node.right)
+            return str(node.val) + "," + dfs(node.left) + "," + dfs(node.right)
+
         return dfs(root)
 
     def deserialize(self, data):
@@ -28,7 +29,9 @@ class Codec:
             node.left = dfs()
             node.right = dfs()
             return node
+
         return dfs()
+
 
 # Your Codec object will be instantiated and called as such:
 # ser = Codec()
