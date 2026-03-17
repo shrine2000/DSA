@@ -7,6 +7,7 @@
 
 
 class Codec:
+
     def serialize(self, root):
         def dfs(node):
             if not node:
