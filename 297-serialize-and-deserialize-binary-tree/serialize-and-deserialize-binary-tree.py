@@ -12,24 +12,23 @@ class Codec:
         def dfs(node):
             if not node:
                 return "#"
-
-            return str(node.val) + "," + dfs(node.left) + "," + dfs(node.right)
-
+            return str(node.val) + ',' + dfs(node.left) + ',' + dfs(node.right)
         return dfs(root)
 
     def deserialize(self, data):
-        def dfs(nodes):
-            val = next(nodes)
-            if val == "#":
+        vals = data.split(",")
+        self.i = 0
+
+        def dfs():
+            if vals[self.i] == "#":
+                self.i += 1
                 return None
-            node = TreeNode(int(val))
-            node.left = dfs(nodes)
-            node.right = dfs(nodes)
+            node = TreeNode(int(vals[self.i]))
+            self.i += 1
+            node.left = dfs()
+            node.right = dfs()
             return node
-
-        nodes = iter(data.split(","))
-        return dfs(nodes)
-
+        return dfs()
 
 # Your Codec object will be instantiated and called as such:
 # ser = Codec()
