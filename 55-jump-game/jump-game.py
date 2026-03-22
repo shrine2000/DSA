@@ -4,7 +4,6 @@ class Solution:
         for n in nums:
             if gas < 0:
                 return False
-            elif n > gas:
-                gas = n
+            gas = max(gas, n)
             gas -= 1
         return True
