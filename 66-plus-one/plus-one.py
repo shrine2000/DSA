@@ -7,8 +7,7 @@ class Solution:
                 else:
                     digits[i] += 1
                     return digits
-            digits.insert(0, 1)
-        else:
-            temp = digits[-1]
-            digits[-1] = temp + 1
+            return [1] + digits
+
+        digits[-1] += 1
         return digits
