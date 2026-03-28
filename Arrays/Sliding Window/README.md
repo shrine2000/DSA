@@ -24,3 +24,48 @@ function slidingWindow(data):
 
     return result
 ```
+
+### 1. Fixed Size Window
+```python
+def fixed_window(arr, k):
+    # initialize window state
+    window_state = 0
+    result = 0
+
+    for r in range(len(arr)):
+        # add arr[r] to window
+        window_state += arr[r]
+
+        # remove leftmost element once window exceeds size k
+        if r >= k:
+            window_state -= arr[r - k]
+
+        # update result (only when window is fully formed)
+        if r >= k - 1:
+            result = max(result, window_state)
+
+    return result
+```
+
+### 2. Variable Size Window
+```python
+def variable_window(arr, k):
+    # initialize window state
+    window_state = 0
+    result = 0
+    l = 0
+
+    for r in range(len(arr)):
+        # add arr[r] to window
+        window_state += arr[r]
+
+        # shrink window from left until valid
+        while not valid(window_state, k):
+            window_state -= arr[l]
+            l += 1
+
+        # update result (window is always valid here)
+        result = max(result, r - l + 1)
+
+    return result
+```
