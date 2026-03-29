@@ -3,26 +3,28 @@ class Solution:
         if not grid or not grid[0]:
             return 0
 
-        R, C = len(grid), len(grid[0])
-        visited = set()
+        m, n = len(grid), len(grid[0])
+
+        visited=set()
+
 
         def dfs(i, j):
-            if (
-                0 <= i < R
-                and 0 <= j < C
-                and (i, j) not in visited
-                and grid[i][j] == "1"
-            ):
-                visited.add((i, j))
-                dfs(i + 1, j)
-                dfs(i - 1, j)
-                dfs(i, j + 1)
-                dfs(i, j - 1)
+            if (i < 0 or j < 0 or i >= m or j >= n or grid[i][j] != '1' or (i, j) in visited):
+                return
 
-        count = 0
-        for i in range(R):
-            for j in range(C):
-                if grid[i][j] == "1" and (i, j) not in visited:
+            visited.add((i, j))
+            
+            dfs(i+1, j)
+            dfs(i, j + 1)
+            dfs(i-1, j)
+            dfs(i, j - 1)
+
+
+        islands = 0
+
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == '1' and (i,j) not in visited:
                     dfs(i, j)
-                    count += 1
-        return count
+                    islands += 1
+        return islands
