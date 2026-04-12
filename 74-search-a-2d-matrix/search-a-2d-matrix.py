@@ -5,15 +5,15 @@ class Solution:
         left, right = 0, m * n - 1
 
         while left <= right:
-            mid = (left + right ) // 2
+            mid = (left + right) // 2
 
             row = mid // n
             col = mid % n
             value = matrix[row][col]
             if value == target:
                 return True
-            elif value < target :
-                left = mid +1
+            elif value < target:
+                left = mid + 1
             else:
                 right = mid - 1
 
