@@ -1,11 +1,16 @@
+from collections import defaultdict
+
 class Solution:
     def countKDifference(self, nums: List[int], k: int) -> int:
+        hmap = defaultdict(int)
         count = 0
-        n = len(nums)
 
-        for i in range(n):
-            for j in range(i + 1, n):
-                if abs(nums[i] - nums[j]) == k:
-                    count += 1
-
+        for num in nums:
+            if (num - k) in hmap:
+                count += hmap[num - k]
+            if (num + k) in hmap:
+                count += hmap[num + k]
+            
+            hmap[num] += 1
+        
         return count
