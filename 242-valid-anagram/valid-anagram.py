@@ -1,19 +1,14 @@
+from collections import Counter
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
 
-        counter = defaultdict(int)
-        for char in s:
-            counter[char] = counter.get(char, 0) + 1
+        freq = [0] * 26
 
-        for char in t:
-            if char in s:
-                counter[char] = max(0, counter.get(char, 0) - 1)
+        for i in range(len(s)):
+            freq[ord(s[i]) - ord('a')] += 1
+            freq[ord(t[i]) - ord('a')] -= 1
 
-        return bool(all([v == 0 for k, v in counter.items()]))
-
-# check length of both strings,
-# make char frequency map on string s,
-# run for loop on t and reduce count of chars which are in s
-# finally see if count of all chars in intial freq map is zero
+        return all(count == 0 for count in freq)
