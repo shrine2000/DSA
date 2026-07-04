@@ -13,4 +13,5 @@ class Solution:
             prev = curr
             curr = nxt_node
         return prev
+ 
 
