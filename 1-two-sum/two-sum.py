@@ -1,10 +1,15 @@
+from typing import List
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hmap = {}
-
-        for idx, num in enumerate(nums):
+        seen = {}
+        
+        for index, num in enumerate(nums):
             complement = target - num
-            if complement in hmap:
-                return [hmap[complement], idx]
-            hmap[num] = idx
+            
+            if complement in seen:
+                return [seen[complement], index]
+                
+            seen[num] = index
+            
         return []
