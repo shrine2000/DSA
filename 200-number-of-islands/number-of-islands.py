@@ -4,32 +4,36 @@ class Solution:
             return 0
 
         m, n = len(grid), len(grid[0])
-
+        directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
         visited = set()
+        max_count = float("-inf")
 
-        def dfs(i, j):
-            if (
-                i < 0
-                or j < 0
-                or i >= m
-                or j >= n
-                or grid[i][j] != "1"
-                or (i, j) in visited
-            ):
-                return
+        def bfs(X, Y):
+            queue = deque([(X, Y)])
+            visited.add((X, Y))
+            count = 0
 
-            visited.add((i, j))
-
-            dfs(i + 1, j)
-            dfs(i, j + 1)
-            dfs(i - 1, j)
-            dfs(i, j - 1)
+            while queue:
+                x, y = queue.popleft()
+                for dx, dy in directions:
+                    nx, ny = x + dx, y + dy
+                    if (
+                        0 <= nx < m
+                        and 0 <= ny < n
+                        and (nx, ny) not in visited
+                        and grid[nx][ny] == "1"
+                    ):
+                        count += 1
+                        queue.append((nx, ny))
+                        visited.add((nx, ny))
+            return count
 
         islands = 0
 
         for i in range(m):
             for j in range(n):
                 if grid[i][j] == "1" and (i, j) not in visited:
-                    dfs(i, j)
+                    bfs(i, j)
                     islands += 1
+
         return islands
