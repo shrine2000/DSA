@@ -10,12 +10,9 @@ class Solution:
             return []
         queue = deque([root])
         order = []
-
         while queue:
             level = []
-
             level_size = len(queue)
-
             for _ in range(level_size):
                 node = queue.popleft()
                 level.append(node.val)
@@ -24,5 +21,4 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
             order.append(level)
-
         return order
