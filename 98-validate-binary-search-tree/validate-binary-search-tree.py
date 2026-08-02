@@ -9,13 +9,13 @@ class Solution:
         if not root:
             return False
 
-        def dfs(node, lower, upper):
+        def check(node, low, high):
             if not node:
                 return True
 
-            if not (lower < node.val < upper):
+            if not (low < node.val < high):
                 return False
+            
+            return (check(node.left, low, node.val) and check(node.right, node.val, high))
 
-            return dfs(node.left, lower, node.val) and dfs(node.right, node.val, upper)
-
-        return dfs(root, float("-inf"), float("inf"))
+        return check(root, float('-inf'), float('inf'))
