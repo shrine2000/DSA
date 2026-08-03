@@ -15,7 +15,7 @@ class Solution:
 
             if not (low < node.val < high):
                 return False
-            
-            return (check(node.left, low, node.val) and check(node.right, node.val, high))
 
-        return check(root, float('-inf'), float('inf'))
+            return check(node.left, low, node.val) and check(node.right, node.val, high)
+
+        return check(root, float("-inf"), float("inf"))
