@@ -1,19 +1,26 @@
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        flattend = []
+
         m, n = len(matrix), len(matrix[0])
+
+        # for i in range(m):
+        #     for j in range(n):
+        #         flattend.append(matrix[i][j])
 
         left, right = 0, m * n - 1
 
         while left <= right:
             mid = (left + right) // 2
-
             row = mid // n
             col = mid % n
-            value = matrix[row][col]
-            if value == target:
+
+            if matrix[row][col] == target:
                 return True
-            elif value < target:
+
+            elif matrix[row][col] < target:
                 left = mid + 1
+
             else:
                 right = mid - 1
 
