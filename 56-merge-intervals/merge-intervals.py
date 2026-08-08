@@ -3,14 +3,15 @@ class Solution:
         if not intervals:
             return []
 
-        intervals.sort(key=lambda x: x[0])
-        merged = [intervals[0].copy()]
-
-        for start, end in intervals[1:]:
-            last = merged[-1]
-
-            if start <= last[1]:
-                last[1] = max(last[1], end)
+        result = []
+        intervals.sort(key=lambda x:x[0])
+        current = intervals[0]
+        for i in range(1, len(intervals)):
+            if current[1] >= intervals[i][0]:
+                current[0] = min(current[0], intervals[i][0])
+                current[1]  = max(current[1], intervals[i][1])
             else:
-                merged.append([start, end])
-        return merged
+                result.append(current)
+                current = intervals[i]
+        result.append(current)
+        return result
