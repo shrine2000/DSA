@@ -1,6 +1,12 @@
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-        mapping = {
+        
+        if not digits:
+            return []
+
+        result = []
+
+        char_map = {
             "2": "abc",
             "3": "def",
             "4": "ghi",
@@ -8,16 +14,20 @@ class Solution:
             "6": "mno",
             "7": "pqrs",
             "8": "tuv",
-            "9": "wxyz",
+            "9": "wxyz"
         }
-        res = []
 
-        def backtrack(idx, path):
+        def backtrack(idx, value):
             if idx == len(digits):
-                res.append(path)
-                return
-            for letter in mapping[digits[idx]]:
-                backtrack(idx + 1, path + letter)
+                result.append(''.join(value))
+                return 
 
-        backtrack(0, "")
-        return res if digits else []
+            letters = char_map[digits[idx]]
+
+            for letter in letters:
+                value.append(letter)
+                backtrack(idx + 1, value)
+                value.pop()
+
+        backtrack(0, [])
+        return result
