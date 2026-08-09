@@ -1,14 +1,22 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        n = len(nums)
-
         @cache
         def dfs(i):
             if i == 0:
                 return nums[0], nums[0]
 
             prev_max, prev_min = dfs(i - 1)
-            candidates = (nums[i], nums[i] * prev_max, nums[i] * prev_min)
-            return max(candidates), min(candidates)
 
-        return max(dfs(i)[0] for i in range(n))
+            num = nums[i]
+            curr_max = max(num, num * prev_max, num * prev_min)
+
+            curr_min = min(num, num * prev_max, num * prev_min)
+
+            return  curr_max,curr_min
+
+        answer = float("-inf")
+
+        for i in range(len(nums)):
+            curr_max, _ = dfs(i)
+            answer = max(answer, curr_max)
+        return answer
