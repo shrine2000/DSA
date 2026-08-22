@@ -1,7 +1,8 @@
+from collections import defaultdict
+from collections import Counter
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        anagram_map = defaultdict(list)
-        for word in strs:
-            key = "".join(sorted(word))
-            anagram_map[key].append(word)
-        return list(anagram_map.values())
+        counter_map = defaultdict(list)
+        for value in strs:
+            counter_map[''.join(sorted(value))].append(value)
+        return list(counter_map.values())
