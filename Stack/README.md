@@ -12,7 +12,7 @@ https://leetcode.com/discuss/study-guide/2347639/a-comprehensive-guide-and-templ
 |--------------------------|----------------------------------|---------------------------------|--------------------|
 | `next_greater_to_right`  | Decreasing (equal allowed)       | `stack[-1] <= arr[i]`  (When looking for greater elements: Remove all smaller elements.)        | Right to Left      |
 | `next_greater_to_left`   | Decreasing (strict)              | `stack[-1] <= arr[i]`           | Left to Right      |
-| `next_smaller_to_right`  | Increasing (equal allowed)       | `stack[-1] >= arr[i]`           | Right to Left      |
+| `next_smaller_to_right`  | Increasing (equal allowed)       | `stack[-1] >= arr[i]` (Remove: all greater elements because we need smaller.)          | Right to Left      |
 | `next_smaller_to_left`   | Increasing (strict)              | `stack[-1] >= arr[i]`           | Left to Right      |
 
 
