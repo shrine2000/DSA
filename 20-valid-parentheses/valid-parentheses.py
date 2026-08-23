@@ -1,12 +1,16 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        charMap = {")": "(", "}": "{", "]": "["}
-        print(charMap.keys() )
-
+        char_map = {
+            ')': '(',
+            '}':'{',
+            ']': '['
+        }
         stack = []
 
         for char in s:
-            if stack and char in charMap.keys() and charMap[char] == stack[-1]:
+            if char in char_map:
+                if not stack or stack[-1] != char_map[char]:
+                    return False
                 stack.pop()
             else:
                 stack.append(char)
