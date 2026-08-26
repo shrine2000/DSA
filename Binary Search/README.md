@@ -76,4 +76,22 @@ while left < right:
     else:
         right = mid - 1
 return left
+
+
 ```
+**When to use `left < right` vs `left <= right`?**
+
+* `left < right`: Use when searching for a boundary (first true, lower bound, answer space); stop when one candidate remains.
+* `left <= right`: Use when searching for an exact element; continue until the search space becomes empty.
+
+**How to initialize `left` and `right`?**
+
+* Set them to the minimum and maximum possible answers.
+* The search range must contain every valid answer from the start.
+
+**How to update boundaries?**
+
+* If `mid` can still be the answer, keep it: `right = mid`.
+* If `mid` cannot be the answer, discard it: `left = mid + 1` (or `right = mid - 1` in exact-search templates).
+
+
