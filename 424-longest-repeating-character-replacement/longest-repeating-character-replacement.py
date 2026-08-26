@@ -1,23 +1,19 @@
 from collections import defaultdict
-from typing import Dict
+
 
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        if not s:
-            return 0
-
         freq = defaultdict(int)
-
-        left = 0
+        l = 0
+        ans = 0
         max_freq = 0
-        max_length = 0
 
-        for right in range(len(s)):
-            freq[s[right]] += 1
-            max_freq = max(max_freq, freq[s[right]])
+        for r in range(len(s)):
+            freq[s[r]] += 1
+            max_freq = max(max_freq, freq[s[r]])
 
-            while (right - left + 1) - max_freq > k:
-                freq[s[left]] -= 1
-                left += 1
-            max_length = max(max_length, right - left + 1)
-        return max_length
+            while (r - l + 1) - max_freq > k:
+                freq[s[l]] -= 1
+                l += 1
+            ans = max(ans, r - l + 1)
+        return ans
