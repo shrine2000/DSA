@@ -19,5 +19,6 @@ class Solution:
                 self.answer = node.val
                 return
             inorder(node.right)
+
         inorder(root)
         return self.answer
