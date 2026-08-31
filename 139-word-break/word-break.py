@@ -10,7 +10,5 @@ class Solution:
         for start in range(n - 1, -1, -1):
             for end in range(start + 1, n + 1):
                 if s[start:end] in word_set and dp[end]:
-                    dp[start] = True
-                    break
-    
+                    dp[start] = True    
         return dp[0]
