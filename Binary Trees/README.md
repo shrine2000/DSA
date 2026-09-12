@@ -19,23 +19,23 @@
 
 | Pattern | Concept | Snippet |
 |---------|---------|---------|
-| Maximum Depth | return height | `return 1 + max(left, right)` |
-| Diameter | left_height + right_height | `diameter = max(diameter, left + right)` |
-| Balanced Tree | height + balance check | `abs(left - right) <= 1` |
-| Validate BST | propagate (low, high) | `low < node.val < high` |
-| LCA Binary Tree | find p/q in both subtrees | `if left and right: return node` |
-| LCA BST | use ordering property | `if p,q < root go left; if p,q > root go right` |
-| Level Order | BFS queue | `for _ in range(len(queue))` |
-| Same Tree | compare recursively | `p.val == q.val and left and right` |
-| Invert Tree | swap children | `node.left, node.right = node.right, node.left` |
-| Kth Smallest BST | inorder traversal | `inorder => sorted order` |
-| Search BST | BST navigation | `root = root.left/right based on target` |
-| Min Depth | shortest root-to-leaf path | `leaf => return 1` |
-| Path Sum | DFS with remaining target | `remaining -= node.val` |
-| Subtree of Tree | Same Tree + DFS | `isSame(root, subRoot)` |
-| Serialize Tree | preserve structure | `preorder + "#" for nulls` |
-| Construct Tree | traversal reconstruction | `root = preorder[0]` |
-| Max Path Sum | left gain + right gain | `ans = max(ans, node.val + left + right)` |
-| Count Good Nodes | carry max_so_far | `if node.val >= max_so_far` |
-| Right Side View | BFS / DFS right-first | `first node seen at each level` |
-| Zigzag Level Order | level order traversal | `reverse every alternate level` |
+| [Maximum Depth](https://leetcode.com/problems/maximum-depth-of-binary-tree/) | return height | `return 1 + max(left, right)` |
+| [Diameter](https://leetcode.com/problems/diameter-of-binary-tree/) | left_height + right_height | `diameter = max(diameter, left + right)` |
+| [Balanced Tree](https://leetcode.com/problems/balanced-binary-tree/) | height + balance check | `abs(left - right) <= 1` |
+| [Validate BST](https://leetcode.com/problems/validate-binary-search-tree/) | propagate (low, high) | `low < node.val < high` |
+| [LCA Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) | find p/q in both subtrees | `if left and right: return node` |
+| [LCA BST](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) | use ordering property | `if p,q < root go left; if p,q > root go right` |
+| [Level Order](https://leetcode.com/problems/binary-tree-level-order-traversal/) | BFS queue | `for _ in range(len(queue))` |
+| [Same Tree](https://leetcode.com/problems/same-tree/) | compare recursively | `p.val == q.val and left and right` |
+| [Invert Tree](https://leetcode.com/problems/invert-binary-tree/) | swap children | `node.left, node.right = node.right, node.left` |
+| [Kth Smallest BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) | inorder traversal | `inorder => sorted order` |
+| [Search BST](https://leetcode.com/problems/search-in-a-binary-search-tree/) | BST navigation | `root = root.left/right based on target` |
+| [Min Depth](https://leetcode.com/problems/minimum-depth-of-binary-tree/) | shortest root-to-leaf path | `leaf => return 1` |
+| [Path Sum](https://leetcode.com/problems/path-sum/) | DFS with remaining target | `remaining -= node.val` |
+| [Subtree of Tree](https://leetcode.com/problems/subtree-of-another-tree/) | Same Tree + DFS | `isSame(root, subRoot)` |
+| [Serialize Tree](https://leetcode.com/problems/serialize-and-deserialize-binary-tree/) | preserve structure | `preorder + "#" for nulls` |
+| [Construct Tree](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/) | traversal reconstruction | `root = preorder[0]` |
+| [Max Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) | left gain + right gain | `ans = max(ans, node.val + left + right)` |
+| [Count Good Nodes](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) | carry max_so_far | `if node.val >= max_so_far` |
+| [Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/) | BFS / DFS right-first | `first node seen at each level` |
+| [Zigzag Level Order](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/) | level order traversal | `reverse every alternate level` |
