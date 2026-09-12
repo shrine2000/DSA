@@ -1,12 +1,8 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
         n = len(nums)
-        @cache
-        def dfs(idx):
-            if idx >= n:
-                return 0
-            
-            pick = nums[idx] + dfs(idx + 2)
-            skip = dfs(idx + 1)
-            return max(pick, skip)
-        return dfs(0)
+        dp = [0] * (n  +  2)
+
+        for i in range(n-1, -1, -1):
+            dp[i] = max(nums[i] + dp[i + 2], dp[i + 1])
+        return dp[0]
