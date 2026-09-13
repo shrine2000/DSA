@@ -5,6 +5,7 @@ class Solution:
             return False
 
         target = total // 2
+        nums.sort(reverse=True)
         n = len(nums)
 
         @cache
@@ -16,5 +17,4 @@ class Solution:
                 return False
 
             return dfs(idx + 1, curr_sum + nums[idx]) or dfs(idx + 1, curr_sum)
-
         return dfs(0, 0)
