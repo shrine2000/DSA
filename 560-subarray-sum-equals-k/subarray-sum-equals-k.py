@@ -1,15 +1,12 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
-        prefix_freq = {0: 1}
+        answer = 0
         running_sum = 0
-        count = 0
-
+        prefix = defaultdict(int)
+        prefix[0] = 1
         for num in nums:
             running_sum += num
-
-            if running_sum - k in prefix_freq:
-                count += prefix_freq[running_sum - k]
-
-            prefix_freq[running_sum] = prefix_freq.get(running_sum, 0) + 1
-
-        return count
+            needed_prefix = running_sum - k
+            answer += prefix[needed_prefix]
+            prefix[running_sum] += 1
+        return answer
