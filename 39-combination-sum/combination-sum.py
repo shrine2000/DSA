@@ -1,19 +1,20 @@
 class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        result = []
+    def combinationSum(self, candidates: list[int], target: int) -> list[list[int]]:
+        res = []
+        n = len(candidates)
 
-        def backtrack(start, path, current_sum):
-            if current_sum == target:
-                result.append(path[:])
+        def dfs(idx, path, remaining):
+            if idx == n or remaining < 0:
                 return
 
-            if current_sum > target:
+            if remaining == 0:
+                res.append(path[:])
                 return
 
-            for i in range(start, len(candidates)):
-                path.append(candidates[i])
-                backtrack(i, path, current_sum + candidates[i])
+            for end in range(idx, n):
+                path.append(candidates[end])
+                dfs(end, path,remaining - candidates[end])
                 path.pop()
 
-        backtrack(0, [], 0)
-        return result
+        dfs(0, [], target)
+        return res
