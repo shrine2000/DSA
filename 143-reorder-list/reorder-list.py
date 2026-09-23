@@ -4,31 +4,45 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def reorderList(self, head: Optional[ListNode]) -> None:
+    def reorderList(self, head: ListNode | None) -> None:
         """
         Do not return anything, modify head in-place instead.
         """
+        if not head or not head.next:
+            return
 
-        fast = slow = head
+        slow = fast = head
+
+        # find mid of the list
 
         while fast and fast.next:
-            fast = fast.next.next
             slow = slow.next
+            fast = fast.next.next
 
-        prev, curr = None, slow
+        mid = slow
+
+        # reverse the second half
+        # save reverse move move
+        prev, curr = None, mid
+
         while curr:
-            next_node = curr.next
+            curr_next = curr.next
             curr.next = prev
-            prev = curr
-            curr = next_node
+            prev = curr # not sure
+            curr = curr_next
 
-        first, second = head, prev
+
+        # interleave both halfs
+        first = head
+        second = prev
+
         while second.next:
-            first_next = first.next
-            second_next = second.next
+            nxt1 = first.next
+            nxt2 = second.next
 
             first.next = second
-            second.next = first_next
+            second.next = nxt1
 
-            first = first_next
-            second = second_next
+            first = nxt1
+            second = nxt2
+
