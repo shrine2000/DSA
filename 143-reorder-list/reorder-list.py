@@ -28,9 +28,8 @@ class Solution:
         while curr:
             curr_next = curr.next
             curr.next = prev
-            prev = curr # not sure
+            prev = curr  # not sure
             curr = curr_next
-
 
         # interleave both halfs
         first = head
@@ -45,4 +44,3 @@ class Solution:
 
             first = nxt1
             second = nxt2
-
