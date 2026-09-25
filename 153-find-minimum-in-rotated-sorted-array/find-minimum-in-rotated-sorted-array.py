@@ -1,12 +1,11 @@
 class Solution:
     def findMin(self, nums: list[int]) -> int:
-        l, r = 0, len(nums) - 1
+        left, right = 0, len(nums) - 1
 
-        while l < r:
-            m = (l + r) // 2
-
-            if nums[m] > nums[r]:
-                l = m + 1
+        while left < right:
+            mid = left + (right - left) // 2
+            if nums[mid] < nums[right]:
+                right = mid
             else:
-                r = m
-        return nums[l]
+                left = mid + 1
+        return nums[left]
