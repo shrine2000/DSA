@@ -15,7 +15,7 @@ class Solution:
 
         if not root:
             return True
-            
+
         left_sub = height(root.left)
         right_sub = height(root.right)
 
