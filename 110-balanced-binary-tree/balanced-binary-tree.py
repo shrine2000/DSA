@@ -9,17 +9,18 @@ class Solution:
         def height(node):
             if not node:
                 return 0
+
             left = height(node.left)
             right = height(node.right)
+
             return 1 + max(left, right)
 
         if not root:
             return True
 
-        left_sub = height(root.left)
-        right_sub = height(root.right)
-
-        if abs(left_sub - right_sub) > 1:
+        l = height(root.left)
+        r = height(root.right)
+        if abs(l - r) > 1:
             return False
 
-        return bool(self.isBalanced(root.left) and self.isBalanced(root.right))
+        return self.isBalanced(root.left) and self.isBalanced(root.right)
