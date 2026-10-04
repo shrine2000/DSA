@@ -1,21 +1,20 @@
 class Solution:
-    def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
-        if not heights:
+    def pacificAtlantic(self, heights: list[list[int]]) -> list[list[int]]:
+        if not heights or not heights[0]:
             return []
+        R, C = len(heights), len(heights[0])
+        directions = [(0, 1), (1, 0), (-1, 0), (0, -1)]
 
-        m, n = len(heights), len(heights[0])
-        dtn = [(1, 0), (0, 1), (-1, 0), (0, -1)]
-
-        def bfs(starting_points):
-            visited = set(starting_points)
-            queue = deque(starting_points)
+        def bfs(starts):
+            visited = set(starts)
+            queue = deque(starts)
             while queue:
                 x, y = queue.popleft()
-                for dx, dy in dtn:
-                    nx, ny = x + dx, y + dy
+                for dx, dy in directions:
+                    nx, ny = dx + x, dy + y
                     if (
-                        0 <= nx < m
-                        and 0 <= ny < n
+                        0 <= nx < R
+                        and 0 <= ny < C
                         and (nx, ny) not in visited
                         and heights[nx][ny] >= heights[x][y]
                     ):
@@ -23,12 +22,9 @@ class Solution:
                         visited.add((nx, ny))
             return visited
 
-        pacific_starts = [(0, j) for j in range(n)] + [(i, 0) for i in range(1, m)]
-        atlantic_starts = [(m - 1, j) for j in range(n)] + [
-            (i, n - 1) for i in range(m - 1)
-        ]
+        pacific = [(i, 0) for i in range(R)] + [(0, j) for j in range(C)]
+        atlantic = [(i, C - 1) for i in range(R)] + [(R - 1, j) for j in range(C)]
 
-        pacific_reachable = bfs(pacific_starts)
-        atlantic_reachable = bfs(atlantic_starts)
-
-        return list(pacific_reachable & atlantic_reachable)
+        pacific_ocean = bfs(pacific)
+        atlantic_ocean = bfs(atlantic)
+        return list(pacific_ocean & atlantic_ocean)
