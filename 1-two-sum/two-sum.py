@@ -1,11 +1,10 @@
-from typing import List
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         seen = {}
-        for key, value in enumerate(nums):
+
+        for idx, value in enumerate(nums):
             complement = target - value
             if complement in seen:
-                return [seen[complement], key]
-            seen[value] = key
+                return [seen.get(complement), idx]
+            seen[value] = idx
         return [-1, -1]
