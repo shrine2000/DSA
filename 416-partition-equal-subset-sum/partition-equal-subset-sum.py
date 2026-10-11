@@ -5,7 +5,7 @@ class Solution:
             return False
 
         target = total // 2
-        #nums.sort(reverse=True)
+        nums.sort(reverse=True)
         n = len(nums)
 
         @cache
