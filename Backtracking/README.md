@@ -17,6 +17,34 @@
 
 ```python
 
+
+def backtrack(start, path):
+    # 1. Base case: Is the current path a valid solution?
+    if is_valid_solution(path):
+        result.append(path.copy())
+        return
+
+    # 2. Explore all possible choices
+    for i in range(start, len(nums)):
+
+        # 3. Make a choice
+        path.append(nums[i])
+
+        # 4. Explore recursively
+        backtrack(i + 1, path)
+
+        # 5. Undo the choice (backtrack)
+        path.pop()
+
+
+result = []
+backtrack(0, [])
+
+
+```
+
+```python
+
 def backtrack(choices: List[Any], current_path: List[Any], result: List[List[Any]]):
     if is_solution(current_path):
         result.append(current_path[:])
