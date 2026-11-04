@@ -9,25 +9,30 @@ class Solution:
         Do not return anything, modify head in-place instead.
         """
 
-        slow = fast = head
+        # 1 2 3 4 find mid
 
+        # 1 2 4 3 reverse from mid
+
+        # 1 4 2 3 interleave from two halfs
+
+        slow = fast = head
         while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
 
-        # mid = slow
-        # prev, curr = None, mid
-
-        prev, curr = None, slow.next
+        second = slow.next
         slow.next = None
+
+        prev = None
+        curr = second
         while curr:
             next_node = curr.next
             curr.next = prev
             prev = curr
             curr = next_node
+        second = prev
 
-        first = head  # 1 -> 2
-        second = prev  # 4 -> 3
+        first = head
 
         while second:
             first_next = first.next
