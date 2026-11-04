@@ -17,12 +17,11 @@ class Solution:
         # return False
 
         visited = set()
-
         curr = head
-
         while curr:
-            if curr in visited:
+            next_node = curr.next
+            if next_node in visited:
                 return True
-            visited.add(curr)
+            visited.add(next_node)
             curr = curr.next
         return False
