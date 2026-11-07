@@ -1,17 +1,14 @@
 class Solution:
     def numDecodings(self, s: str) -> int:
+        n = len(s)
         @cache
-        def dfs(i):
-            if i == len(s):
+        def dfs(idx):
+            if idx == n:
                 return 1
-
-            if s[i] == "0":
+            if s[idx] == "0":
                 return 0
-
-            count = dfs(i + 1)
-            if i + 1 < len(s) and 10 <= int(s[i : i + 2]) <= 26:
-                count += dfs(i + 2)
-
-            return count
-
+            ways = dfs(idx + 1)
+            if idx + 1 < n and 10 <= int(s[idx : idx + 2]) <= 26:
+                ways += dfs(idx + 2)
+            return ways
         return dfs(0)
