@@ -10,21 +10,20 @@ from typing import Optional
 
 
 class Solution:
-    def cloneGraph(self, node: Optional["Node"]) -> Optional["Node"]:
-
+    def cloneGraph(self, root: Optional["Node"]) -> Optional["Node"]:
         visited = {}
 
-        def dfs(value):
-            if value is None:
+        def dfs(node):
+            if not node:
                 return None
-            if value in visited:
-                return visited[value]
 
-            new_node = Node(val=value.val)
-            visited[value] = new_node
-            for ngbr in value.neighbors:
+            if node in visited:
+                return visited[node]
+
+            new_node = Node(val=node.val)
+            visited[node] = new_node
+            for ngbr in node.neighbors:
                 new_node.neighbors.append(dfs(ngbr))
-            visited[value] = new_node
             return new_node
 
-        return dfs(node)
+        return dfs(root)
