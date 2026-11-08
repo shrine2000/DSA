@@ -1,26 +1,28 @@
-class Solution:
-    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        
-        graph = defaultdict(list)
-        indegree = [0] * numCourses
-        for u, v in prerequisites:
-            graph[v].append(u)
-        
+from collections import deque
 
-        def has_cycle(start):
-            visited = set()
-            stack = [start]
-            while stack:
-                node = stack.pop()
-                for ngbr in graph[node]:
-                    if ngbr == start:
-                        return True
-                    if ngbr not in visited:
-                        visited.add(ngbr)
-                        stack.append(ngbr)
-            return False
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: list[list[int]]) -> bool:
+
+        graph = [[] for _ in range(numCourses)]
+        indegree = [0] * numCourses
+
+        for course, prereq in prerequisites:
+            graph[prereq].append(course)
+            indegree[course] += 1
         
-        for i in range(numCourses):
-            if has_cycle(i):
-                return False
-        return True
+        queue = deque()
+        for course in range(numCourses):
+            if indegree[course] == 0:
+                queue.append(course)
+            
+        courses_completed = 0
+        while queue:
+            course = queue.popleft()
+            courses_completed += 1
+            for next_course in graph[course]:
+                indegree[next_course] -= 1
+                if indegree[next_course] == 0:
+                    queue.append(next_course)
+        return courses_completed == numCourses
+
+        
