@@ -1,11 +1,7 @@
 class Solution:
     def minMergedInteger(self, nums: list[int]) -> int:
-        merged = []
-        N = len(nums)
-        i = 0
-        while i < N:
+        heap = []
+        for i in range(0, len(nums), 2):
             arr = str(nums[i]) + str(nums[i + 1])
-            merged.append(int(arr))
-            i+=2
-        merged.sort()
-        return merged[0]
+            heapq.heappush(heap, int(arr))
+        return heap[0]
