@@ -11,7 +11,6 @@ class TimeMap:
         if not element or element[0][1]> timestamp:
             return ""
         l, r = 0, len(element) - 1
-        timestamp_prev = ""
         while l < r:
             m = (l + r + 1) // 2
             if  element[m][1]<= timestamp:
