@@ -1,17 +1,10 @@
 class Solution:
-    def rob(self, nums: List[int]) -> int:
+    def rob(self, nums: list[int]) -> int:
         N = len(nums)
-        # dp = [0] * (n  +  2)
+        dp = [0] * (N + 2)
 
-        # for i in range(n-1, -1, -1):
-        #     dp[i] = max(nums[i] + dp[i + 2], dp[i + 1])
-        # return dp[0]
-
-        @cache
-        def dfs(idx):
-            if idx >= N:
-                return 0
-            pick = dfs(idx + 2) + nums[idx]
-            not_pick = dfs(idx + 1)
-            return max(pick, not_pick)
-        return dfs(0)
+        for i in range(N - 1, -1, -1):
+            pick = nums[i] + dp[i + 2]
+            not_pick = dp[i + 1]
+            dp[i] = max(pick, not_pick)
+        return dp[0]
